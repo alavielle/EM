@@ -1,0 +1,1 @@
+ALL RECORDS:C47([StructureFamille:3])

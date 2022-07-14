@@ -1,0 +1,770 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 30,
+	"markerBody": 60,
+	"events": [
+		"onLoad"
+	],
+	"windowTitle": "window title",
+	"destination": "listScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"background": {
+					"type": "rectangle",
+					"fill": "automatic",
+					"stroke": "transparent",
+					"top": 30,
+					"height": 30,
+					"left": 0,
+					"right": 8330
+				},
+				"label_ID": {
+					"type": "text",
+					"text": "ID",
+					"top": 10,
+					"left": 10,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID:1",
+					"top": 37,
+					"left": 10,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_1": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 265
+				},
+				"label_CodeEC": {
+					"type": "text",
+					"text": "CodeEC",
+					"top": 10,
+					"left": 270,
+					"width": 100,
+					"height": 17
+				},
+				"field_CodeEC": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]CodeEC:2",
+					"top": 37,
+					"left": 270,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_2": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 525
+				},
+				"label_Type": {
+					"type": "text",
+					"text": "Type",
+					"top": 10,
+					"left": 530,
+					"width": 100,
+					"height": 17
+				},
+				"field_Type": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Type:3",
+					"top": 37,
+					"left": 530,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_3": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 785
+				},
+				"label_Titre": {
+					"type": "text",
+					"text": "Titre",
+					"top": 10,
+					"left": 790,
+					"width": 100,
+					"height": 17
+				},
+				"field_Titre": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Titre:4",
+					"top": 37,
+					"left": 790,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_4": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1045
+				},
+				"label_Ordre": {
+					"type": "text",
+					"text": "Ordre",
+					"top": 10,
+					"left": 1050,
+					"width": 100,
+					"height": 17
+				},
+				"field_Ordre": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Ordre:5",
+					"top": 37,
+					"left": 1050,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_5": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1305
+				},
+				"label_Prenom": {
+					"type": "text",
+					"text": "Prenom",
+					"top": 10,
+					"left": 1310,
+					"width": 100,
+					"height": 17
+				},
+				"field_Prenom": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Prenom:7",
+					"top": 37,
+					"left": 1310,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_6": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1565
+				},
+				"label_Divorce": {
+					"type": "text",
+					"text": "Divorce",
+					"top": 10,
+					"left": 1570,
+					"width": 100,
+					"height": 17
+				},
+				"field_Divorce": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Divorce:9",
+					"top": 37,
+					"left": 1570,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_7": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1825
+				},
+				"label_LieuNaissance": {
+					"type": "text",
+					"text": "LieuNaissance",
+					"top": 10,
+					"left": 1830,
+					"width": 100,
+					"height": 17
+				},
+				"field_LieuNaissance": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]LieuNaissance:10",
+					"top": 37,
+					"left": 1830,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_8": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2085
+				},
+				"label_Adresse": {
+					"type": "text",
+					"text": "Adresse",
+					"top": 10,
+					"left": 2090,
+					"width": 100,
+					"height": 17
+				},
+				"field_Adresse": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Adresse:11",
+					"top": 37,
+					"left": 2090,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_9": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2345
+				},
+				"label_ID_Tuteur": {
+					"type": "text",
+					"text": "ID_Tuteur",
+					"top": 10,
+					"left": 2350,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Tuteur": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Tuteur:12",
+					"top": 37,
+					"left": 2350,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_10": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2605
+				},
+				"label_Situation": {
+					"type": "text",
+					"text": "Situation",
+					"top": 10,
+					"left": 2610,
+					"width": 100,
+					"height": 17
+				},
+				"field_Situation": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Situation:13",
+					"top": 37,
+					"left": 2610,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_11": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2865
+				},
+				"label_IndependantFiscal": {
+					"type": "text",
+					"text": "IndependantFiscal",
+					"top": 10,
+					"left": 2870,
+					"width": 100,
+					"height": 17
+				},
+				"field_IndependantFiscal": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]IndependantFiscal:14",
+					"top": 37,
+					"left": 2870,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_12": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3125
+				},
+				"label_SuperIsole": {
+					"type": "text",
+					"text": "SuperIsole",
+					"top": 10,
+					"left": 3130,
+					"width": 100,
+					"height": 17
+				},
+				"field_SuperIsole": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]SuperIsole:15",
+					"top": 37,
+					"left": 3130,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_13": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3385
+				},
+				"label_TelTrav": {
+					"type": "text",
+					"text": "TelTrav",
+					"top": 10,
+					"left": 3390,
+					"width": 100,
+					"height": 17
+				},
+				"field_TelTrav": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]TelTrav:17",
+					"top": 37,
+					"left": 3390,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_14": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3645
+				},
+				"label_Decede": {
+					"type": "text",
+					"text": "Decede",
+					"top": 10,
+					"left": 3650,
+					"width": 100,
+					"height": 17
+				},
+				"field_Decede": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Decede:20",
+					"top": 37,
+					"left": 3650,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_15": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3905
+				},
+				"label_DateDeces": {
+					"type": "text",
+					"text": "DateDeces",
+					"top": 10,
+					"left": 3910,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateDeces": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DateDeces:21",
+					"top": 37,
+					"left": 3910,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_16": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4165
+				},
+				"label_Handicap": {
+					"type": "text",
+					"text": "Handicap",
+					"top": 10,
+					"left": 4170,
+					"width": 100,
+					"height": 17
+				},
+				"field_Handicap": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Handicap:22",
+					"top": 37,
+					"left": 4170,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_17": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4425
+				},
+				"label_SituationProfessionnelle": {
+					"type": "text",
+					"text": "SituationProfessionnelle",
+					"top": 10,
+					"left": 4430,
+					"width": 100,
+					"height": 17
+				},
+				"field_SituationProfessionnelle": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]SituationProfessionnelle:24",
+					"top": 37,
+					"left": 4430,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_18": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4685
+				},
+				"label_Archive": {
+					"type": "text",
+					"text": "Archive",
+					"top": 10,
+					"left": 4690,
+					"width": 100,
+					"height": 17
+				},
+				"field_Archive": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Archive:25",
+					"top": 37,
+					"left": 4690,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_19": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4945
+				},
+				"label_TauxHandicap": {
+					"type": "text",
+					"text": "TauxHandicap",
+					"top": 10,
+					"left": 4950,
+					"width": 100,
+					"height": 17
+				},
+				"field_TauxHandicap": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]TauxHandicap:26",
+					"top": 37,
+					"left": 4950,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_20": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5205
+				},
+				"label_Statut": {
+					"type": "text",
+					"text": "Statut",
+					"top": 10,
+					"left": 5210,
+					"width": 100,
+					"height": 17
+				},
+				"field_Statut": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Statut:27",
+					"top": 37,
+					"left": 5210,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_21": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5465
+				},
+				"label_DateMAJ": {
+					"type": "text",
+					"text": "DateMAJ",
+					"top": 10,
+					"left": 5470,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateMAJ": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DateMAJ:28",
+					"top": 37,
+					"left": 5470,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_22": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5725
+				},
+				"label_ID_Grade": {
+					"type": "text",
+					"text": "ID_Grade",
+					"top": 10,
+					"left": 5730,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Grade": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Grade:29",
+					"top": 37,
+					"left": 5730,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_23": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5985
+				},
+				"label_CodeDossier": {
+					"type": "text",
+					"text": "CodeDossier",
+					"top": 10,
+					"left": 5990,
+					"width": 100,
+					"height": 17
+				},
+				"field_CodeDossier": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]CodeDossier:30",
+					"top": 37,
+					"left": 5990,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_24": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 6245
+				},
+				"label_ID_CodeFiscal": {
+					"type": "text",
+					"text": "ID_CodeFiscal",
+					"top": 10,
+					"left": 6250,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_CodeFiscal": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_CodeFiscal:31",
+					"top": 37,
+					"left": 6250,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_25": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 6505
+				},
+				"label_ID_Ressortissant": {
+					"type": "text",
+					"text": "ID_Ressortissant",
+					"top": 10,
+					"left": 6510,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Ressortissant": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Ressortissant:32",
+					"top": 37,
+					"left": 6510,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_26": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 6765
+				},
+				"label_ID_Conjoint": {
+					"type": "text",
+					"text": "ID_Conjoint",
+					"top": 10,
+					"left": 6770,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Conjoint": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Conjoint:33",
+					"top": 37,
+					"left": 6770,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_27": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7025
+				},
+				"label_UUID": {
+					"type": "text",
+					"text": "UUID",
+					"top": 10,
+					"left": 7030,
+					"width": 100,
+					"height": 17
+				},
+				"field_UUID": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]UUID:34",
+					"top": 37,
+					"left": 7030,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_28": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7285
+				},
+				"label_DureeService": {
+					"type": "text",
+					"text": "DureeService",
+					"top": 10,
+					"left": 7290,
+					"width": 100,
+					"height": 17
+				},
+				"field_DureeService": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DureeService:35",
+					"top": 37,
+					"left": 7290,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_29": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7545
+				},
+				"label_FinService": {
+					"type": "text",
+					"text": "FinService",
+					"top": 10,
+					"left": 7550,
+					"width": 100,
+					"height": 17
+				},
+				"field_FinService": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]FinService:36",
+					"top": 37,
+					"left": 7550,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_30": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7805
+				},
+				"label_ImputableService": {
+					"type": "text",
+					"text": "ImputableService",
+					"top": 10,
+					"left": 7810,
+					"width": 100,
+					"height": 17
+				},
+				"field_ImputableService": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ImputableService:37",
+					"top": 37,
+					"left": 7810,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_31": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 8065
+				},
+				"label_DerniereAffectation": {
+					"type": "text",
+					"text": "DerniereAffectation",
+					"top": 10,
+					"left": 8070,
+					"width": 100,
+					"height": 17
+				},
+				"field_DerniereAffectation": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DerniereAffectation:39",
+					"top": 37,
+					"left": 8070,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				}
+			}
+		}
+	],
+	"geometryStamp": 15
+}

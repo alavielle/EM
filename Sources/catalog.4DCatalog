@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="EM" uuid="01E437BB3514C344A0EA9666A034B08C" collation_locale="fr">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="Compta" uuid="252E06270D415C4BA096823244AA4F1F" id="1" prevent_journaling="true">
+		<field name="ID" uuid="4D43B9D35201F94DB622307BF9402011" type="4" unique="true" autosequence="true" id="1"/>
+		<field name="NumCompte" uuid="4420DB4B27196C4D9A846CFB783E3923" type="10" limiting_length="255" id="2"/>
+		<field name="Libelle" uuid="B52C8488B1839A48B0961D644CCEDA72" type="10" limiting_length="255" id="3"/>
+		<primary_key field_name="ID" field_uuid="4D43B9D35201F94DB622307BF9402011"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="3">
+				<color red="249" green="130" blue="127" alpha="255"/>
+				<coordinates left="1423" top="1087" width="120" height="122.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="WebUser" uuid="3A274C059EE2A941B07AEEA0CF1E4585" id="2">
+		<field name="ID" uuid="BD7B78C7433C5C4F960EEAAE51B8CB51" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Email" uuid="952F447CBDB8D248BB61CB7C525BA2B3" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Nom" uuid="C230E477AD5BCC4DB0F3CD1AB155DA60" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="Prenom" uuid="72B4BC80D688E84D9BF9790431DD0120" type="10" limiting_length="255" never_null="true" id="4"/>
+		<field name="Password" uuid="C923125C9AFFC645B6F0F55AECED5782" type="10" limiting_length="255" never_null="true" id="5"/>
+		<field name="ID_Privilege" uuid="7CBAD47F1525C14EBBCD9AA290E1DAA1" type="4" never_null="true" id="6"/>
+		<field name="UUID" uuid="7940329B09B8714CB292489F28B1EBEF" type="10" autogenerate="true" store_as_UUID="true" not_null="true" never_null="true" id="7"/>
+		<field name="ID_Equipe" uuid="AB68A4E2CCB43D4DBC55DB8FD58A94B5" type="4" never_null="true" id="8"/>
+		<field name="ID_CodeFiscal" uuid="81680C09E3DF2249A1C361A4276B5AF7" type="4" never_null="true" id="9"/>
+		<field name="TimeStamp" uuid="20EA5C3DDEFEF04F97D3CDA6488FD447" type="10" limiting_length="255" never_null="true" id="10"/>
+		<field name="Token" uuid="1039182ECC6A2B4690B203B9B387C25A" type="10" limiting_length="255" never_null="true" id="11"/>
+		<field name="Expiration" uuid="6B50697EEB276645B74D61FBB11D5822" type="6" never_null="true" id="12"/>
+		<primary_key field_name="ID" field_uuid="BD7B78C7433C5C4F960EEAAE51B8CB51"/>
+		<table_extra output_form="Output" input_form="Input">
+			<editor_table_info displayable_fields_count="11">
+				<color red="186" green="170" blue="158" alpha="255"/>
+				<coordinates left="1317" top="39" width="120" height="285.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="FoyerFiscal" uuid="F1EAFD2D991B4840A92086370A67A2E6" id="3">
+		<field name="ID" uuid="A75FF7E4B2E2CA428B0438E14ACE984A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="CodeFiscal" uuid="A399B5C0A2286448AAD40AD67F48CCE8" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra multi_line="false" enumeration_id="2">
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="ID_ASA" uuid="E1E2C97FAA47D24A8C1D888D09B748DA" type="4" never_null="true" id="3"/>
+		<field name="ID_ASEM" uuid="B2E2FEB77B5732479F24564E031680C7" type="4" never_null="true" id="4"/>
+		<field name="AdulteSup" uuid="964F1038EA955444A1E93A33271C51EB" type="1" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="A75FF7E4B2E2CA428B0438E14ACE984A"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="7">
+				<color red="114" green="209" blue="221" alpha="255"/>
+				<coordinates left="868" top="244" width="120" height="196.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Privilege" uuid="7994DF256FF63148A1BEB5A21B8182EC" id="4">
+		<field name="ID" uuid="FAEC9B7A7DACBE46B9F491D11F9BDB95" type="4" unique="true" not_null="true" id="1"/>
+		<field name="Profil" uuid="21CA3BC35490EE439CAEB2E53292EDFB" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Menu" uuid="C951D9B9F1092B4D9478E84DCA9C48D5" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="Zone_Parametre" uuid="82C0CD244CDDE947BDF87383EE576725" type="10" limiting_length="255" never_null="true" id="4"/>
+		<field name="Zone_EtatCivil" uuid="56F9EFF08BDCBF448167D1DD8E43D7CA" type="10" limiting_length="255" never_null="true" id="5"/>
+		<field name="Zone_Bourse" uuid="C87AAABC1439144794549B6BD9BAF0F4" type="10" limiting_length="255" never_null="true" id="6"/>
+		<field name="Zone_Aide" uuid="C1AD928CD720D048977CCC0FDCA3F5DF" type="10" limiting_length="255" never_null="true" id="7"/>
+		<field name="Zone_Pret" uuid="BA0E826070534242ACB4AC7F4C9A9D4E" type="10" limiting_length="255" never_null="true" id="8"/>
+		<primary_key field_name="ID" field_uuid="FAEC9B7A7DACBE46B9F491D11F9BDB95"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="8">
+				<color red="186" green="170" blue="158" alpha="255"/>
+				<coordinates left="1031" top="0" width="120" height="223.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="WebDebugger" uuid="E4B364B6EB3CC248A3E89A521B9CA95E" id="5" prevent_journaling="true">
+		<field name="ID" uuid="8BA56E0C71FE46488979FFDFBDA9871C" type="4" unique="true" autosequence="true" not_null="true" never_null="true" id="1">
+			<field_extra multi_line="false">
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="TimeStamp" uuid="520ECB4C98678A458911436DE612F8A0" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Contenu" uuid="CFA80A47E05C0442B9DCDE627746BF92" type="10" never_null="true" id="3"/>
+		<field name="UUID" uuid="119DBE56AAF5F1459A5D134AC3753238" type="10" unique="true" autogenerate="true" store_as_UUID="true" id="4">
+			<field_extra multi_line="false">
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<primary_key field_name="ID" field_uuid="8BA56E0C71FE46488979FFDFBDA9871C"/>
+		<table_extra input_form="Output" output_form="Output">
+			<editor_table_info displayable_fields_count="5">
+				<color red="186" green="170" blue="158" alpha="255"/>
+				<coordinates left="1492" top="14" width="120" height="149.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Grade" uuid="1C8B2081932D2A43A4A87B1984EBF4B1" id="6" prevent_journaling="true">
+		<field name="ID" uuid="F52882495DFF3A40B310099A6ED4AF83" type="4" unique="true" autosequence="true" id="1"/>
+		<field name="GradeRessortissant" uuid="A4ACF64A833F104D9A42B0174B6ACB2F" type="10" limiting_length="255" id="2"/>
+		<field name="GradeGeneral" uuid="7EDF3A1057A34247886E772C17CBB289" type="10" limiting_length="255" id="3">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\tx720\cf1\protect\f0}]]></comment>
+				<comment format="text"/>
+			</field_extra>
+		</field>
+		<primary_key field_name="ID" field_uuid="F52882495DFF3A40B310099A6ED4AF83"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info fields_ordering="1" displayable_fields_count="3">
+				<color red="196" green="193" blue="186" alpha="255"/>
+				<coordinates left="641" top="1031" width="120" height="124.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="MontantPart" uuid="2ADC3433C223E74990A66570286C3945" id="7">
+		<field name="ID" uuid="CD6159C48CC3314083CD722552BDB2F4" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="NiveauEtude" uuid="5CCEB3E421DD364484F9E6D197E23F78" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="Montant" uuid="217376D14B02E54E972868F276D5D02B" type="6" never_null="true" id="3"/>
+		<field name="AE" uuid="73D5DB5EA1C64147B04824E96E406954" type="1" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="CD6159C48CC3314083CD722552BDB2F4"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="4">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1072" top="842" width="120" height="139.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Classe" uuid="321FE3434658764586BE5E0CA8EBD18F" id="8">
+		<field name="ID" uuid="A1BC059B818AD049A3346BBF3CE2B50A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_NiveauEtude" uuid="823607DF8B2637488CFAB3022C36C979" type="4" never_null="true" id="2"/>
+		<field name="Classe" uuid="389A077321470C45927C7D5FA3706873" type="10" limiting_length="255" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="A1BC059B818AD049A3346BBF3CE2B50A"/>
+		<table_extra output_form="Output" input_form="Input">
+			<editor_table_info displayable_fields_count="3">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="892" top="758" width="120" height="118.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Mois" uuid="A6D61344B8E627419DB9117AAB2312D6" id="9" prevent_journaling="true">
+		<field name="ID" uuid="08BED11F8326D14485FA9B28CFBC34A3" type="4" unique="true" id="1"/>
+		<field name="Mois" uuid="A049A6DC740B4546AE432F6DB0F3FB66" type="10" limiting_length="255" id="2"/>
+		<primary_key field_name="ID" field_uuid="08BED11F8326D14485FA9B28CFBC34A3"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info fields_ordering="1" displayable_fields_count="3">
+				<color red="249" green="130" blue="127" alpha="255"/>
+				<coordinates left="1429" top="1237" width="120" height="105.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="CED" uuid="F8183C49C4D83D4EACA983C45789F6A8" id="10">
+		<field name="ID" uuid="8ED649B24B6345469E40B1D287FDBCE4" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="CED" uuid="9FC193AABFBF8C4C8E183F3BAD67D0EE" type="10" limiting_length="255" never_null="true" id="2"/>
+		<primary_key field_name="ID" field_uuid="8ED649B24B6345469E40B1D287FDBCE4"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="2">
+				<color red="196" green="193" blue="186" alpha="255"/>
+				<coordinates left="440" top="1113.33203125" width="120" height="88.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Palier" uuid="42AA029139DDEA4A90AD7268C9C1206C" id="11" prevent_journaling="true">
+		<field name="ID" uuid="BF269529E886304B82200481FFD4DED5" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra multi_line="false">
+				<editor_field_info>
+					<color red="255" green="255" blue="255" alpha="0"/>
+				</editor_field_info>
+			</field_extra>
+		</field>
+		<field name="Indice" uuid="C22603D51F4561469216FA1822DBF938" type="6" id="2"/>
+		<field name="Seuil" uuid="5B500BF69974DB49BEF6953070D61434" type="6" id="3"/>
+		<field name="College" uuid="3EAE94B69A193240852A4734FA5BBB2C" type="4" id="4"/>
+		<field name="Lycee" uuid="47DD5028F6F6FE4381CECEAA3C8893F4" type="4" id="5"/>
+		<field name="Superieur" uuid="79C536502C807E4F9C1C396A17B732B2" type="4" id="6"/>
+		<field name="IndFiscal" uuid="9ECC71D01F11654F9F805CA3E1AB2D43" type="4" id="7"/>
+		<field name="Eloignement" uuid="E6E0080185F2E44BBEA9E1B31C0D07EE" type="6" id="8"/>
+		<field name="SupplementGV" uuid="EFB65E10E9C0F041804BFA06C649640C" type="6" id="9"/>
+		<field name="SuperIsole" uuid="580AC92004AB2E42AB58EE94EB2C3EEA" type="6" id="10"/>
+		<primary_key field_name="ID" field_uuid="BF269529E886304B82200481FFD4DED5"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info fields_ordering="1" displayable_fields_count="11">
+				<color red="237" green="211" blue="181" alpha="255"/>
+				<coordinates left="1241" top="840" width="126" height="272.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Bourse" uuid="67B366B1E3D8F04081ED92B97242DA00" id="12" prevent_journaling="true">
+		<field name="ID" uuid="DF7BE76CB2913E46A06600DC9B12BF46" type="4" unique="true" autosequence="true" id="1"/>
+		<field name="ID_AnneeSco" uuid="35E5F6D6E96C7641ACDC9EBF1DA64FF5" type="4" id="2"/>
+		<field name="DateDemande" uuid="2DD43B50BAE15C4C86687E5466F337D7" type="8" id="3"/>
+		<field name="Renouvellement" uuid="2D79894A5D7FF3429C8904A05B65D500" type="1" id="4"/>
+		<field name="Categorie" uuid="4D28F1FB49DD5F4DB0EBF1B6FB16C6C5" type="4" id="5"/>
+		<field name="Provenance" uuid="80F09E54C9031243BBF16E57F0071AD6" type="10" limiting_length="255" id="6"/>
+		<field name="AssistanteSociale" uuid="A1373BBCBD84D347897B3D5511E05F27" type="10" limiting_length="255" id="7"/>
+		<field name="ID_Boursier" uuid="36ED0ACBAEE0F047904A85B65B52B946" type="4" id="8"/>
+		<field name="ID_Versement" uuid="484C7E05CA100247B323155D42C70545" type="4" id="9"/>
+		<field name="EtudeLoin" uuid="56E99A9F7AEC794F9D51693F702E6064" type="1" id="13"/>
+		<field name="EtudeIdF" uuid="329767422C7EC648806AF2CFF86731AD" type="1" id="14"/>
+		<field name="BM" uuid="5A4793F23293BF4693AF9500EEDC4E38" type="1" id="17"/>
+		<field name="MontantBM" uuid="62174FBA7F4F9A4ABA74A61D09B442E3" type="6" id="18"/>
+		<field name="NbMois" uuid="774DB8462FED2D4EB4D0E27C980AEF1F" type="3" id="19"/>
+		<field name="MoisDeb" uuid="5D749C20752FB6408F4BF51587E7F310" type="3" id="20"/>
+		<field name="MoisFin" uuid="20365170ED4DF54696B817B18653AF6A" type="3" id="21"/>
+		<field name="Complement" uuid="8A3BE5541BD7644283C2DD1859DDB302" type="1" id="22"/>
+		<field name="MontantCompl" uuid="138686CC045B2B42841D1C2B6428C024" type="6" id="23"/>
+		<field name="Avance" uuid="A1609FA0F6C572468566B3CE86D4F063" type="1" id="24"/>
+		<field name="MontantAvance" uuid="D12BB876EB3F2C4586D3FE463DBBA3CA" type="6" id="25"/>
+		<field name="DateAvance" uuid="62853CDCC0B7FF499779241A0DF3F40F" type="8" id="26"/>
+		<field name="DateMAJ" uuid="64ADEDA9C33B8A41BE37BDBBF3C15D3D" type="8" id="30"/>
+		<field name="Solde" uuid="61F57A56F7760F409091A96114C59292" type="1" id="35"/>
+		<field name="MontantSolde" uuid="B7B7B31F1E5C854B8C1E01FD9F9699A4" type="6" id="36"/>
+		<field name="DateSolde" uuid="E510699AD6B4794185D630787C556F96" type="8" id="37"/>
+		<field name="ComplementCA" uuid="B8FC2FBAC062C3408046E65609AF6DA7" type="1" id="41"/>
+		<field name="MontantComplCA" uuid="30F2EAE1D89CD84E82C4F7801FB8A9A8" type="6" id="42"/>
+		<field name="DateComplCA" uuid="F7782AFAF2CFBC469A2086980C13F63E" type="8" id="43"/>
+		<field name="DateBM" uuid="AA566E61918FB34883D60074AEB4E895" type="8" id="44"/>
+		<field name="NumPieceBM" uuid="71CD0EB7C0B0D14A9F15D77709840010" type="10" limiting_length="255" id="45"/>
+		<field name="NumPieceAvance" uuid="0DFD4CF343718B4DA54B5E5060EBF1A0" type="10" limiting_length="255" id="46"/>
+		<field name="NumPieceComplCA" uuid="F3AC8E72CE1D464DBDDBC62E33EC8562" type="10" limiting_length="255" id="47"/>
+		<field name="NumPieceSolde" uuid="A423ABE7785EC44F91730F01BE4F6C06" type="10" limiting_length="255" id="48"/>
+		<field name="VersementAnnule" uuid="20454B6FA4E0944BBDA2D157EA4B357D" type="1" id="49"/>
+		<field name="Quotient" uuid="4942B4C23B616B4491D502A23316D45D" type="6" id="50"/>
+		<field name="UC" uuid="B1ECA540021A0040B4EFB2933F74F2E9" type="6" id="51"/>
+		<field name="NbParts" uuid="1ED35EB5DEBA1C469D9A1CBA7E2C0419" type="4" id="52"/>
+		<field name="MontantPart" uuid="0B72CCB60FE6BF4896E4415488EE4E93" type="6" id="53"/>
+		<field name="Montant" uuid="B30E005D2AD1EB47894BD91C373252D4" type="6" id="55"/>
+		<field name="Supplement" uuid="2BBD8A86D7C0AF448D1CEFA92D5EE074" type="6" id="56"/>
+		<field name="ID_CED" uuid="90696A2D3AD97640A3A410F705FAEF82" type="4" id="58"/>
+		<field name="Observation" uuid="CABEA69B95EB16498D6056A121967AFB" type="10" never_null="true" id="59"/>
+		<field name="TypeAide" uuid="B2CF7D4FA1F1B64AA0E30A433B7DAAEA" type="10" limiting_length="255" never_null="true" id="60"/>
+		<primary_key field_name="ID" field_uuid="DF7BE76CB2913E46A06600DC9B12BF46"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="44">
+				<color red="175" green="188" blue="191" alpha="255"/>
+				<coordinates left="182" top="0" width="161" height="968.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Ressource" uuid="BC5CA96AB5126A4EA1A8DEB45949053B" id="13" prevent_journaling="true">
+		<field name="ID" uuid="532A05A500CAA44E983DEC3843BFBB0A" type="4" unique="true" autosequence="true" id="1"/>
+		<field name="ID_CodeFiscal" uuid="D16DB6B67935704AA69AA3C649CBC911" type="4" id="2"/>
+		<field name="Annee" uuid="704173839B28FB4BBB230885C06C3307" type="3" id="3"/>
+		<field name="A01" uuid="C4E8096F60024245B983CD34528740AE" type="6" id="4"/>
+		<field name="A02" uuid="26B659633B9D9A4CB08850C31D950478" type="6" id="5"/>
+		<field name="A03" uuid="56D350C764314A42BE041D5B14FD1F72" type="6" id="6"/>
+		<field name="A04" uuid="5BB8B69C66AAD54FA661850A841E4D86" type="6" id="7"/>
+		<field name="A05" uuid="DD8AB982DED39944895AF4A89D600997" type="6" id="8"/>
+		<field name="A06" uuid="D5BA745EE8326847BFEB5BE5CC1C369C" type="6" id="9"/>
+		<field name="A07" uuid="AA8B9BA778994449BB1848DB7EE915A2" type="6" id="10"/>
+		<field name="A08" uuid="43B11ABDF0D0244EB67FFB4F18719702" type="6" id="11"/>
+		<field name="A09" uuid="8746AB497E0CA74FB3D01B1EA42BBDF2" type="6" id="12"/>
+		<field name="A10" uuid="18FF150BED63C94298FF7DF8D90CBE45" type="6" id="13"/>
+		<field name="A11" uuid="9C176226E6853B45BBEDC0FA02923B43" type="6" id="14"/>
+		<field name="B01" uuid="C9ACF8AA32440A48BB95EB29EE7998D0" type="6" id="15"/>
+		<field name="B02" uuid="C37C377BCA7AD947AE446744ADC21037" type="6" id="16"/>
+		<field name="B03" uuid="D3A122157D213341998F577143CC7603" type="6" id="17"/>
+		<field name="B04" uuid="07D258298C3C91419877669732F1DDBE" type="6" id="18"/>
+		<field name="B05" uuid="38C9ABFA40C756419A8ADC1D782E5034" type="6" id="19"/>
+		<field name="B06" uuid="B4A70F04B311984BB27D6BC76856B5BB" type="6" id="20"/>
+		<field name="B07" uuid="804274915C2CBD4D91153FB3D369ED55" type="6" id="21"/>
+		<field name="B08" uuid="0B6010188318CB4DBFCC3F732A7F7E98" type="6" id="22"/>
+		<field name="B09" uuid="1B22BEF928AD394CBEB24BD8C994088C" type="6" id="23"/>
+		<field name="B10" uuid="EF6BF8A0B71D694F8468BD1A317DBACB" type="6" id="24"/>
+		<field name="B11" uuid="ACB67293593B1C4B8B0EC25D6498C099" type="6" id="25"/>
+		<field name="C01" uuid="193C50708D89C348A7AA942A8DA32446" type="6" id="26"/>
+		<field name="C02" uuid="A2D2E44738080C408B3317ABBC2DBBAA" type="6" id="27"/>
+		<field name="C03" uuid="08214567215E064E8535D61F51B45611" type="6" id="28"/>
+		<field name="C04" uuid="4FDB351AED08A24BBB19593A554355F0" type="6" id="29"/>
+		<field name="C05" uuid="549C83F3628EF84B90DAE84DA64B8B05" type="6" id="30"/>
+		<field name="C06" uuid="46BBFF9C87D8044FADCF5C9EDBB26A6C" type="6" id="31"/>
+		<field name="C07" uuid="353204FB12ED3B4CA29356BE62A46F1A" type="6" id="32"/>
+		<field name="C08" uuid="A34937128D440D40925A65B3361AE8A0" type="6" id="33"/>
+		<field name="C09" uuid="6E86F2F5E32A7B448B37750152EC10EB" type="6" id="34"/>
+		<field name="C10" uuid="06112191D369344FAC169AA4856E532F" type="6" id="35"/>
+		<field name="C11" uuid="75BC03CCDFA62F439452F99BB7B2323A" type="6" id="36"/>
+		<field name="A12" uuid="9D75EBBF672179489EA11F6E4FDC8FCE" type="6" id="37"/>
+		<field name="A13" uuid="A18AB872243B2941A4DA21E5E5BDA4F5" type="6" id="38"/>
+		<field name="A14" uuid="75EF9311D40ADE4CB626536EF9AB321B" type="6" id="39"/>
+		<field name="TT" uuid="83F8323A61BB3340A2488A93E8F28FB4" type="6" id="40"/>
+		<field name="A15" uuid="08C6582A7E2DBD4794592669AE59A985" type="6" id="41"/>
+		<field name="B12" uuid="4F1A66977C7E104D9DFCF9D1BD33BD1B" type="6" id="42"/>
+		<field name="B13" uuid="7BC08858D75CE647A084BD95A1269643" type="6" id="43"/>
+		<field name="B14" uuid="8D836DC240655442902A2AEDB2098CF0" type="6" id="44"/>
+		<field name="B15" uuid="3B38BCB324A67A41A9877156CB0051E6" type="6" id="45"/>
+		<field name="C12" uuid="1694ED44B51C7045B8251868BD4B110F" type="6" id="46"/>
+		<field name="C13" uuid="33DC8AE638F22A42ACB94A0F2227052C" type="6" id="47"/>
+		<field name="C14" uuid="4D0416C3E018E240B51B0F82CBB3E373" type="6" id="48"/>
+		<field name="C15" uuid="7D1FB17A58E32A43BACAD49AE9626E97" type="6" id="49"/>
+		<primary_key field_name="ID" field_uuid="532A05A500CAA44E983DEC3843BFBB0A"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="49">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="0" top="0" width="152" height="1080"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="EtatCivil" uuid="11F6DB6E9B052042A7AECEF651138E6B" id="14" encryptable="true" prevent_journaling="true">
+		<field name="ID" uuid="8EC072600131FD4584070FBCC4729F9D" type="4" unique="true" autosequence="true" id="1"/>
+		<field name="CodeEC" uuid="0147892740909F4C9D1AD3D53773D32F" type="4" id="2"/>
+		<field name="Type" uuid="C79F0520A163E64A976A6101AF3F8971" type="10" limiting_length="255" id="3"/>
+		<field name="Titre" uuid="A2382B01DDEF3D43890265727CF98CA6" type="10" limiting_length="255" id="4"/>
+		<field name="Ordre" uuid="01DA974D53CAB445ABB0BB70077D2FA6" type="4" never_null="true" id="5"/>
+		<field name="Observation" uuid="662FC085D318F44F8A1DFE214CB31AAE" type="10" never_null="true" id="6"/>
+		<field name="Prenom" uuid="469DB0023920B64AAC67E3AEC16EF97F" type="10" limiting_length="255" id="7"/>
+		<field name="BlobCrypted" uuid="6F7356D40D73D54FB730B9D84394EA7C" type="18" never_null="true" id="8"/>
+		<field name="Divorce" uuid="3BF188C6E5F73E4280542D90F63D6F36" type="1" never_null="true" id="9"/>
+		<field name="LieuNaissance" uuid="F083AAB6F7F29442844B18C50114F74D" type="10" limiting_length="255" id="10"/>
+		<field name="Adresse" uuid="ED6E016D5850DB47AEAFC10000040302" type="10" limiting_length="255" id="11"/>
+		<field name="ID_Tuteur" uuid="B55527721B2EC44BBA5D8EA78630D90B" type="4" never_null="true" id="12"/>
+		<field name="Situation" uuid="8C08F1A02E76B448AFB04BE8842AEB35" type="10" limiting_length="255" never_null="true" id="13">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\tx720\cf1\protect\f0\fs17 Civil ou militaire\f1}]]></comment>
+				<comment format="text">Civil ou militaire</comment>
+			</field_extra>
+		</field>
+		<field name="IndependantFiscal" uuid="7697C9975924064A8BC3A577A0CBCB0F" type="1" never_null="true" id="14"/>
+		<field name="SuperIsole" uuid="FCFC1C289C673A4784A4EF6095BC8653" type="1" never_null="true" id="15"/>
+		<field name="SituationMaritale" uuid="68F0078E6EFDFC4687E9EA1390BCA80D" type="10" limiting_length="255" never_null="true" id="16"/>
+		<field name="SecteurMarine" uuid="AE50CF62270D144E931BB8ED02B8B544" type="10" limiting_length="255" never_null="true" id="17"/>
+		<field name="DatePension" uuid="5E93BB8386EF7B4AA1CB975836557592" type="8" never_null="true" id="18"/>
+		<field name="DecesEnActivite" uuid="2FEB88DE53B95D4EA282630D40E8E00E" type="1" never_null="true" id="19"/>
+		<field name="Decede" uuid="A80348EFCBA01A4091929FBE83AB3E67" type="1" id="20"/>
+		<field name="DateDeces" uuid="5CE508A09B3744409ADDAF5AB5BE3AE1" type="8" id="21"/>
+		<field name="Handicap" uuid="7E1E8C3430D14B49B3CD97C63DBF51EC" type="1" id="22"/>
+		<field name="DecesEnRetraite" uuid="E40DF16C04C3BE4581320E45C435005B" type="1" never_null="true" id="23"/>
+		<field name="SituationProfessionnelle" uuid="EA9C3E616D2F1A45AD163C859E2F3E6E" type="10" limiting_length="255" id="24"/>
+		<field name="Archive" uuid="DFF43316701E95478E66D18A1A276D3C" type="1" id="25"/>
+		<field name="TauxHandicap" uuid="F79AA96F1BABF7468EF1224E0B77C04D" type="10" limiting_length="255" id="26"/>
+		<field name="Statut" uuid="2A2ABB00D9FC7D4C9811977A9270EDFC" type="10" limiting_length="255" never_null="true" id="27"/>
+		<field name="DateMAJ" uuid="5CE2B0234D47064AA7677071C5D91115" type="10" limiting_length="255" id="28"/>
+		<field name="ID_Grade" uuid="B30D9044DC4D3C4F9DB1284AAFF0C7B3" type="4" never_null="true" id="29">
+			<field_extra>
+				<comment format="rtf"><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}{\f1\fnil Segoe UI;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\tx720\cf1\protect\f0\fs17 Dernier Grade\f1}]]></comment>
+				<comment format="text">Dernier Grade</comment>
+			</field_extra>
+		</field>
+		<field name="CodeDossier" uuid="E4A0EF5428E9904F959147245C733477" type="10" limiting_length="255" id="30"/>
+		<field name="ID_CodeFiscal" uuid="3D338B9AA837854FA00B9257F6988227" type="4" never_null="true" id="31"/>
+		<field name="ID_Ressortissant" uuid="C1439C2F9DFEFE4FB8B65785D5574392" type="4" never_null="true" id="32"/>
+		<field name="ID_Conjoint" uuid="3C06F6DB0B5C544595E80B0D384E8D10" type="4" never_null="true" id="33"/>
+		<field name="UUID" uuid="F51E4C6662EB7646868B20E32F83E6CF" type="10" autogenerate="true" store_as_UUID="true" never_null="true" id="34"/>
+		<field name="DateDebutService" uuid="A703E1B58DF3734B96436018010AFE98" type="8" never_null="true" id="35">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="DateFinService" uuid="9CDF7E28747AA84C88573F6CC2ECB7AA" type="8" never_null="true" id="36"/>
+		<field name="ImputableService" uuid="83AEA1A419126446A862E163D7220324" type="1" never_null="true" id="37"/>
+		<field name="DernierEmploi" uuid="7F49DB1BB3B08C49AC74516349716247" type="10" limiting_length="255" never_null="true" id="38"/>
+		<field name="DerniereAffectation" uuid="CAF1D1C12E3C6043B3B1433CD676E8ED" type="10" limiting_length="255" never_null="true" id="39"/>
+		<field name="ID_SecteurMarine" uuid="9A61F63780D0454795CED05E89DDCB61" type="4" never_null="true" id="40"/>
+		<field name="Parente" uuid="3EAAA39C6336904F9D280678E950C83D" type="10" limiting_length="255" never_null="true" id="41"/>
+		<primary_key field_name="ID" field_uuid="8EC072600131FD4584070FBCC4729F9D"/>
+		<table_extra input_form="Input" output_form="Output" trigger_insert="true" trigger_update="true">
+			<editor_table_info displayable_fields_count="41">
+				<color red="150" green="216" blue="175" alpha="255"/>
+				<coordinates left="418" top="173" width="164.37890625" height="911.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ModelesHTML" uuid="99B145AC923CAA44B4BFF978CCD08C7A" id="15">
+		<field name="ID" uuid="F7169AA1035D684B8E09613E87F1DCA8" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Titre" uuid="C8852F536EF038479B144EA8DCEF7017" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Detail" uuid="7E9ACED3579F104BB5D87AC846FACB1F" type="10" never_null="true" id="3"/>
+		<field name="Contenu" uuid="7BDD95C4262183479F74F7B31679DA41" type="18" never_null="true" id="4"/>
+		<field name="Objet" uuid="6F8202E065156D4B91063F76AA1765FA" type="21" blob_switch_size="2147483647" never_null="true" id="5"/>
+		<field name="UUID" uuid="62A173B75BFA17448C24467B92E4218A" type="10" unique="true" store_as_UUID="true" id="6"/>
+		<primary_key field_name="ID" field_uuid="F7169AA1035D684B8E09613E87F1DCA8"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="7">
+				<color red="255" green="153" blue="63" alpha="255"/>
+				<coordinates left="499" top="1236" width="120" height="191.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="EquipeSociale" uuid="40AA800B77333A49BFBFE3A9E479EEB6" id="16">
+		<field name="ID" uuid="0731531716A2E0468FEEB664F046A616" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Nom" uuid="06459E93AFF66C4C9A1B8C263D596004" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Prenom" uuid="9CA93A7BB4A3E14FB48C0A81E40085D0" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="Fonction" uuid="951503EE076D9148A249ABA1C04C96E8" type="10" limiting_length="255" never_null="true" id="4"/>
+		<field name="ID_Pole" uuid="E39BA4287930FB479B98211DFC4CF4F9" type="4" never_null="true" id="5"/>
+		<field name="ID_Conseiller" uuid="25286C7A50349C43A0C5E1BC662EC118" type="4" never_null="true" id="6"/>
+		<field name="Email" uuid="972D83641324674AB493B092F6AD97B4" type="10" limiting_length="255" never_null="true" id="7"/>
+		<field name="Telephone" uuid="83BA7D5E1C2E7A4881DC8961B4B2E0CA" type="10" limiting_length="255" never_null="true" id="8"/>
+		<primary_key field_name="ID" field_uuid="0731531716A2E0468FEEB664F046A616"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="11">
+				<color red="181" green="145" blue="209" alpha="255"/>
+				<coordinates left="1112" top="322" width="120" height="275.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="PoleSocial" uuid="2320F109A73D79439C109B483BCD3761" id="17">
+		<field name="ID" uuid="C66C366C7E8B7A4D8731E080CD2FDF24" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Nom" uuid="96CECDCFB1720D4BA77696B1738F4F0A" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Adresse" uuid="E1A5212DE73B364090B6839690DA4115" type="10" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="C66C366C7E8B7A4D8731E080CD2FDF24"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="4">
+				<color red="181" green="145" blue="209" alpha="255"/>
+				<coordinates left="1338" top="445" width="120" height="129.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Frais" uuid="371FA29E2877FD4F9D9ACF46E36FDF24" id="18">
+		<field name="ID" uuid="89B5078845F43A40A5EB042903201682" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_EtatCivil" uuid="D51DAE81C71BA848BA329D1EC2BEA7C7" type="4" never_null="true" id="2"/>
+		<field name="ID_AnneeSco" uuid="020C361337C3D54D92B864007C5506B4" type="4" never_null="true" id="3"/>
+		<field name="ID_Ligne" uuid="70DA7EEB051ED24F83F32825ABF1B30B" type="4" never_null="true" id="4"/>
+		<field name="Montant" uuid="668612EAEE1A8045A487D296E15EB8B7" type="6" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="89B5078845F43A40A5EB042903201682"/>
+		<table_extra output_form="Output" input_form="Input">
+			<editor_table_info displayable_fields_count="8">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="5" top="1101" width="147" height="224.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Mutuelle" uuid="8947163D1995224EBFF3245FCA327915" id="19">
+		<field name="ID" uuid="C431124CF401AA4789A679A9FB66462C" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_EtatCivil" uuid="0BF0397191C63A4FB3B950544E335299" type="4" never_null="true" id="2"/>
+		<field name="ID_Assurance" uuid="6868A7D447A1B845B61BF7661D219660" type="4" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="C431124CF401AA4789A679A9FB66462C"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="150" green="216" blue="175" alpha="255"/>
+				<coordinates left="680" top="834" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Scolarite" uuid="A3BA7139427D6A4D93D5055C01D59AE8" id="20">
+		<field name="ID" uuid="ED76433E48A02C45948DCF91C802392C" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_AnneeSco" uuid="195CBF2D2DB8E64F8C556AF89720411A" type="4" never_null="true" id="2">
+			<field_extra multi_line="false"/>
+		</field>
+		<field name="Filiere" uuid="3A3BD8BFDB31954CA21CC23D6CAE03F7" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="ID_EtatCivil" uuid="AF9A8C1FACC09D44A72546D4F2155B4A" type="4" never_null="true" id="5"/>
+		<field name="ID_Classe" uuid="962E6A5FBE19034AB9F77A79674AD6C1" type="4" never_null="true" id="6"/>
+		<primary_key field_name="ID" field_uuid="ED76433E48A02C45948DCF91C802392C"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="7">
+				<color red="150" green="216" blue="175" alpha="255"/>
+				<coordinates left="649" top="401" width="120" height="190.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="AnneeScolaire" uuid="33F95BB2E3F0A1469E02824A35F2265A" id="21">
+		<field name="ID" uuid="1E0E03DF0B12E94ABE329509E794AE47" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="AnneeSco" uuid="5B35017676A4B74C82C6D38C9F647A30" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Courante" uuid="5C7B76A767C38B41AF132DF8FDB1708A" type="1" never_null="true" id="3"/>
+		<field name="PrefixeCodeDossier" uuid="EB234A431370814A9A437A818D985BD5" type="10" limiting_length="2" never_null="true" id="4"/>
+		<primary_key field_name="ID" field_uuid="1E0E03DF0B12E94ABE329509E794AE47"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="4">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1078" top="648" width="120" height="145.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Assurance" uuid="BAE52CD75F6BF141ACDA1392BBC37F4B" id="22">
+		<field name="ID" uuid="ED33E5443A5816478DC72CB261939581" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Assurance" uuid="B038AAD359F1EF4CADCA243FFAB04080" type="10" limiting_length="255" never_null="true" id="2"/>
+		<primary_key field_name="ID" field_uuid="ED33E5443A5816478DC72CB261939581"/>
+		<table_extra output_form="Output" input_form="Input">
+			<editor_table_info displayable_fields_count="4">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="906" top="935.33203125" width="120" height="128.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="LigneRessource" uuid="8160BBE8FF80B34E984EE66C50ACE850" id="23">
+		<field name="ID" uuid="A205DBDA1667A446AA60BF7A51593266" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="NumeroLigne" uuid="47A7070158D7A743B4225EE537ED62FA" type="3" never_null="true" id="2"/>
+		<field name="Libelle" uuid="50EA641507E70F46B8F592F20A85FD73" type="10" limiting_length="255" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="A205DBDA1667A446AA60BF7A51593266"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="4">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1417" top="768" width="120" height="129.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Seuil" uuid="3B7A4AFEBCF75648B077E1734DE4AF1B" id="24">
+		<field name="ID" uuid="4C09EB858964E349B2E783DE53B9707C" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Seuil" uuid="511F03F36BCCD64AA7393A068D454EF0" type="6" never_null="true" id="2"/>
+		<field name="Date_MAJ" uuid="60F0ED0A2B9B2C458C5DB3300A40AFAD" type="8" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="4C09EB858964E349B2E783DE53B9707C"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="3">
+				<color red="237" green="211" blue="181" alpha="255"/>
+				<coordinates left="1242" top="1124" width="125" height="121.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Keys" uuid="F62E18729243FA4F8EAE0B259FB9FC08" id="25">
+		<field name="ID" uuid="9FE9E160AD043E478A84A4674BDC89CB" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="PrivateKey" uuid="39F1972432D000488B3F736324FFC702" type="18" never_null="true" id="2"/>
+		<field name="PublicKey" uuid="82AD5A0E133D7646835ECBCD61C0FA09" type="18" never_null="true" id="3"/>
+		<field name="TimeStampKeyPair" uuid="5C2675F15A8F374B8CAA0B12057BA996" type="10" limiting_length="255" never_null="true" id="4"/>
+		<primary_key field_name="ID" field_uuid="9FE9E160AD043E478A84A4674BDC89CB"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="6">
+				<color red="226" green="158" blue="214" alpha="255"/>
+				<coordinates left="908" top="1206" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ChampsCryptes" uuid="3CF4BC7902CDDC45AD7792FBF52D6FEC" id="26">
+		<field name="ID" uuid="BB5596BD0816A94DA9B6BF4EAF3C95B0" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="NomDuChamp" uuid="6742D1D52B6528419D76D53090ACB6A3" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Is_Crypted" uuid="EC7B087D59446548918D74215E9C34F4" type="1" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="BB5596BD0816A94DA9B6BF4EAF3C95B0"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="6">
+				<color red="226" green="158" blue="214" alpha="255"/>
+				<coordinates left="1064" top="1202" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="AffectationDept" uuid="187DDD6A144FB94DAA6D502B8900DCC8" id="27">
+		<field name="ID" uuid="88CD849B32F0B14DB733E25CE6A9CD18" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_Pole" uuid="9BA14CAED77E774F8BBFF5E8938480A9" type="4" never_null="true" id="2"/>
+		<field name="Departement" uuid="26562875144A914DBDD851B6179C312B" type="10" limiting_length="2" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="88CD849B32F0B14DB733E25CE6A9CD18"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="6">
+				<color red="181" green="145" blue="209" alpha="255"/>
+				<coordinates left="1533" top="407" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Document" uuid="4912E6CC9A9A39408EDF4EC32ED904BB" id="28">
+		<field name="ID" uuid="086EDE63992FAC488534567756F5119B" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Document" uuid="A9B0D1D6A1FEC5439F7853D9302062BF" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="IndependantFiscal" uuid="A8DD271C5D24B0438FD91D2C693A268B" type="1" never_null="true" id="3"/>
+		<field name="Candidat" uuid="EDA6527DA1E00549BFA291465E87C7C0" type="1" never_null="true" id="4"/>
+		<field name="ChangementSitu" uuid="C50BD7DC93FF2846A830A6653B7A5DA9" type="1" never_null="true" id="5"/>
+		<field name="PremiereDemande" uuid="19175123FC03AD49A56A3FB5C20EB746" type="1" never_null="true" id="6"/>
+		<field name="Ordre" uuid="C0D2D024B14EBE49B6A05F559AA67750" type="3" never_null="true" id="7"/>
+		<primary_key field_name="ID" field_uuid="086EDE63992FAC488534567756F5119B"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="7">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="848" top="525" width="120" height="198.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Justificatif" uuid="924847BA3DCDBC47A858FE5F698A5D7C" id="29">
+		<field name="ID" uuid="D26F44548C855C4AB85A9128BC638E82" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_EtatCivil" uuid="ABF316FF75D4CE4F9C463DD094BD42A3" type="4" never_null="true" id="2"/>
+		<field name="ID_Document" uuid="5F5D09DCD42DF94BAB77E2776EC75FE2" type="4" never_null="true" id="3"/>
+		<field name="ID_AnneeSco" uuid="C9ECAE03806E1241A2CACB49AB50552A" type="4" never_null="true" id="4"/>
+		<field name="Lien" uuid="98D58700BE709E459F16A3859EA2C06F" type="10" limiting_length="255" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="D26F44548C855C4AB85A9128BC638E82"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="114" green="209" blue="221" alpha="255"/>
+				<coordinates left="665" top="91" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="LigneFrais" uuid="0C77514180F02A4DB438218CE706E323" id="30">
+		<field name="ID" uuid="B70E8AC6022A654B8DEB1A36EE41F141" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="NumeroLigne" uuid="1F5BA01ACF94D64AAC409595E2989F75" type="3" never_null="true" id="2"/>
+		<field name="Libelle" uuid="B1B35B4CD7CD7042A7219DD626E114AF" type="10" limiting_length="255" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="B70E8AC6022A654B8DEB1A36EE41F141"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="5">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1417" top="926" width="120" height="151.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="LigneBudget" uuid="9E432CD1160E8F4F9554D9C490455BBC" id="31">
+		<field name="ID" uuid="ACA65D4ABF048F46862D93B545E1EA47" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="NumeroLigne" uuid="4DF6FBD9219545489102C01D8B07F4E1" type="3" never_null="true" id="2"/>
+		<field name="Libelle" uuid="807BF70FDD8E174F894BCEEA5F03AF23" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="Ressource" uuid="DD593D364379074AA415B64BE3559974" type="1" never_null="true" id="4"/>
+		<field name="VieCourante" uuid="2E5822A82EF5E249B401B74B7655E954" type="1" never_null="true" id="5"/>
+		<field name="Logement" uuid="FE6741651D68414E96740C66B970AEA5" type="1" never_null="true" id="6"/>
+		<primary_key field_name="ID" field_uuid="ACA65D4ABF048F46862D93B545E1EA47"/>
+		<table_extra output_form="Output" input_form="Input">
+			<editor_table_info displayable_fields_count="6">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1565" top="975.33203125" width="111" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ImportBourse" uuid="A251FE4DB69C7B45B7716F7342D54C67" id="32" prevent_journaling="true">
+		<field name="ID_import" uuid="B077166D34FC9B43BE5AAA9A7EE7F779" type="6" unique="true" id="1"/>
+		<field name="Cd_bourse" uuid="63A80CAEE81B784390E79F20CCFD3D08" type="6" id="2"/>
+		<field name="Annee_bourse" uuid="608488E1F5E7A74F8FFEA628B7A5EEE2" type="6" id="3"/>
+		<field name="Annee_Sco" uuid="C2A74337DFA27A40809B201A4125C2B0" type="10" id="4"/>
+		<field name="DateDemande" uuid="4F971812779E1A40A56B8E9BFC631CD2" type="8" id="5"/>
+		<field name="Renouvellement" uuid="A3E1708B7555B84A8C83E7DBB0736F4A" type="10" limiting_length="255" id="6"/>
+		<field name="Categorie" uuid="81BA513DDC8EF2428E5A3B237979E46F" type="3" id="7"/>
+		<field name="Provenance" uuid="5A20921DAC438B45AC9AD3FB0AB5C9EA" type="10" id="8"/>
+		<field name="AS" uuid="995C5870C19D9F4C9225C1E7EE26C7D5" type="10" id="9"/>
+		<field name="Codec_postulant" uuid="DD35091C86519942AC2777D18FAB5AB6" type="6" id="10"/>
+		<field name="Codec_representant" uuid="659968286A33CD419AE5442F0B33BFAC" type="6" id="11"/>
+		<field name="Total_pt_aydrt" uuid="20C727CADDEC1D4493700B3118134104" type="6" id="12"/>
+		<field name="TotalPtsParents" uuid="534374D1BA134A4C97A9E249BDB51B55" type="6" id="13"/>
+		<field name="pfm" uuid="0D9130253F1C2049A200307D5BE5E9BF" type="6" id="14"/>
+		<field name="pfn" uuid="A6207F53AED2E741B35CA7B593060230" type="6" id="15"/>
+		<field name="Total_pt_eac" uuid="89A5B68A32CD5949AA1BD1EE01348CE5" type="6" id="16"/>
+		<field name="Total_pt_pac" uuid="B365CC5515E81749910F584A6D5AC4BA" type="6" id="17"/>
+		<field name="TotalPtsFamille" uuid="815C632D866A2E44B9660C4194B725B3" type="6" id="18"/>
+		<field name="Total_pt" uuid="257298E5A041B543844AD570C48F5C5E" type="6" id="19"/>
+		<field name="Parts" uuid="54FF610CC19A3F46820EB269CA7475CB" type="6" id="20"/>
+		<field name="Plafond_part" uuid="4AF3444AF313C24295EA96F575D5E56C" type="10" id="21"/>
+		<field name="Attribution" uuid="760860F2902B2C40B50DE7AC665F1B59" type="6" id="22"/>
+		<field name="Observation" uuid="5C066F23EE53954B85566DFF7E3CA30B" type="10" id="23"/>
+		<field name="Tutelle" uuid="BAB00342AD2E3146B0B3532E830FDE1B" type="6" id="24"/>
+		<field name="Nom_etab" uuid="AFC8B598A44CB549A316C6F0D66DB9E0" type="10" id="25"/>
+		<field name="Classe" uuid="16D3F3AA91F2B44BAA0C429622DCB43F" type="10" id="26"/>
+		<field name="Ne" uuid="45E04E025C93BC4991D1466210C2016C" type="10" id="27"/>
+		<field name="Etude_eloi" uuid="05531BFDA314DF4D9CE0AC4A3A166D8B" type="6" id="28"/>
+		<field name="Etude_IdF" uuid="62FC79294626FE4693CEEF90ABE15F86" type="6" id="29"/>
+		<field name="Bourse_dem" uuid="304D18B0B5E59E479FC073B85057EE39" type="10" id="30"/>
+		<field name="Details" uuid="9578DC56EA83854FAB033A634B9112C7" type="10" id="31"/>
+		<field name="Quotient" uuid="105D3C94F9A83542A4B87F7636A4DAC1" type="10" id="32"/>
+		<field name="Montant_part" uuid="D5DC69FD2C54404FB2ACB1902FCF1789" type="6" id="33"/>
+		<field name="Montant_ex" uuid="02927F10AF4777448D3EF7D0D6DFB8E9" type="6" id="34"/>
+		<field name="Edu_nation" uuid="195E8E409856214A90C72BC879719003" type="10" id="35"/>
+		<field name="Departementale" uuid="B761F2D54C95FE45A2CF480A99F0BCE4" type="10" id="36"/>
+		<field name="Ailes_brisee" uuid="08414DBA32C41646AB838EAFC1DCA502" type="10" id="37"/>
+		<field name="Adosm" uuid="F837542AB6E17D4FBF5E357F9670F8E3" type="10" id="38"/>
+		<field name="Total_scolarite" uuid="106FBD97ED597E48B5057D53D0067E8D" type="6" id="39"/>
+		<field name="A01" uuid="CDE57A4B1EC6FF499F04F27E637FE23F" type="10" id="40"/>
+		<field name="A02" uuid="43A15E516AFF5C48B580157D3A07E854" type="10" id="41"/>
+		<field name="A03" uuid="169D360F06F5D54F9D6A30B7EBDB5C87" type="10" id="42"/>
+		<field name="A04" uuid="9415775D35F9B24EA9C9A99346E9079A" type="10" id="43"/>
+		<field name="A05" uuid="1F7BFAF61ED3144CB2158A6EE2A79046" type="10" id="44"/>
+		<field name="A06" uuid="D704A5832C06C140809D19E5DFF2AD63" type="10" id="45"/>
+		<field name="A07" uuid="82EC7096C037054EA21F232571B0792E" type="10" id="46"/>
+		<field name="A08" uuid="26333B648BF1154C94BEFF431CC3B206" type="10" id="47"/>
+		<field name="A09" uuid="C948594F1E1E4543B3BE15DDE3BE112C" type="10" id="48"/>
+		<field name="A10" uuid="8F74BF167690A64AA8DEDB39EC27F69F" type="10" id="49"/>
+		<field name="A11" uuid="B8A4C33279D63D41953518D7BC67430E" type="10" id="50"/>
+		<field name="B01" uuid="50E31BE5D8B921439A7BAD464F947833" type="10" id="51"/>
+		<field name="B02" uuid="EA50DB1FF743234289C7859CB827590C" type="10" id="52"/>
+		<field name="B03" uuid="253B897F483A0549A335EAA2E8F2575A" type="10" id="53"/>
+		<field name="B04" uuid="9411407A3AF564478C92628E90508156" type="10" id="54"/>
+		<field name="B05" uuid="5A5DD6ED8E979F459F7D8697778755A4" type="10" id="55"/>
+		<field name="B06" uuid="BADB734E3007214E9701DAF7F784FE2D" type="10" id="56"/>
+		<field name="B07" uuid="CC33AF720E1CE445A35FE5A70F7E1940" type="10" id="57"/>
+		<field name="B08" uuid="80E56465F0735543AC3465975653F5C0" type="10" id="58"/>
+		<field name="B09" uuid="C48855FD0168C145B1403876EAA5600F" type="10" id="59"/>
+		<field name="B10" uuid="BDD8FE2D49201F4A9649AAA5534E4400" type="10" id="60"/>
+		<field name="B11" uuid="FD81FBB751954B4287F87C809118AA16" type="10" id="61"/>
+		<field name="C01" uuid="605D8101FABBAF438158E4B9B292DD68" type="10" id="62"/>
+		<field name="C02" uuid="23B97E7E7D2247439BA65682A48659A8" type="10" id="63"/>
+		<field name="C03" uuid="9E7F139007096540A66CB4D986B3D0E0" type="10" id="64"/>
+		<field name="C04" uuid="87560DA2EC519A4E898FFB74F7C112E7" type="10" id="65"/>
+		<field name="C05" uuid="C70DBD15C4080642A5062D2A28492A77" type="10" id="66"/>
+		<field name="C06" uuid="61F2B0FCFA46A045A1E2A8A83CE72A2D" type="10" id="67"/>
+		<field name="C07" uuid="BCA0EA2AF50C694799B3683B0EF67CE0" type="10" id="68"/>
+		<field name="C08" uuid="4E1C43F0A2E268468337336719BD29B9" type="10" id="69"/>
+		<field name="C09" uuid="042AF6EE0985A14182B64DE051775057" type="10" id="70"/>
+		<field name="C10" uuid="3343B9F820D3044C9036FC2644A8249E" type="6" id="71"/>
+		<field name="C11" uuid="497F5049C3393B40939EF3988B7EDDA8" type="6" id="72"/>
+		<field name="Total_ressourceA" uuid="2F33DD1F92CC034BB64248DFD2434A61" type="6" id="73"/>
+		<field name="Total_ressourceB" uuid="310E05A57032214E98FFDBB785B91887" type="6" id="74"/>
+		<field name="Total_ressourceC" uuid="CD9D18BEF1B3B241AEE9A17FB1D9657F" type="6" id="75"/>
+		<field name="Total_ressource" uuid="1D9A8E0858D71843A4C370308C020601" type="6" id="76"/>
+		<field name="Independant_fiscal" uuid="8A6AD4E6269DC34E85B0CFC2D29F75C1" type="1" id="77"/>
+		<field name="imp" uuid="412F7F9CEDFE274CAF3F9BEC7DA596AF" type="6" id="78"/>
+		<field name="GMPA" uuid="12B46AADA797A9498DB4474779D7B133" type="6" id="79"/>
+		<field name="BM" uuid="0D67F3219F33F944A656537BCA554C09" type="1" id="80"/>
+		<field name="MontantBM" uuid="4B9079E211675C45BB89943B75311428" type="6" id="81"/>
+		<field name="NbMois" uuid="5E90C9F74766894DBD27EBB20D465850" type="6" id="82"/>
+		<field name="MoisDeb" uuid="59CF7DF426C1D44DB5936AE9440049E8" type="6" id="83"/>
+		<field name="MoisFin" uuid="877C670749177243AF6327E947872399" type="6" id="84"/>
+		<field name="MoisEnCours" uuid="B31E1ACC83989A448350CA32A6A2A16F" type="10" id="85"/>
+		<field name="PremierVersement" uuid="2154B116A7E0034EB9E82032EB7376A5" type="6" id="86"/>
+		<field name="DernierVersement" uuid="B48A913963AA7748B44C1802F064154A" type="6" id="87"/>
+		<field name="Complement" uuid="F43A46A96B7DD64F9810B43224A041AF" type="1" id="88"/>
+		<field name="MontantCompl" uuid="6302A2CBFCDA1343ACE110C5AD976231" type="6" id="89"/>
+		<field name="Avance" uuid="FE43375805775B4CB124EB80D19CEBA2" type="1" id="90"/>
+		<field name="MontantAvance" uuid="F982183F92EA3340BBB50C499E233E3B" type="6" id="91"/>
+		<field name="DateAvance" uuid="98C87FAF47AFA7419C4C1C23615EFD33" type="8" id="92"/>
+		<field name="AE" uuid="4357CFAD87FD984E9116F46D9019A81F" type="1" id="93"/>
+		<field name="Motif" uuid="3EB13A9A1FE96747B4D8A360D3312588" type="10" id="94"/>
+		<field name="Nom_AS" uuid="70495329F239754F8EE4115A8F259DE1" type="10" id="95"/>
+		<field name="CodeDossier" uuid="7672FCE2A605A74A8AEDC5222186625D" type="10" id="96"/>
+		<field name="NonRecevable" uuid="0A76DC0E25F00242B23F9035EBF37801" type="6" id="97"/>
+		<field name="MontantCalcul" uuid="184D6121EBD92448A8245DD6842B8780" type="6" id="98"/>
+		<field name="Archive" uuid="02C16B7986A7234D8C1E1E55520947EA" type="1" id="99"/>
+		<field name="RIB" uuid="2DC3104C51C7214787CDB3DC6F7E22EC" type="1" id="100"/>
+		<field name="DateMAJ" uuid="4D699C401EA2F84C97BE5103DF6587F9" type="8" id="101"/>
+		<field name="Plafond_Scol" uuid="BA606261206A194ABE3B4F767F745953" type="6" id="102"/>
+		<field name="Representant" uuid="E9D7391DD444AF45B4ED2B26228E93BC" type="10" id="103"/>
+		<field name="UNEO" uuid="44E519E112501948A54A051028720E67" type="6" id="104"/>
+		<field name="AdulteSup" uuid="8D38D640C8F13E41A13289D84EA5F24C" type="1" id="105"/>
+		<field name="Solde" uuid="B8173CABCDFECB4780F911681D1A465A" type="1" id="106"/>
+		<field name="MontantSolde" uuid="AE668D8A78866C49A3292140FBC0DF6B" type="6" id="107"/>
+		<field name="DateSolde" uuid="FBD1E8992429524897FBAE5989CC4C90" type="8" id="108"/>
+		<field name="ASPrevenue" uuid="2750482B706952469FA3847276B9BD50" type="6" id="109"/>
+		<field name="HOSTATER" uuid="B5C2639D04A3AD43885D1D9366A376F4" type="6" id="110"/>
+		<field name="Impots" uuid="A632EFA797907649A65EF95AA18007BA" type="6" id="111"/>
+		<field name="SOLIDEFENSE" uuid="47D06CE46F98D944BF4B2F76BABDED77" type="6" id="112"/>
+		<field name="ComplementCA" uuid="09FBC0F53553D648B717915B498BF635" type="6" id="113"/>
+		<field name="MontantComplCA" uuid="C931DF70B1DB42488FFA3EAABF13B7A7" type="10" id="114"/>
+		<field name="DateComplCA" uuid="783C7457EA48404E80DAA7858A6C7CB3" type="8" id="115"/>
+		<field name="DateBM" uuid="B861D0888FE40E44B77E9B81BFC2CAB5" type="8" id="116"/>
+		<field name="NumPieceBM" uuid="CE051EB5F88A024993348497319CD86D" type="10" id="117"/>
+		<field name="NumPieceAvance" uuid="7A7ACD3743AA3E4CBAF89596BC71D9B5" type="10" id="118"/>
+		<field name="NumPieceComplCA" uuid="3F572F54F42AD0439864BF79A9BFD75C" type="10" id="119"/>
+		<field name="NumPieceSolde" uuid="26CD5F053FED6340A0A53FA57E4D0FB6" type="10" id="120"/>
+		<field name="MAJ_Nov" uuid="7321A2655E4E08408D212842DA583E79" type="6" id="121"/>
+		<field name="VersementAnnule" uuid="E234B7966848634DAB106AC8FCA77207" type="1" id="122"/>
+		<field name="QuotienFamilial" uuid="A45C3340E1AA2F4BB28CFC4A9A323E22" type="6" id="123"/>
+		<field name="NbUC" uuid="45D6034DCEFBD348A3B3DE9548F0FFD8" type="6" id="124"/>
+		<field name="NbParts" uuid="955793B0BC97904D87C2871AD805307C" type="6" id="125"/>
+		<field name="Montant" uuid="D11DFF150A784049A3A852F9EBC9C8E8" type="6" id="126"/>
+		<field name="Supplement" uuid="0A487AE0987F8F4483374D6433C3C355" type="6" id="127"/>
+		<field name="SuperIsole" uuid="A7AD18E24D72C34099CA7413579CCFB4" type="1" id="128"/>
+		<field name="CED" uuid="07BB38F203E15D44BB8F1A603DA13705" type="6" id="129"/>
+		<primary_key field_name="ID_import" field_uuid="B077166D34FC9B43BE5AAA9A7EE7F779"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="3">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="1259" top="1357" width="159" height="106.99609375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Budget" uuid="38E4C495AD909C48B7820F86A2878AB9" id="33">
+		<field name="ID" uuid="9C3157FFDFC28E438D660EBC8FF1C375" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_EtatCivil" uuid="26F3EEA2BC0AB84A955E8996C6758EE0" type="4" never_null="true" id="2"/>
+		<field name="ID_AnneeSco" uuid="FBA438D0EAC02F46A8657C02B5A8AA26" type="4" never_null="true" id="3"/>
+		<field name="ID_Ligne" uuid="D02A9C990EA2C04ABFD9F85BDFFE2DAA" type="4" never_null="true" id="4"/>
+		<field name="Montant" uuid="6839B9599CBF4C41915F0DE2213177DF" type="6" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="9C3157FFDFC28E438D660EBC8FF1C375"/>
+		<table_extra output_form="Output" input_form="Input">
+			<editor_table_info displayable_fields_count="6">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="204" top="1049.33203125" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="importRessortissant" uuid="D90D6A550275A548ADD6449D037074C3" id="34" prevent_journaling="true">
+		<field name="CodeEC" uuid="0B5172DDCADF6E4BB696958A8D2036B5" type="4" unique="true" id="1"/>
+		<field name="CodeDossier" uuid="1A99B328936B494F8D5FA7BA1922EFD3" type="10" id="2"/>
+		<field name="Situation" uuid="526B14A451ECD54D845FF4B8F8345CEA" type="10" id="3"/>
+		<field name="Grade" uuid="63024250DF8B9B45A186DEC8999E5FC5" type="10" id="4"/>
+		<field name="FinService" uuid="1336CC56A6844A4886723A5DD2BB3615" type="8" id="5"/>
+		<field name="Statut" uuid="72ADC268B0E50E49B7D26952CBD7A10E" type="10" id="6"/>
+		<field name="ImputableService" uuid="223D40C042CDE14084C73D1F15214006" type="1" id="7"/>
+		<primary_key field_name="CodeEC" field_uuid="0B5172DDCADF6E4BB696958A8D2036B5"/>
+		<table_extra>
+			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="1106" top="1394" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="SecteurMarine" uuid="548169F9223076478A380275EC62CCB8" id="35">
+		<field name="ID" uuid="ECC06B86E0E862449C8CDFA1D7D4496B" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Secteur" uuid="5E8814F7FC35164BA78C3139BB9123A7" type="10" limiting_length="255" never_null="true" id="2"/>
+		<primary_key field_name="ID" field_uuid="ECC06B86E0E862449C8CDFA1D7D4496B"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="2">
+				<color red="196" green="193" blue="186" alpha="255"/>
+				<coordinates left="684" top="1229" width="120" height="102.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="AutreRessource" uuid="80F510E1EB6ACC46B1D1F7CB69C56591" id="40">
+		<field name="ID" uuid="1F4567032C48D64797F4FD88E85DEB8A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_Ligne" uuid="2E515DEF5460BE4188C799AC27768C1D" type="4" never_null="true" id="2"/>
+		<field name="Libelle" uuid="D3C940E36613BC4DA790E5F6C497CCB1" type="10" limiting_length="255" never_null="true" id="3"/>
+		<field name="ID_Document" uuid="A03EB0D5FAFDF948A88F3823611EA96E" type="4" never_null="true" id="4"/>
+		<field name="Type" uuid="9DFB3E3131ACEC47BB71AE6573FAD01C" type="10" limiting_length="255" never_null="true" id="5"/>
+		<field name="ClassForm" uuid="409F639982D81C418D5BFFB51D543E30" type="10" limiting_length="255" never_null="true" id="6"/>
+		<primary_key field_name="ID" field_uuid="1F4567032C48D64797F4FD88E85DEB8A"/>
+		<table_extra input_form="Input" output_form="Output">
+			<editor_table_info displayable_fields_count="6">
+				<color red="168" green="206" blue="226" alpha="255"/>
+				<coordinates left="1562" top="766" width="114" height="186.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="1BB2D6C802D2174CB70FE62527CEAF35" name_Nto1="foyerFiscal" name_1toN="membres" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="3D338B9AA837854FA00B9257F6988227" name="ID_CodeFiscal">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="A75FF7E4B2E2CA428B0438E14ACE984A" name="ID">
+				<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="114" green="209" blue="221" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="477E56D0EF98F643A17682381700F799" name_Nto1="foyerFiscal" name_1toN="ressources" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="D16DB6B67935704AA69AA3C649CBC911" name="ID_CodeFiscal">
+				<table_ref uuid="BC5CA96AB5126A4EA1A8DEB45949053B" name="Ressource"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="A75FF7E4B2E2CA428B0438E14ACE984A" name="ID">
+				<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="3" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="175" green="188" blue="191" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="42646F251919F446A25DB37CE02D5070" name_Nto1="niveau" name_1toN="classes" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="823607DF8B2637488CFAB3022C36C979" name="ID_NiveauEtude">
+				<table_ref uuid="321FE3434658764586BE5E0CA8EBD18F" name="Classe"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="CD6159C48CC3314083CD722552BDB2F4" name="ID">
+				<table_ref uuid="2ADC3433C223E74990A66570286C3945" name="MontantPart"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="1" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="3B9DF39FDBE87B439BE68EF47C204D95" name_Nto1="boursier" name_1toN="bourses" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="36ED0ACBAEE0F047904A85B65B52B946" name="ID_Boursier">
+				<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="150" green="216" blue="175" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="895193C7BEE0AF46B7CB9F5A8FFE0D70" name_Nto1="CED" name_1toN="boursiers" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="90696A2D3AD97640A3A410F705FAEF82" name="ID_CED">
+				<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8ED649B24B6345469E40B1D287FDBCE4" name="ID">
+				<table_ref uuid="F8183C49C4D83D4EACA983C45789F6A8" name="CED"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="196" green="193" blue="186" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="99D8883A4FD5DA4A9C1375DFD2B3C9A2" name_Nto1="conseiller" name_1toN="asas" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="25286C7A50349C43A0C5E1BC662EC118" name="ID_Conseiller">
+				<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0731531716A2E0468FEEB664F046A616" name="ID">
+				<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="181" green="145" blue="209" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="94F49431D8BE43489F6A7C4B565E0135" name_Nto1="ressortissant" name_1toN="ayantDroits" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="C1439C2F9DFEFE4FB8B65785D5574392" name="ID_Ressortissant">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="150" green="216" blue="175" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="8AA2B505DE548742AF6E487C6DF22C29" name_Nto1="conjoint" name_1toN="enfants" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="3C06F6DB0B5C544595E80B0D384E8D10" name="ID_Conjoint">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="226" green="158" blue="214" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="6453C08140548F4F875EE028AEE4C812" name_Nto1="asa" name_1toN="foyersAsa" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="E1E2C97FAA47D24A8C1D888D09B748DA" name="ID_ASA">
+				<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0731531716A2E0468FEEB664F046A616" name="ID">
+				<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="114" green="209" blue="221" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="F98E3686934E264C9A219BA2D2CECB7B" name_Nto1="asem" name_1toN="foyersAsem" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="B2E2FEB77B5732479F24564E031680C7" name="ID_ASEM">
+				<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0731531716A2E0468FEEB664F046A616" name="ID">
+				<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="114" green="209" blue="221" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="A49F7C94C231804A88E82335EC455CEF" name_Nto1="pole" name_1toN="equipes" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="E39BA4287930FB479B98211DFC4CF4F9" name="ID_Pole">
+				<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="C66C366C7E8B7A4D8731E080CD2FDF24" name="ID">
+				<table_ref uuid="2320F109A73D79439C109B483BCD3761" name="PoleSocial"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="181" green="145" blue="209" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="52F64DA1BFB0FC47B0E22F3BB57813C7" name_Nto1="profil" name_1toN="users" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="7CBAD47F1525C14EBBCD9AA290E1DAA1" name="ID_Privilege">
+				<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="FAEC9B7A7DACBE46B9F491D11F9BDB95" name="ID">
+				<table_ref uuid="7994DF256FF63148A1BEB5A21B8182EC" name="Privilege"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="186" green="170" blue="158" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="8AA76B4CAA72C041A810E7F1C66BA5EB" name_Nto1="codeFiscal" name_1toN="users" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="81680C09E3DF2249A1C361A4276B5AF7" name="ID_CodeFiscal">
+				<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="A75FF7E4B2E2CA428B0438E14ACE984A" name="ID">
+				<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="186" green="170" blue="158" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="1D6A1B7A7CCC9843B8B761D8E04B66CE" name_Nto1="equipe" name_1toN="users" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="AB68A4E2CCB43D4DBC55DB8FD58A94B5" name="ID_Equipe">
+				<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="0731531716A2E0468FEEB664F046A616" name="ID">
+				<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="186" green="170" blue="158" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="54C4DA01AD737A48AF5EA5084BA27D84" name_Nto1="etat_civil" name_1toN="assurances" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="0BF0397191C63A4FB3B950544E335299" name="ID_EtatCivil">
+				<table_ref uuid="8947163D1995224EBFF3245FCA327915" name="Mutuelle"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="150" green="216" blue="175" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="551722A9CF0B3E48A444BA2C057B1946" name_Nto1="etat_civil" name_1toN="scolarites" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="AF9A8C1FACC09D44A72546D4F2155B4A" name="ID_EtatCivil">
+				<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="150" green="216" blue="175" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="C8F2791059450F4FB8E7B82E105B4B40" name_Nto1="Lien_19" name_1toN="Lien_19_retour" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="6868A7D447A1B845B61BF7661D219660" name="ID_Assurance">
+				<table_ref uuid="8947163D1995224EBFF3245FCA327915" name="Mutuelle"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="ED33E5443A5816478DC72CB261939581" name="ID">
+				<table_ref uuid="BAE52CD75F6BF141ACDA1392BBC37F4B" name="Assurance"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="24CF81CA999CE04184FB64CB71D27A45" name_Nto1="tuteur" name_1toN="tutelles" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="B55527721B2EC44BBA5D8EA78630D90B" name="ID_Tuteur">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="186" green="170" blue="158" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="7FA163FC79B52B40885903562A31EB29" name_Nto1="grade" name_1toN="ressortissants" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="B30D9044DC4D3C4F9DB1284AAFF0C7B3" name="ID_Grade">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="F52882495DFF3A40B310099A6ED4AF83" name="ID">
+				<table_ref uuid="1C8B2081932D2A43A4A87B1984EBF4B1" name="Grade"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="196" green="193" blue="186" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="37FFC3B64DCAC641A3D08B6D3F7F32AB" name_Nto1="versementA" name_1toN="versementsRecus" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="484C7E05CA100247B323155D42C70545" name="ID_Versement">
+				<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="789EA0E44B2AA54D923DB31ABD2BC0C9" name_Nto1="pole" name_1toN="departements" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="9BA14CAED77E774F8BBFF5E8938480A9" name="ID_Pole">
+				<table_ref uuid="187DDD6A144FB94DAA6D502B8900DCC8" name="AffectationDept"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="C66C366C7E8B7A4D8731E080CD2FDF24" name="ID">
+				<table_ref uuid="2320F109A73D79439C109B483BCD3761" name="PoleSocial"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="181" green="145" blue="209" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="11F69938AD42CC42A969ACC3F67F255B" name_Nto1="etat_civil" name_1toN="justificatifs" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="ABF316FF75D4CE4F9C463DD094BD42A3" name="ID_EtatCivil">
+				<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="150" green="216" blue="175" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="946653EA79AA3F4C8733E5E027F1A47C" name_Nto1="classe" name_1toN="scolarites" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="962E6A5FBE19034AB9F77A79674AD6C1" name="ID_Classe">
+				<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="A1BC059B818AD049A3346BBF3CE2B50A" name="ID">
+				<table_ref uuid="321FE3434658764586BE5E0CA8EBD18F" name="Classe"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="AFD4B8AB87F86149A09F31268F46B499" name_Nto1="document" name_1toN="justificatifs" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="5F5D09DCD42DF94BAB77E2776EC75FE2" name="ID_Document">
+				<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="086EDE63992FAC488534567756F5119B" name="ID">
+				<table_ref uuid="4912E6CC9A9A39408EDF4EC32ED904BB" name="Document"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="2DD867350E85AD488C4CEA353DBD132D" name_Nto1="anneSco" name_1toN="justificatifs" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="C9ECAE03806E1241A2CACB49AB50552A" name="ID_AnneeSco">
+				<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="1E0E03DF0B12E94ABE329509E794AE47" name="ID">
+				<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="168" green="206" blue="226" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="24837C9E6A63EA4DAE4C0F243EA99F70" name_Nto1="anneeSco" name_1toN="scolarites" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="195CBF2D2DB8E64F8C556AF89720411A" name="ID_AnneeSco">
+				<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="1E0E03DF0B12E94ABE329509E794AE47" name="ID">
+				<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="150" green="216" blue="175" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="EFD9D471592C464BAA4F0CA8E9158541" name_Nto1="anneeSco" name_1toN="bourses" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="35E5F6D6E96C7641ACDC9EBF1DA64FF5" name="ID_AnneeSco">
+				<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="1E0E03DF0B12E94ABE329509E794AE47" name="ID">
+				<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="160" green="174" blue="158" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="350B88B40FA63A40922ED14961D51E7A" name_Nto1="anneeSco" name_1toN="frais" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="020C361337C3D54D92B864007C5506B4" name="ID_AnneeSco">
+				<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="1E0E03DF0B12E94ABE329509E794AE47" name="ID">
+				<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="97E28EC7D2DE7143B728972ABBBDE811" name_Nto1="etatCivil" name_1toN="frais" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="D51DAE81C71BA848BA329D1EC2BEA7C7" name="ID_EtatCivil">
+				<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="9848ECAF67B39440988903F43054E7E0" name_Nto1="ligneFrais" name_1toN="frais" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="70DA7EEB051ED24F83F32825ABF1B30B" name="ID_Ligne">
+				<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="B70E8AC6022A654B8DEB1A36EE41F141" name="ID">
+				<table_ref uuid="0C77514180F02A4DB438218CE706E323" name="LigneFrais"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="73442047AF91A445AB21897650D7B2A9" name_Nto1="etatCivil" name_1toN="budgets" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="26F3EEA2BC0AB84A955E8996C6758EE0" name="ID_EtatCivil">
+				<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="7199CE4174E6734CB2F14DCDA15B2FA0" name_Nto1="annee_sco" name_1toN="Lien_32_retour" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="FBA438D0EAC02F46A8657C02B5A8AA26" name="ID_AnneeSco">
+				<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="1E0E03DF0B12E94ABE329509E794AE47" name="ID">
+				<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="2EE30ADB2CD9D14B83D24A51C99D5936" name_Nto1="ligneBudget" name_1toN="budgets" auto_load_Nto1="true" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="D02A9C990EA2C04ABFD9F85BDFFE2DAA" name="ID_Ligne">
+				<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="ACA65D4ABF048F46862D93B545E1EA47" name="ID">
+				<table_ref uuid="9E432CD1160E8F4F9554D9C490455BBC" name="LigneBudget"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="A149E7A253637B46AD56CD8237095E54" name_Nto1="secteur" name_1toN="Lien_34_retour" auto_load_Nto1="false" auto_load_1toN="false" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="9A61F63780D0454795CED05E89DDCB61" name="ID_SecteurMarine">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="ECC06B86E0E862449C8CDFA1D7D4496B" name="ID">
+				<table_ref uuid="548169F9223076478A380275EC62CCB8" name="SecteurMarine"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="196" green="193" blue="186" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" uuid="055A6755281BCD4FA196CD28CDB95C7E" type="7">
+		<field_ref uuid="D02A9C990EA2C04ABFD9F85BDFFE2DAA" name="ID_Ligne">
+			<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="055B5E2989903D46956E64A1C9BE42B5" type="7">
+		<field_ref uuid="F51E4C6662EB7646868B20E32F83E6CF" name="UUID">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="1B28009E66DD2B438D72FD5509F3554E" type="7">
+		<field_ref uuid="C431124CF401AA4789A679A9FB66462C" name="ID">
+			<table_ref uuid="8947163D1995224EBFF3245FCA327915" name="Mutuelle"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="2402E0B8DA9C664F992753444B069B4A" type="7">
+		<field_ref uuid="0147892740909F4C9D1AD3D53773D32F" name="CodeEC">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="25FCFB0323418C4C9DC03AF9F217AD71" type="7">
+		<field_ref uuid="A75FF7E4B2E2CA428B0438E14ACE984A" name="ID">
+			<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="2976FD34B1AACD4CAC325D72F1396C30" type="7">
+		<field_ref uuid="01DA974D53CAB445ABB0BB70077D2FA6" name="Ordre">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="2A4EF046CCF13D49861D9B6E91BA533D" type="7">
+		<field_ref uuid="FBA438D0EAC02F46A8657C02B5A8AA26" name="ID_AnneeSco">
+			<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="2BC913571271B4499FC9D2949669E68F" type="7">
+		<field_ref uuid="5C7B76A767C38B41AF132DF8FDB1708A" name="Courante">
+			<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="2C72776BF11A0C479E10CC5E0EEBDAB9" type="7">
+		<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="2F63D6D8C02676438479D45E6AC45AC9" type="7">
+		<field_ref uuid="8BA56E0C71FE46488979FFDFBDA9871C" name="ID">
+			<table_ref uuid="E4B364B6EB3CC248A3E89A521B9CA95E" name="WebDebugger"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="30BCE7916FC11841A237D67886FC7724" type="7">
+		<field_ref uuid="1F4567032C48D64797F4FD88E85DEB8A" name="ID">
+			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreRessource"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="341C89F0C3110441B3E44437C9E65003" type="7">
+		<field_ref uuid="F7169AA1035D684B8E09613E87F1DCA8" name="ID">
+			<table_ref uuid="99B145AC923CAA44B4BFF978CCD08C7A" name="ModelesHTML"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="3859B395D19EED4595EFEE00ED2B5891" type="7">
+		<field_ref uuid="4D43B9D35201F94DB622307BF9402011" name="ID">
+			<table_ref uuid="252E06270D415C4BA096823244AA4F1F" name="Compta"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="3C89AF85DF14EA48ABDCDAE166405F37" type="7">
+		<field_ref uuid="020C361337C3D54D92B864007C5506B4" name="ID_AnneeSco">
+			<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4377FDDCF028D649AC841D096D110212" type="7">
+		<field_ref uuid="FAEC9B7A7DACBE46B9F491D11F9BDB95" name="ID">
+			<table_ref uuid="7994DF256FF63148A1BEB5A21B8182EC" name="Privilege"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="4838E31EE048FA458BFDC23B95995223" type="7">
+		<field_ref uuid="36ED0ACBAEE0F047904A85B65B52B946" name="ID_Boursier">
+			<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="49B39A1F64F205418B3513033BFF98F4" type="7">
+		<field_ref uuid="0BF0397191C63A4FB3B950544E335299" name="ID_EtatCivil">
+			<table_ref uuid="8947163D1995224EBFF3245FCA327915" name="Mutuelle"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4B36893AF8A6CA4DB9FAEB85AF12F7F5" type="7">
+		<field_ref uuid="ECC06B86E0E862449C8CDFA1D7D4496B" name="ID">
+			<table_ref uuid="548169F9223076478A380275EC62CCB8" name="SecteurMarine"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="4B49B186FF3D96479C2F033764C7F13B" type="7">
+		<field_ref uuid="5B35017676A4B74C82C6D38C9F647A30" name="AnneeSco">
+			<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="4C87C2DE316A234AA25B064679446898" type="7">
+		<field_ref uuid="70DA7EEB051ED24F83F32825ABF1B30B" name="ID_Ligne">
+			<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4E8F1D198BBC4C4691089885676543E8" type="7">
+		<field_ref uuid="BD7B78C7433C5C4F960EEAAE51B8CB51" name="ID">
+			<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="4ECF47FF48DA3747933F80D22684817D" type="7">
+		<field_ref uuid="62A173B75BFA17448C24467B92E4218A" name="UUID">
+			<table_ref uuid="99B145AC923CAA44B4BFF978CCD08C7A" name="ModelesHTML"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="5051437CA03F3B4EAA332AA36887538C" type="7">
+		<field_ref uuid="D26F44548C855C4AB85A9128BC638E82" name="ID">
+			<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="56E46642FC0434408E04E690B7542015" type="1">
+		<field_ref uuid="0B5172DDCADF6E4BB696958A8D2036B5" name="CodeEC">
+			<table_ref uuid="D90D6A550275A548ADD6449D037074C3" name="importRessortissant"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="5D6784A93FD29F47AB99EF5D3A3CB18A" type="7">
+		<field_ref uuid="2E515DEF5460BE4188C799AC27768C1D" name="ID_Ligne">
+			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreRessource"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="61D40C56AE6C064BA6C4D281FA67EEE7" type="7">
+		<field_ref uuid="1E0E03DF0B12E94ABE329509E794AE47" name="ID">
+			<table_ref uuid="33F95BB2E3F0A1469E02824A35F2265A" name="AnneeScolaire"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="61EA30A164B350458F26EA05F3614849" type="7">
+		<field_ref uuid="823607DF8B2637488CFAB3022C36C979" name="ID_NiveauEtude">
+			<table_ref uuid="321FE3434658764586BE5E0CA8EBD18F" name="Classe"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="64ABBE126A8D9D4495B098F7E48A83FC" type="7">
+		<field_ref uuid="BB5596BD0816A94DA9B6BF4EAF3C95B0" name="ID">
+			<table_ref uuid="3CF4BC7902CDDC45AD7792FBF52D6FEC" name="ChampsCryptes"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="67B180236A8A46429873DB66448483B3" type="7">
+		<field_ref uuid="5F5D09DCD42DF94BAB77E2776EC75FE2" name="ID_Document">
+			<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="67D43B86A0AA2F4DBCC50A2BF9E84ED0" type="7">
+		<field_ref uuid="25286C7A50349C43A0C5E1BC662EC118" name="ID_Conseiller">
+			<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="6C2E07BCA464774B8EDE352BAAC09B9B" type="1">
+		<field_ref uuid="B077166D34FC9B43BE5AAA9A7EE7F779" name="ID_import">
+			<table_ref uuid="A251FE4DB69C7B45B7716F7342D54C67" name="ImportBourse"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="6C82518058F8584DBB0ACBA32E32D63A" type="7">
+		<field_ref uuid="7940329B09B8714CB292489F28B1EBEF" name="UUID">
+			<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="74B55B933E069A43A590B10B9630FF02" type="7">
+		<field_ref uuid="6868A7D447A1B845B61BF7661D219660" name="ID_Assurance">
+			<table_ref uuid="8947163D1995224EBFF3245FCA327915" name="Mutuelle"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="77CA77BAE8B5724A809CFBCF02ABC4D9" type="7">
+		<field_ref uuid="B70E8AC6022A654B8DEB1A36EE41F141" name="ID">
+			<table_ref uuid="0C77514180F02A4DB438218CE706E323" name="LigneFrais"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="7EC610394E77814383A12D320BE1D4B7" type="7">
+		<field_ref uuid="7CBAD47F1525C14EBBCD9AA290E1DAA1" name="ID_Privilege">
+			<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="7F7EDEBE39DB2449B075FE7AA81C33A6" type="7">
+		<field_ref uuid="962E6A5FBE19034AB9F77A79674AD6C1" name="ID_Classe">
+			<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="821AF4CE9AB1404681249BDFDC7DB79C" type="7">
+		<field_ref uuid="35E5F6D6E96C7641ACDC9EBF1DA64FF5" name="ID_AnneeSco">
+			<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="824EF8757B2584449AB03C04DE135B32" type="7">
+		<field_ref uuid="A03EB0D5FAFDF948A88F3823611EA96E" name="ID_Document">
+			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreRessource"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="859280143D04A647AE04A797E0F529B2" type="7">
+		<field_ref uuid="ABF316FF75D4CE4F9C463DD094BD42A3" name="ID_EtatCivil">
+			<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="85CE12CCD6B3824E9B16462C609D4F82" type="7">
+		<field_ref uuid="B55527721B2EC44BBA5D8EA78630D90B" name="ID_Tuteur">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="868C5AFE985C6C41B3CA1C0A5DCEF314" type="7">
+		<field_ref uuid="484C7E05CA100247B323155D42C70545" name="ID_Versement">
+			<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="8753A3EDA5EEC9419E9DB0CDD698DEE8" type="7">
+		<field_ref uuid="C1439C2F9DFEFE4FB8B65785D5574392" name="ID_Ressortissant">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="8AC13DEF1A0731429D7F44865F1F084A" type="7">
+		<field_ref uuid="BF269529E886304B82200481FFD4DED5" name="ID">
+			<table_ref uuid="42AA029139DDEA4A90AD7268C9C1206C" name="Palier"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="8EB41FF47808A44CA09C216998D21B85" type="7">
+		<field_ref uuid="D16DB6B67935704AA69AA3C649CBC911" name="ID_CodeFiscal">
+			<table_ref uuid="BC5CA96AB5126A4EA1A8DEB45949053B" name="Ressource"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="8F1A29D41754FD43BCD62B217844479B" type="7">
+		<field_ref uuid="88CD849B32F0B14DB733E25CE6A9CD18" name="ID">
+			<table_ref uuid="187DDD6A144FB94DAA6D502B8900DCC8" name="AffectationDept"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="9006B12F1A14B14EA264AFA1FAC248A7" type="7">
+		<field_ref uuid="0731531716A2E0468FEEB664F046A616" name="ID">
+			<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="90DF76F7454C7248AB8E520BAEA2C9B9" type="7">
+		<field_ref uuid="D51DAE81C71BA848BA329D1EC2BEA7C7" name="ID_EtatCivil">
+			<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="9334379C3E3F554A9202C186F228B82B" type="7">
+		<field_ref uuid="532A05A500CAA44E983DEC3843BFBB0A" name="ID">
+			<table_ref uuid="BC5CA96AB5126A4EA1A8DEB45949053B" name="Ressource"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="9536AFCFA0DCC6429C27B40248F232E1" type="7">
+		<field_ref uuid="E39BA4287930FB479B98211DFC4CF4F9" name="ID_Pole">
+			<table_ref uuid="40AA800B77333A49BFBFE3A9E479EEB6" name="EquipeSociale"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="97D49B84E1914141BFC868C405CF486A" type="7">
+		<field_ref uuid="195CBF2D2DB8E64F8C556AF89720411A" name="ID_AnneeSco">
+			<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="9B4EC11EBDD103408964EAA581ED3002" type="7">
+		<field_ref uuid="EC7B087D59446548918D74215E9C34F4" name="Is_Crypted">
+			<table_ref uuid="3CF4BC7902CDDC45AD7792FBF52D6FEC" name="ChampsCryptes"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="9F80327AACEB3440A4012EFFC4AE97EE" type="7">
+		<field_ref uuid="119DBE56AAF5F1459A5D134AC3753238" name="UUID">
+			<table_ref uuid="E4B364B6EB3CC248A3E89A521B9CA95E" name="WebDebugger"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="AB20C01705963F4AA7026AB7AAFB345E" type="7">
+		<field_ref uuid="A205DBDA1667A446AA60BF7A51593266" name="ID">
+			<table_ref uuid="8160BBE8FF80B34E984EE66C50ACE850" name="LigneRessource"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="AE13FC20BA8ADA4BB97ECE9955323E37" type="7">
+		<field_ref uuid="B30D9044DC4D3C4F9DB1284AAFF0C7B3" name="ID_Grade">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="B0031BA49E489B459D14F744F072C4F5" type="7">
+		<field_ref uuid="3D338B9AA837854FA00B9257F6988227" name="ID_CodeFiscal">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B4BEA581FF1C25479FFEF4495CBBAD9B" type="7">
+		<field_ref uuid="ED76433E48A02C45948DCF91C802392C" name="ID">
+			<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B4D2E38574CD5A42A9EA25B15237FCB8" type="7">
+		<field_ref uuid="A1BC059B818AD049A3346BBF3CE2B50A" name="ID">
+			<table_ref uuid="321FE3434658764586BE5E0CA8EBD18F" name="Classe"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="C7279D7007663C468B998CA02A98CF27" type="7">
+		<field_ref uuid="C66C366C7E8B7A4D8731E080CD2FDF24" name="ID">
+			<table_ref uuid="2320F109A73D79439C109B483BCD3761" name="PoleSocial"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="C877900E428DD0458673C27509523A05" type="7">
+		<field_ref uuid="90696A2D3AD97640A3A410F705FAEF82" name="ID_CED">
+			<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="CA603B3580AE0147A1F2B218002B59BE" type="7">
+		<field_ref uuid="08BED11F8326D14485FA9B28CFBC34A3" name="ID">
+			<table_ref uuid="A6D61344B8E627419DB9117AAB2312D6" name="Mois"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="CED7FA422322C24DA42572CCEEFAB010" type="7">
+		<field_ref uuid="3C06F6DB0B5C544595E80B0D384E8D10" name="ID_Conjoint">
+			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="D1098D492C89F2428EF054047877733F" type="7">
+		<field_ref uuid="9C3157FFDFC28E438D660EBC8FF1C375" name="ID">
+			<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="D3D0F75F6A1AB944935F1373643F0A39" type="7">
+		<field_ref uuid="89B5078845F43A40A5EB042903201682" name="ID">
+			<table_ref uuid="371FA29E2877FD4F9D9ACF46E36FDF24" name="Frais"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="DB5E4B0364384549BAFBDE53484A4229" type="7">
+		<field_ref uuid="CD6159C48CC3314083CD722552BDB2F4" name="ID">
+			<table_ref uuid="2ADC3433C223E74990A66570286C3945" name="MontantPart"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="DBCD5B2A3191DA4EBB8B5DF7AE6838E2" type="7">
+		<field_ref uuid="9FE9E160AD043E478A84A4674BDC89CB" name="ID">
+			<table_ref uuid="F62E18729243FA4F8EAE0B259FB9FC08" name="Keys"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E05106CD781B1542856B9E1F837D0D6E" type="7">
+		<field_ref uuid="8ED649B24B6345469E40B1D287FDBCE4" name="ID">
+			<table_ref uuid="F8183C49C4D83D4EACA983C45789F6A8" name="CED"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="E41136137125734F9ACE0943A25E4EF7" type="7">
+		<field_ref uuid="AB68A4E2CCB43D4DBC55DB8FD58A94B5" name="ID_Equipe">
+			<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E439CF8F29AFF74FB0B8AD922AB50DE8" type="7">
+		<field_ref uuid="086EDE63992FAC488534567756F5119B" name="ID">
+			<table_ref uuid="4912E6CC9A9A39408EDF4EC32ED904BB" name="Document"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="E71D2DC7A4D1AB459220EDDBF69FCB91" type="7">
+		<field_ref uuid="C9ECAE03806E1241A2CACB49AB50552A" name="ID_AnneeSco">
+			<table_ref uuid="924847BA3DCDBC47A858FE5F698A5D7C" name="Justificatif"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="F1709C091536DD4B8FCB566A35CE1ACC" type="7">
+		<field_ref uuid="AF9A8C1FACC09D44A72546D4F2155B4A" name="ID_EtatCivil">
+			<table_ref uuid="A3BA7139427D6A4D93D5055C01D59AE8" name="Scolarite"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="F1E8AD60C8F0B846B19849985CD1B66B" type="7">
+		<field_ref uuid="81680C09E3DF2249A1C361A4276B5AF7" name="ID_CodeFiscal">
+			<table_ref uuid="3A274C059EE2A941B07AEEA0CF1E4585" name="WebUser"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="F4D594420FF2EC44938382FDCD2545D8" type="7">
+		<field_ref uuid="F52882495DFF3A40B310099A6ED4AF83" name="ID">
+			<table_ref uuid="1C8B2081932D2A43A4A87B1984EBF4B1" name="Grade"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="F809370889A6324C8C69280135FD70FE" type="7">
+		<field_ref uuid="ACA65D4ABF048F46862D93B545E1EA47" name="ID">
+			<table_ref uuid="9E432CD1160E8F4F9554D9C490455BBC" name="LigneBudget"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="FAD140C140B0FF49979975F55DEF52A7" type="7">
+		<field_ref uuid="ED33E5443A5816478DC72CB261939581" name="ID">
+			<table_ref uuid="BAE52CD75F6BF141ACDA1392BBC37F4B" name="Assurance"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="FB6D7EB8D73465478334AAD1EED0740B" type="7">
+		<field_ref uuid="A399B5C0A2286448AAD40AD67F48CCE8" name="CodeFiscal">
+			<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="FBDE42D7CFE0EB43BCBC886DCB308683" type="7">
+		<field_ref uuid="B2E2FEB77B5732479F24564E031680C7" name="ID_ASEM">
+			<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="FC799BB4574E134C955D5A3B59355A3E" type="7">
+		<field_ref uuid="E1E2C97FAA47D24A8C1D888D09B748DA" name="ID_ASA">
+			<table_ref uuid="F1EAFD2D991B4840A92086370A67A2E6" name="FoyerFiscal"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="FD0F654300B3334A92E2339B226026AB" type="7">
+		<field_ref uuid="26F3EEA2BC0AB84A955E8996C6758EE0" name="ID_EtatCivil">
+			<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="FD2D077BCC8A4F43A29FB5500E56114B" type="7">
+		<field_ref uuid="DF7BE76CB2913E46A06600DC9B12BF46" name="ID">
+			<table_ref uuid="67B366B1E3D8F04081ED92B97242DA00" name="Bourse"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="FD48A6BB76B01342A58DC22DE8B60967" type="7">
+		<field_ref uuid="4C09EB858964E349B2E783DE53B9707C" name="ID">
+			<table_ref uuid="3B7A4AFEBCF75648B077E1734DE4AF1B" name="Seuil"/>
+		</field_ref>
+	</index>
+	<base_extra __stringCompHash="icu:68.1.0" __keywordBuildingHash="icu:68.1.0"/>
+</base>

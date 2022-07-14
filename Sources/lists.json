@@ -1,0 +1,92 @@
+{
+	"Type": {
+		"editable": true,
+		"items": [
+			{
+				"text": "Ressortissant",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "Conjoint",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "Enfant",
+				"ref": 3,
+				"editable": true
+			},
+			{
+				"text": "Tuteur",
+				"ref": 4,
+				"editable": true
+			},
+			{
+				"text": "Asso",
+				"ref": 5,
+				"editable": true
+			}
+		]
+	},
+	"Situation": {
+		"editable": true,
+		"items": [
+			{
+				"text": "",
+				"ref": 6,
+				"editable": false
+			},
+			{
+				"text": "Célibataire",
+				"ref": 7,
+				"editable": false
+			},
+			{
+				"text": "En couple",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "Marié(e)",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "Divorcé(e)",
+				"ref": 3,
+				"editable": true
+			},
+			{
+				"text": "Séparé(e)",
+				"ref": 4,
+				"editable": true
+			},
+			{
+				"text": "Veuf(ve)",
+				"ref": 5,
+				"editable": true
+			}
+		]
+	},
+	"Permission": {
+		"editable": true,
+		"items": [
+			{
+				"text": "Read",
+				"ref": 1,
+				"editable": true
+			},
+			{
+				"text": "Write",
+				"ref": 2,
+				"editable": true
+			},
+			{
+				"text": "NoAccess",
+				"ref": 3,
+				"editable": true
+			}
+		]
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"BudgetEntity": {
+		"functions": {},
+		"extends": "Entity"
+	},
+	"ComptaEntity": {
+		"functions": {},
+		"extends": "Entity"
+	},
+	"EtatCivil": {
+		"functions": {},
+		"extends": "DataClass"
+	},
+	"FoyerFiscalSelection": {
+		"functions": {},
+		"extends": "EntitySelection"
+	},
+	"EtatCivilSelection": {
+		"functions": {},
+		"extends": "EntitySelection"
+	},
+	"EtatCivilEntity": {
+		"functions": {},
+		"extends": "Entity"
+	},
+	"FoyerFiscalEntity": {
+		"functions": {},
+		"extends": "Entity"
+	},
+	"FoyerFiscal": {
+		"functions": {},
+		"extends": "DataClass"
+	},
+	"Privilege": {
+		"functions": {},
+		"extends": "DataClass"
+	},
+	"WebUserSelection": {
+		"functions": {},
+		"extends": "EntitySelection"
+	},
+	"PrivilegeEntity": {
+		"functions": {},
+		"extends": "Entity"
+	},
+	"WebDebuggerSelection": {
+		"functions": {},
+		"extends": "EntitySelection"
+	},
+	"WebUser": {
+		"functions": {},
+		"extends": "DataClass"
+	},
+	"WebUserEntity": {
+		"functions": {},
+		"extends": "Entity"
+	}
+}

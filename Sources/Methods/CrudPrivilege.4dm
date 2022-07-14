@@ -1,0 +1,20 @@
+//%attributes = {}
+// CrudPrivilege
+// $1 : Index
+
+QUERY:C277([Privilege:4]; [Privilege:4]ID:1>1)
+$composant:=Crud($1; ->[Privilege:4]; ds:C1482.Privilege)
+
+
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="crud")
+$contenu:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
+
+$Contenu:=Replace string:C233($Contenu; "$displayAdd$"; "hidden")
+$Contenu:=Replace string:C233($Contenu; "$displayDelete$"; "hidden")
+$Contenu:=Replace string:C233($Contenu; "$param$"; "")
+$Contenu:=Replace string:C233($Contenu; "$title$"; "Privilèges")
+$Contenu:=Replace string:C233($Contenu; "$url$"; "Privileges")
+$Contenu:=Replace string:C233($Contenu; "$Data$"; $Composant)
+
+WEB SEND TEXT:C677($Contenu; "text/html")

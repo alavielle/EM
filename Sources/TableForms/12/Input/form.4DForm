@@ -1,0 +1,878 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Line9": {
+					"type": "line",
+					"top": 77,
+					"left": 19,
+					"width": 644,
+					"sizingX": "grow"
+				},
+				"bFirst": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 21,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/First Record"
+					},
+					"action": "firstRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/FirstRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bPrevious": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 84,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Previous Record"
+					},
+					"action": "previousRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/PreviousRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bNext": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 147,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Next Record"
+					},
+					"action": "nextRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/NextRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bLast": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 210,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Last Record"
+					},
+					"action": "lastRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/LastRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bDelete": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 273,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Delete Record"
+					},
+					"action": "deleteRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/DeleteRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bCancel": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 336,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"action": "cancel",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/Cancel.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bValidate": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 399,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/OK"
+					},
+					"action": "accept",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/Validate.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"label_ID": {
+					"type": "text",
+					"text": "ID:",
+					"top": 103,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID": {
+					"type": "input",
+					"dataSource": "[Bourse:12]ID:1",
+					"top": 103,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_AnneeSco": {
+					"type": "text",
+					"text": "ID_AnneeSco:",
+					"top": 140,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_AnneeSco": {
+					"type": "input",
+					"dataSource": "[Bourse:12]ID_AnneeSco:2",
+					"top": 140,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateDemande": {
+					"type": "text",
+					"text": "DateDemande:",
+					"top": 177,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateDemande": {
+					"type": "input",
+					"dataSource": "[Bourse:12]DateDemande:3",
+					"top": 177,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_Renouvellement": {
+					"type": "text",
+					"text": "Renouvellement:",
+					"top": 214,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_Renouvellement": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Renouvellement:4",
+					"top": 214,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_Categorie": {
+					"type": "text",
+					"text": "Categorie:",
+					"top": 251,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_Categorie": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Categorie:5",
+					"top": 251,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_Provenance": {
+					"type": "text",
+					"text": "Provenance:",
+					"top": 288,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_Provenance": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Provenance:6",
+					"top": 288,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_AssistanteSociale": {
+					"type": "text",
+					"text": "AssistanteSociale:",
+					"top": 325,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_AssistanteSociale": {
+					"type": "input",
+					"dataSource": "[Bourse:12]AssistanteSociale:7",
+					"top": 325,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_Boursier": {
+					"type": "text",
+					"text": "ID_Boursier:",
+					"top": 362,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Boursier": {
+					"type": "input",
+					"dataSource": "[Bourse:12]ID_Boursier:8",
+					"top": 362,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_Versement": {
+					"type": "text",
+					"text": "ID_Versement:",
+					"top": 399,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Versement": {
+					"type": "input",
+					"dataSource": "[Bourse:12]ID_Versement:9",
+					"top": 399,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_EtudeLoin": {
+					"type": "text",
+					"text": "EtudeLoin:",
+					"top": 436,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_EtudeLoin": {
+					"type": "input",
+					"dataSource": "[Bourse:12]EtudeLoin:13",
+					"top": 436,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_EtudeIdF": {
+					"type": "text",
+					"text": "EtudeIdF:",
+					"top": 473,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_EtudeIdF": {
+					"type": "input",
+					"dataSource": "[Bourse:12]EtudeIdF:14",
+					"top": 473,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_BM": {
+					"type": "text",
+					"text": "BM:",
+					"top": 510,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_BM": {
+					"type": "input",
+					"dataSource": "[Bourse:12]BM:17",
+					"top": 510,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_MontantBM": {
+					"type": "text",
+					"text": "MontantBM:",
+					"top": 547,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_MontantBM": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MontantBM:18",
+					"top": 547,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_NbMois": {
+					"type": "text",
+					"text": "NbMois:",
+					"top": 584,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_NbMois": {
+					"type": "input",
+					"dataSource": "[Bourse:12]NbMois:19",
+					"top": 584,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_MoisDeb": {
+					"type": "text",
+					"text": "MoisDeb:",
+					"top": 621,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_MoisDeb": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MoisDeb:20",
+					"top": 621,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_MoisFin": {
+					"type": "text",
+					"text": "MoisFin:",
+					"top": 658,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_MoisFin": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MoisFin:21",
+					"top": 658,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_Complement": {
+					"type": "text",
+					"text": "Complement:",
+					"top": 695,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_Complement": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Complement:22",
+					"top": 695,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_MontantCompl": {
+					"type": "text",
+					"text": "MontantCompl:",
+					"top": 732,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_MontantCompl": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MontantCompl:23",
+					"top": 732,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_Avance": {
+					"type": "text",
+					"text": "Avance:",
+					"top": 103,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_Avance": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Avance:24",
+					"top": 103,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_MontantAvance": {
+					"type": "text",
+					"text": "MontantAvance:",
+					"top": 140,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_MontantAvance": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MontantAvance:25",
+					"top": 140,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateAvance": {
+					"type": "text",
+					"text": "DateAvance:",
+					"top": 177,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateAvance": {
+					"type": "input",
+					"dataSource": "[Bourse:12]DateAvance:26",
+					"top": 177,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateMAJ": {
+					"type": "text",
+					"text": "DateMAJ:",
+					"top": 214,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateMAJ": {
+					"type": "input",
+					"dataSource": "[Bourse:12]DateMAJ:30",
+					"top": 214,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_Solde": {
+					"type": "text",
+					"text": "Solde:",
+					"top": 251,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_Solde": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Solde:35",
+					"top": 251,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_MontantSolde": {
+					"type": "text",
+					"text": "MontantSolde:",
+					"top": 288,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_MontantSolde": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MontantSolde:36",
+					"top": 288,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateSolde": {
+					"type": "text",
+					"text": "DateSolde:",
+					"top": 325,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateSolde": {
+					"type": "input",
+					"dataSource": "[Bourse:12]DateSolde:37",
+					"top": 325,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_ComplementCA": {
+					"type": "text",
+					"text": "ComplementCA:",
+					"top": 362,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_ComplementCA": {
+					"type": "input",
+					"dataSource": "[Bourse:12]ComplementCA:41",
+					"top": 362,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_MontantComplCA": {
+					"type": "text",
+					"text": "MontantComplCA:",
+					"top": 399,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_MontantComplCA": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MontantComplCA:42",
+					"top": 399,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateComplCA": {
+					"type": "text",
+					"text": "DateComplCA:",
+					"top": 436,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateComplCA": {
+					"type": "input",
+					"dataSource": "[Bourse:12]DateComplCA:43",
+					"top": 436,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateBM": {
+					"type": "text",
+					"text": "DateBM:",
+					"top": 473,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateBM": {
+					"type": "input",
+					"dataSource": "[Bourse:12]DateBM:44",
+					"top": 473,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_NumPieceBM": {
+					"type": "text",
+					"text": "NumPieceBM:",
+					"top": 510,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_NumPieceBM": {
+					"type": "input",
+					"dataSource": "[Bourse:12]NumPieceBM:45",
+					"top": 510,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_NumPieceAvance": {
+					"type": "text",
+					"text": "NumPieceAvance:",
+					"top": 547,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_NumPieceAvance": {
+					"type": "input",
+					"dataSource": "[Bourse:12]NumPieceAvance:46",
+					"top": 547,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_NumPieceComplCA": {
+					"type": "text",
+					"text": "NumPieceComplCA:",
+					"top": 584,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_NumPieceComplCA": {
+					"type": "input",
+					"dataSource": "[Bourse:12]NumPieceComplCA:47",
+					"top": 584,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_NumPieceSolde": {
+					"type": "text",
+					"text": "NumPieceSolde:",
+					"top": 621,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_NumPieceSolde": {
+					"type": "input",
+					"dataSource": "[Bourse:12]NumPieceSolde:48",
+					"top": 621,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_VersementAnnule": {
+					"type": "text",
+					"text": "VersementAnnule:",
+					"top": 658,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_VersementAnnule": {
+					"type": "input",
+					"dataSource": "[Bourse:12]VersementAnnule:49",
+					"top": 658,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_Quotient": {
+					"type": "text",
+					"text": "Quotient:",
+					"top": 695,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_Quotient": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Quotient:50",
+					"top": 695,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_UC": {
+					"type": "text",
+					"text": "UC:",
+					"top": 732,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_UC": {
+					"type": "input",
+					"dataSource": "[Bourse:12]UC:51",
+					"top": 732,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_NbParts": {
+					"type": "text",
+					"text": "NbParts:",
+					"top": 769,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_NbParts": {
+					"type": "input",
+					"dataSource": "[Bourse:12]NbParts:52",
+					"top": 769,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_MontantPart": {
+					"type": "text",
+					"text": "MontantPart:",
+					"top": 806,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_MontantPart": {
+					"type": "input",
+					"dataSource": "[Bourse:12]MontantPart:53",
+					"top": 806,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_Montant": {
+					"type": "text",
+					"text": "Montant:",
+					"top": 843,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_Montant": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Montant:55",
+					"top": 843,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_Supplement": {
+					"type": "text",
+					"text": "Supplement:",
+					"top": 880,
+					"left": 486,
+					"width": 100,
+					"height": 17
+				},
+				"field_Supplement": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Supplement:56",
+					"top": 880,
+					"left": 596,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_CED": {
+					"type": "text",
+					"text": "ID_CED:",
+					"top": 769,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_CED": {
+					"type": "input",
+					"dataSource": "[Bourse:12]ID_CED:58",
+					"top": 769,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				},
+				"label_Observation": {
+					"type": "text",
+					"text": "Observation:",
+					"top": 806,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_Observation": {
+					"type": "input",
+					"dataSource": "[Bourse:12]Observation:59",
+					"top": 806,
+					"left": 141,
+					"width": 250,
+					"height": 170
+				},
+				"label_TypeAide": {
+					"type": "text",
+					"text": "TypeAide:",
+					"top": 996,
+					"left": 31,
+					"width": 100,
+					"height": 17
+				},
+				"field_TypeAide": {
+					"type": "input",
+					"dataSource": "[Bourse:12]TypeAide:60",
+					"top": 996,
+					"left": 141,
+					"width": 250,
+					"height": 17
+				}
+			}
+		}
+	],
+	"geometryStamp": 33,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

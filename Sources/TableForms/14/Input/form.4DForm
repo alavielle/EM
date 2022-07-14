@@ -1,0 +1,718 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"events": [
+		"onLoad",
+		"onPageChange",
+		"onValidate",
+		"onClick",
+		"onDoubleClick",
+		"onOutsideCall",
+		"onBeginDragOver",
+		"onDragOver",
+		"onDrop",
+		"onAfterKeystroke",
+		"onMenuSelect",
+		"onPluginArea",
+		"onAfterEdit",
+		"onTimer",
+		"onBoundVariableChange"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"Line9": {
+					"type": "line",
+					"top": 77,
+					"left": 19,
+					"width": 644,
+					"sizingX": "grow"
+				},
+				"bFirst": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 21,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/First Record"
+					},
+					"action": "firstRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/FirstRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bPrevious": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 84,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Previous Record"
+					},
+					"action": "previousRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/PreviousRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bNext": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 147,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Next Record"
+					},
+					"action": "nextRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/NextRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bLast": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 210,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Last Record"
+					},
+					"action": "lastRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/LastRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bDelete": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 273,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Delete Record"
+					},
+					"action": "deleteRecord",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/DeleteRecord.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bCancel": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 336,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"action": "cancel",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/Cancel.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"bValidate": {
+					"type": "pictureButton",
+					"top": 16,
+					"left": 399,
+					"width": 48,
+					"height": 48,
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/OK"
+					},
+					"action": "accept",
+					"rowCount": 4,
+					"picture": "/RESOURCES/Images/Buttons/LightGrey/Validate.png",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"label_ID": {
+					"type": "text",
+					"text": "ID:",
+					"top": 97,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID:1",
+					"top": 97,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_CodeEC": {
+					"type": "text",
+					"text": "CodeEC:",
+					"top": 134,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_CodeEC": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]CodeEC:2",
+					"top": 134,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Type": {
+					"type": "text",
+					"text": "Type:",
+					"top": 171,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Type": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Type:3",
+					"top": 171,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Titre": {
+					"type": "text",
+					"text": "Titre:",
+					"top": 208,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Titre": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Titre:4",
+					"top": 208,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Ordre": {
+					"type": "text",
+					"text": "Ordre:",
+					"top": 245,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Ordre": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Ordre:5",
+					"top": 245,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Observation": {
+					"type": "text",
+					"text": "Observation:",
+					"top": 282,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Observation": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Observation:6",
+					"top": 282,
+					"left": 211,
+					"width": 250,
+					"height": 170
+				},
+				"label_Prenom": {
+					"type": "text",
+					"text": "Prenom:",
+					"top": 472,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Prenom": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Prenom:7",
+					"top": 472,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Divorce": {
+					"type": "text",
+					"text": "Divorce:",
+					"top": 509,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Divorce": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Divorce:9",
+					"top": 509,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_LieuNaissance": {
+					"type": "text",
+					"text": "LieuNaissance:",
+					"top": 546,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_LieuNaissance": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]LieuNaissance:10",
+					"top": 546,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Adresse": {
+					"type": "text",
+					"text": "Adresse:",
+					"top": 583,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Adresse": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Adresse:11",
+					"top": 583,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_Tuteur": {
+					"type": "text",
+					"text": "ID_Tuteur:",
+					"top": 620,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Tuteur": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Tuteur:12",
+					"top": 620,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Situation": {
+					"type": "text",
+					"text": "Situation:",
+					"top": 657,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Situation": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Situation:13",
+					"top": 657,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_IndependantFiscal": {
+					"type": "text",
+					"text": "IndependantFiscal:",
+					"top": 694,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_IndependantFiscal": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]IndependantFiscal:14",
+					"top": 694,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_SuperIsole": {
+					"type": "text",
+					"text": "SuperIsole:",
+					"top": 731,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_SuperIsole": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]SuperIsole:15",
+					"top": 731,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_TelTrav": {
+					"type": "text",
+					"text": "TelTrav:",
+					"top": 768,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_TelTrav": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]TelTrav:17",
+					"top": 768,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Decede": {
+					"type": "text",
+					"text": "Decede:",
+					"top": 805,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Decede": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Decede:20",
+					"top": 805,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateDeces": {
+					"type": "text",
+					"text": "DateDeces:",
+					"top": 842,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateDeces": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DateDeces:21",
+					"top": 842,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Handicap": {
+					"type": "text",
+					"text": "Handicap:",
+					"top": 879,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Handicap": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Handicap:22",
+					"top": 879,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_SituationProfessionnelle": {
+					"type": "text",
+					"text": "SituationProfessionnelle:",
+					"top": 916,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_SituationProfessionnelle": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]SituationProfessionnelle:24",
+					"top": 916,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Archive": {
+					"type": "text",
+					"text": "Archive:",
+					"top": 953,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Archive": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Archive:25",
+					"top": 953,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_TauxHandicap": {
+					"type": "text",
+					"text": "TauxHandicap:",
+					"top": 990,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_TauxHandicap": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]TauxHandicap:26",
+					"top": 990,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_Statut": {
+					"type": "text",
+					"text": "Statut:",
+					"top": 1027,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_Statut": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]Statut:27",
+					"top": 1027,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_DateMAJ": {
+					"type": "text",
+					"text": "DateMAJ:",
+					"top": 1064,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_DateMAJ": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DateMAJ:28",
+					"top": 1064,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_Grade": {
+					"type": "text",
+					"text": "ID_Grade:",
+					"top": 1101,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Grade": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Grade:29",
+					"top": 1101,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_CodeDossier": {
+					"type": "text",
+					"text": "CodeDossier:",
+					"top": 1138,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_CodeDossier": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]CodeDossier:30",
+					"top": 1138,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_CodeFiscal": {
+					"type": "text",
+					"text": "ID_CodeFiscal:",
+					"top": 1175,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_CodeFiscal": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_CodeFiscal:31",
+					"top": 1175,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_Ressortissant": {
+					"type": "text",
+					"text": "ID_Ressortissant:",
+					"top": 1212,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Ressortissant": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Ressortissant:32",
+					"top": 1212,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_ID_Conjoint": {
+					"type": "text",
+					"text": "ID_Conjoint:",
+					"top": 1249,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID_Conjoint": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ID_Conjoint:33",
+					"top": 1249,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_UUID": {
+					"type": "text",
+					"text": "UUID:",
+					"top": 1286,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_UUID": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]UUID:34",
+					"top": 1286,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_DureeService": {
+					"type": "text",
+					"text": "DureeService:",
+					"top": 1323,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_DureeService": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DureeService:35",
+					"top": 1323,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_FinService": {
+					"type": "text",
+					"text": "FinService:",
+					"top": 1360,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_FinService": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]FinService:36",
+					"top": 1360,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_ImputableService": {
+					"type": "text",
+					"text": "ImputableService:",
+					"top": 1397,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_ImputableService": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]ImputableService:37",
+					"top": 1397,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				},
+				"label_DerniereAffectation": {
+					"type": "text",
+					"text": "DerniereAffectation:",
+					"top": 1434,
+					"left": 101,
+					"width": 100,
+					"height": 17
+				},
+				"field_DerniereAffectation": {
+					"type": "input",
+					"dataSource": "[EtatCivil:14]DerniereAffectation:39",
+					"top": 1434,
+					"left": 211,
+					"width": 250,
+					"height": 17
+				}
+			}
+		}
+	],
+	"geometryStamp": 59,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	}
+}

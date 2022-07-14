@@ -1,0 +1,31 @@
+//%attributes = {}
+//ImportENA
+
+C_OBJECT:C1216($etatcivil; $temp; $ObjCrypte; $etatcivil_C)
+$imports:=ds:C1482.ImportENA.all()
+For each ($import; $imports)
+	$etatcivil_C:=ds:C1482.EtatCivil.query("CodeEC =:1"; $import.CodeConjoint)[0]
+	$temp:=$import.toObject()
+	$etatcivil:=ds:C1482.EtatCivil.new()
+	$etatcivil.fromObject($temp)
+	$etatcivil.ID_Conjoint:=$etatcivil_C.ID
+	$etatcivil.save()
+	
+	OB SET:C1220($objCrypte; "Nom"; Uppercase:C13($temp.Nom))
+	OB SET:C1220($objCrypte; "NomNaissance"; "")
+	OB SET:C1220($objCrypte; "DateNaissance"; Date:C102($temp.DateNaissance))
+	OB SET:C1220($objCrypte; "CP"; "")
+	OB SET:C1220($objCrypte; "Ville"; "")
+	OB SET:C1220($objCrypte; "Tel"; "")
+	OB SET:C1220($objCrypte; "Email"; "")
+	
+	$toBlob:=JSON Stringify:C1217($objCrypte)
+	QUERY:C277([EtatCivil:14]; [EtatCivil:14]ID:1=$etatcivil.ID)
+	TEXT TO BLOB:C554($toBlob; [EtatCivil:14]BlobCrypted:8)
+	QUERY:C277([Keys:25]; [Keys:25]TimeStampKeyPair:4#"")
+	ENCRYPT BLOB:C689([EtatCivil:14]BlobCrypted:8; [Keys:25]PrivateKey:2)  //On crypte le blob
+	SAVE RECORD:C53([EtatCivil:14])
+	UNLOAD RECORD:C212([EtatCivil:14])
+	UNLOAD RECORD:C212([Keys:25])
+	
+End for each 

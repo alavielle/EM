@@ -1,0 +1,954 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 0,
+	"windowMinHeight": 0,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"rightMargin": 20,
+	"bottomMargin": 20,
+	"markerHeader": 30,
+	"markerBody": 60,
+	"events": [
+		"onLoad"
+	],
+	"windowTitle": "window title",
+	"destination": "listScreen",
+	"pages": [
+		{
+			"objects": {}
+		},
+		{
+			"objects": {
+				"background": {
+					"type": "rectangle",
+					"fill": "automatic",
+					"stroke": "transparent",
+					"top": 30,
+					"height": 30,
+					"left": 0,
+					"right": 10410
+				},
+				"label_ID": {
+					"type": "text",
+					"text": "ID",
+					"top": 10,
+					"left": 10,
+					"width": 100,
+					"height": 17
+				},
+				"field_ID": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]ID:1",
+					"top": 37,
+					"left": 10,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_1": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 265
+				},
+				"label_ID_CodeFiscal": {
+					"type": "text",
+					"text": "ID_CodeFiscal",
+					"top": 10,
+					"left": 270,
+					"width": 100,
+					"height": 17
+				},
+				"field_CodeDossier": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]CodeDossier:2",
+					"top": 37,
+					"left": 270,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_2": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 525
+				},
+				"label_Annee": {
+					"type": "text",
+					"text": "Annee",
+					"top": 10,
+					"left": 530,
+					"width": 100,
+					"height": 17
+				},
+				"field_Annee": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]Annee:3",
+					"top": 37,
+					"left": 530,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_3": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 785
+				},
+				"label_A01": {
+					"type": "text",
+					"text": "A01",
+					"top": 10,
+					"left": 790,
+					"width": 100,
+					"height": 17
+				},
+				"field_A01": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A01:4",
+					"top": 37,
+					"left": 790,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_4": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1045
+				},
+				"label_A02": {
+					"type": "text",
+					"text": "A02",
+					"top": 10,
+					"left": 1050,
+					"width": 100,
+					"height": 17
+				},
+				"field_A02": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A02:5",
+					"top": 37,
+					"left": 1050,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_5": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1305
+				},
+				"label_A03": {
+					"type": "text",
+					"text": "A03",
+					"top": 10,
+					"left": 1310,
+					"width": 100,
+					"height": 17
+				},
+				"field_A03": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A03:6",
+					"top": 37,
+					"left": 1310,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_6": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1565
+				},
+				"label_A04": {
+					"type": "text",
+					"text": "A04",
+					"top": 10,
+					"left": 1570,
+					"width": 100,
+					"height": 17
+				},
+				"field_A04": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A04:7",
+					"top": 37,
+					"left": 1570,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_7": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 1825
+				},
+				"label_A05": {
+					"type": "text",
+					"text": "A05",
+					"top": 10,
+					"left": 1830,
+					"width": 100,
+					"height": 17
+				},
+				"field_A05": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A05:8",
+					"top": 37,
+					"left": 1830,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_8": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2085
+				},
+				"label_A06": {
+					"type": "text",
+					"text": "A06",
+					"top": 10,
+					"left": 2090,
+					"width": 100,
+					"height": 17
+				},
+				"field_A06": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A06:9",
+					"top": 37,
+					"left": 2090,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_9": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2345
+				},
+				"label_A07": {
+					"type": "text",
+					"text": "A07",
+					"top": 10,
+					"left": 2350,
+					"width": 100,
+					"height": 17
+				},
+				"field_A07": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A07:10",
+					"top": 37,
+					"left": 2350,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_10": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2605
+				},
+				"label_A08": {
+					"type": "text",
+					"text": "A08",
+					"top": 10,
+					"left": 2610,
+					"width": 100,
+					"height": 17
+				},
+				"field_A08": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A08:11",
+					"top": 37,
+					"left": 2610,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_11": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 2865
+				},
+				"label_A09": {
+					"type": "text",
+					"text": "A09",
+					"top": 10,
+					"left": 2870,
+					"width": 100,
+					"height": 17
+				},
+				"field_A09": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A09:12",
+					"top": 37,
+					"left": 2870,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_12": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3125
+				},
+				"label_A10": {
+					"type": "text",
+					"text": "A10",
+					"top": 10,
+					"left": 3130,
+					"width": 100,
+					"height": 17
+				},
+				"field_A10": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A10:13",
+					"top": 37,
+					"left": 3130,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_13": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3385
+				},
+				"label_A11": {
+					"type": "text",
+					"text": "A11",
+					"top": 10,
+					"left": 3390,
+					"width": 100,
+					"height": 17
+				},
+				"field_A11": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]A11:14",
+					"top": 37,
+					"left": 3390,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_14": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3645
+				},
+				"label_B01": {
+					"type": "text",
+					"text": "B01",
+					"top": 10,
+					"left": 3650,
+					"width": 100,
+					"height": 17
+				},
+				"field_B01": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B01:15",
+					"top": 37,
+					"left": 3650,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_15": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 3905
+				},
+				"label_B02": {
+					"type": "text",
+					"text": "B02",
+					"top": 10,
+					"left": 3910,
+					"width": 100,
+					"height": 17
+				},
+				"field_B02": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B02:16",
+					"top": 37,
+					"left": 3910,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_16": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4165
+				},
+				"label_B03": {
+					"type": "text",
+					"text": "B03",
+					"top": 10,
+					"left": 4170,
+					"width": 100,
+					"height": 17
+				},
+				"field_B03": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B03:17",
+					"top": 37,
+					"left": 4170,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_17": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4425
+				},
+				"label_B04": {
+					"type": "text",
+					"text": "B04",
+					"top": 10,
+					"left": 4430,
+					"width": 100,
+					"height": 17
+				},
+				"field_B04": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B04:18",
+					"top": 37,
+					"left": 4430,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_18": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4685
+				},
+				"label_B05": {
+					"type": "text",
+					"text": "B05",
+					"top": 10,
+					"left": 4690,
+					"width": 100,
+					"height": 17
+				},
+				"field_B05": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B05:19",
+					"top": 37,
+					"left": 4690,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_19": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 4945
+				},
+				"label_B06": {
+					"type": "text",
+					"text": "B06",
+					"top": 10,
+					"left": 4950,
+					"width": 100,
+					"height": 17
+				},
+				"field_B06": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B06:20",
+					"top": 37,
+					"left": 4950,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_20": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5205
+				},
+				"label_B07": {
+					"type": "text",
+					"text": "B07",
+					"top": 10,
+					"left": 5210,
+					"width": 100,
+					"height": 17
+				},
+				"field_B07": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B07:21",
+					"top": 37,
+					"left": 5210,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_21": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5465
+				},
+				"label_B08": {
+					"type": "text",
+					"text": "B08",
+					"top": 10,
+					"left": 5470,
+					"width": 100,
+					"height": 17
+				},
+				"field_B08": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B08:22",
+					"top": 37,
+					"left": 5470,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_22": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5725
+				},
+				"label_B09": {
+					"type": "text",
+					"text": "B09",
+					"top": 10,
+					"left": 5730,
+					"width": 100,
+					"height": 17
+				},
+				"field_B09": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B09:23",
+					"top": 37,
+					"left": 5730,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_23": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 5985
+				},
+				"label_B10": {
+					"type": "text",
+					"text": "B10",
+					"top": 10,
+					"left": 5990,
+					"width": 100,
+					"height": 17
+				},
+				"field_B10": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B10:24",
+					"top": 37,
+					"left": 5990,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_24": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 6245
+				},
+				"label_B11": {
+					"type": "text",
+					"text": "B11",
+					"top": 10,
+					"left": 6250,
+					"width": 100,
+					"height": 17
+				},
+				"field_B11": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]B11:25",
+					"top": 37,
+					"left": 6250,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_25": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 6505
+				},
+				"label_C01": {
+					"type": "text",
+					"text": "C01",
+					"top": 10,
+					"left": 6510,
+					"width": 100,
+					"height": 17
+				},
+				"field_C01": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C01:26",
+					"top": 37,
+					"left": 6510,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_26": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 6765
+				},
+				"label_C02": {
+					"type": "text",
+					"text": "C02",
+					"top": 10,
+					"left": 6770,
+					"width": 100,
+					"height": 17
+				},
+				"field_C02": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C02:27",
+					"top": 37,
+					"left": 6770,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_27": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7025
+				},
+				"label_C03": {
+					"type": "text",
+					"text": "C03",
+					"top": 10,
+					"left": 7030,
+					"width": 100,
+					"height": 17
+				},
+				"field_C03": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C03:28",
+					"top": 37,
+					"left": 7030,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_28": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7285
+				},
+				"label_C04": {
+					"type": "text",
+					"text": "C04",
+					"top": 10,
+					"left": 7290,
+					"width": 100,
+					"height": 17
+				},
+				"field_C04": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C04:29",
+					"top": 37,
+					"left": 7290,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_29": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7545
+				},
+				"label_C05": {
+					"type": "text",
+					"text": "C05",
+					"top": 10,
+					"left": 7550,
+					"width": 100,
+					"height": 17
+				},
+				"field_C05": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C05:30",
+					"top": 37,
+					"left": 7550,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_30": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 7805
+				},
+				"label_C06": {
+					"type": "text",
+					"text": "C06",
+					"top": 10,
+					"left": 7810,
+					"width": 100,
+					"height": 17
+				},
+				"field_C06": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C06:31",
+					"top": 37,
+					"left": 7810,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_31": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 8065
+				},
+				"label_C07": {
+					"type": "text",
+					"text": "C07",
+					"top": 10,
+					"left": 8070,
+					"width": 100,
+					"height": 17
+				},
+				"field_C07": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C07:32",
+					"top": 37,
+					"left": 8070,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_32": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 8325
+				},
+				"label_C08": {
+					"type": "text",
+					"text": "C08",
+					"top": 10,
+					"left": 8330,
+					"width": 100,
+					"height": 17
+				},
+				"field_C08": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C08:33",
+					"top": 37,
+					"left": 8330,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_33": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 8585
+				},
+				"label_C09": {
+					"type": "text",
+					"text": "C09",
+					"top": 10,
+					"left": 8590,
+					"width": 100,
+					"height": 17
+				},
+				"field_C09": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C09:34",
+					"top": 37,
+					"left": 8590,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_34": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 8845
+				},
+				"label_C10": {
+					"type": "text",
+					"text": "C10",
+					"top": 10,
+					"left": 8850,
+					"width": 100,
+					"height": 17
+				},
+				"field_C10": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C10:35",
+					"top": 37,
+					"left": 8850,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_35": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 9105
+				},
+				"label_C11": {
+					"type": "text",
+					"text": "C11",
+					"top": 10,
+					"left": 9110,
+					"width": 100,
+					"height": 17
+				},
+				"field_C11": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]C11:36",
+					"top": 37,
+					"left": 9110,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_36": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 9365
+				},
+				"label_TotalRessourceA": {
+					"type": "text",
+					"text": "TotalRessourceA",
+					"top": 10,
+					"left": 9370,
+					"width": 100,
+					"height": 17
+				},
+				"field_TotalRessourceA": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]TotalRessourceA:37",
+					"top": 37,
+					"left": 9370,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_37": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 9625
+				},
+				"label_TotalRessourceB": {
+					"type": "text",
+					"text": "TotalRessourceB",
+					"top": 10,
+					"left": 9630,
+					"width": 100,
+					"height": 17
+				},
+				"field_TotalRessourceB": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]TotalRessourceB:38",
+					"top": 37,
+					"left": 9630,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_38": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 9885
+				},
+				"label_TotalRessourceC": {
+					"type": "text",
+					"text": "TotalRessourceC",
+					"top": 10,
+					"left": 9890,
+					"width": 100,
+					"height": 17
+				},
+				"field_TotalRessourceC": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]TotalRessourceC:39",
+					"top": 37,
+					"left": 9890,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				},
+				"line_39": {
+					"type": "line",
+					"top": 0,
+					"height": 60,
+					"left": 10145
+				},
+				"label_TotalRessource": {
+					"type": "text",
+					"text": "TotalRessource",
+					"top": 10,
+					"left": 10150,
+					"width": 100,
+					"height": 17
+				},
+				"field_TotalRessource": {
+					"type": "input",
+					"dataSource": "[RessourceBis:13]TotalRessource:40",
+					"top": 37,
+					"left": 10150,
+					"width": 250,
+					"height": 17,
+					"borderStyle": "none"
+				}
+			}
+		}
+	],
+	"geometryStamp": 2
+}
