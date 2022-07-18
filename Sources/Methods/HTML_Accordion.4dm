@@ -1,7 +1,7 @@
 //%attributes = {}
 // HTML_Accordion
 //$1 : Nom de l'étiquette
-//$2 : Nom du libellé si non null, sinon, nome et prénom
+//$2 : Nom du libellé si non null, sinon, nom et prénom
 //$3 : ->Tableau texte
 
 C_TEXT:C284($Contenu; $0; $1; $2)

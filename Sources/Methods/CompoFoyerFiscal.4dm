@@ -5,6 +5,7 @@
 
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="compo_foyer_fiscal")
 $contenu:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
 
 $user:=ds:C1482.WebUser.query("UUID = :1"; $1).first()
 If ($user#Null:C1517)
@@ -93,6 +94,11 @@ If ($user#Null:C1517)
 		$Contenu:=Replace string:C233($Contenu; "$option$"; "Pas de dossier en cours")
 	End if 
 	
-	WEB SEND TEXT:C677($Contenu; "text/html")
+	QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+	$navBar:=[ModelesHTML:15]Detail:3
 	UNLOAD RECORD:C212([ModelesHTML:15])
+	$prenomNom:=Session:C1714.userName
+	$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+	$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+	WEB SEND TEXT:C677($Contenu; "text/html")
 End if 

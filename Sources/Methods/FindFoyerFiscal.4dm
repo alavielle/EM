@@ -45,9 +45,13 @@ If (Length:C16($1)>0)
 	ARRAY OBJECT:C1221($tabObj; 0)
 	USE SET:C118("EnsCodeDossier")
 	For ($j; 1; Records in selection:C76([EtatCivil:14]))
-		$indexDetail:=Find in array:C230($TabIndex; [EtatCivil:14]ID_CodeFiscal:31)
-		$detail:=$TabLibDetail{$indexDetail}
-		RELATE ONE:C42([EtatCivil:14]ID_CodeFiscal:31)
+		If ([EtatCivil:14]ID_CodeFiscal:31>0)
+			$indexDetail:=Find in array:C230($TabIndex; [EtatCivil:14]ID_CodeFiscal:31)
+			$detail:=$TabLibDetail{$indexDetail}
+			RELATE ONE:C42([EtatCivil:14]ID_CodeFiscal:31)
+		Else 
+			$detail:=[EtatCivil:14]CodeDossier:30+"-NC"
+		End if 
 		$SharedEC:=Storage:C1525.SharedEtatCivil.query("ID = :1"; [EtatCivil:14]ID:1)[0]
 		$Nom:=$SharedEC.Nom
 		$Prenom:=$SharedEC.Prenom

@@ -30,6 +30,11 @@ If ($pos>0)
 			
 	End case 
 	$entity.fromObject($ReceivedObject)
+	For each ($e; $entity)
+		If (Position:C15("Date"; $e)>0)
+			$entity[$e]:=Date:C102($ReceivedObject[$e])
+		End if 
+	End for each 
 	$entity.save()
 	SauvegarderStorageEtatCivil($entity.ID; $ReceivedObject.Nom; $ReceivedObject.NomNaissance; $ReceivedObject.DateNaissance; $ReceivedObject.CP; $ReceivedObject.Ville; $ReceivedObject.Tel; $ReceivedObject.Email)
 End if 

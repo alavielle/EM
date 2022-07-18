@@ -30,7 +30,7 @@ If ($user#Null:C1517)  //a user was found
 		$user.TimeStamp:=Timestamp:C1445
 		$user.save()
 		//afficher menu selon le profil
-		<>vprenomNom:=Session:C1714.userName
+		//<>vprenomNom:=Session.userName
 		WEB SEND HTTP REDIRECT:C659("/menu")
 	Else 
 		Connexion("Identifiant ou mot de passe incorrect.")

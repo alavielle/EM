@@ -3,6 +3,7 @@
 
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="user_new")
 $contenu:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
 
 QUERY:C277([EtatCivil:14]; [EtatCivil:14]Type:3="RESSORTISSANT")
 ORDER BY:C49([EtatCivil:14]Prenom:7; >)
@@ -61,5 +62,11 @@ $Composant:=HTML_Select("Choisir dans la liste"; "typeSelected"; ->$tabIdType; -
 
 $Contenu:=Replace string:C233($Contenu; "$optionType$"; $Composant)
 
-WEB SEND TEXT:C677($Contenu; "text/html")
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
 UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
+WEB SEND TEXT:C677($Contenu; "text/html")

@@ -115,6 +115,13 @@ $SelectNe:=HTML_Select("Niveau d'études *"; "NiveauEtude"; ->$TabId; ->$TabLib;
 $scolarite_base:=Replace string:C233($scolarite_base; "$selectNe$"; $SelectNe)
 
 
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
 $Contenu:=Replace string:C233($Contenu; "$Data$"; $Data)
 $Contenu:=Replace string:C233($Contenu; "$DataEnfant$"; $DataEnfant)
 $Contenu:=Replace string:C233($Contenu; "$DataAutre$"; $DataAutre)

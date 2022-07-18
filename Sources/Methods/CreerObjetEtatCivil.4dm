@@ -27,7 +27,7 @@ If ($etatcivil#Null:C1517)
 	End if 
 	If ($etatcivil.ID_Tuteur>0)
 		$tuteurEC:=Storage:C1525.SharedEtatCivil.query("ID = :1"; $etatcivil.ID_Tuteur)[0]
-		OB SET:C1220($objEC; "NomTuteur"; $tuteurEC.Nom+" "+$tuteurEC.Prenom; "UUID_Tuteur"; $etatcivil.Tuteur.UUID)
+		OB SET:C1220($objEC; "NomTuteur"; $tuteurEC.Nom+" "+$tuteurEC.Prenom; "UUID_Tuteur"; $etatcivil.tuteur.UUID)
 	End if 
 	OB SET:C1220($objEC; "FoyerFiscal"; $etatcivil.foyerFiscal.CodeFiscal)
 End if 

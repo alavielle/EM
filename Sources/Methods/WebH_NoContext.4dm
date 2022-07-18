@@ -39,14 +39,20 @@ If (Identify)
 			QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2=$index)
 			If (Records in selection:C76([ModelesHTML:15])>0)
 				$contenu:=[ModelesHTML:15]Detail:3
+				UNLOAD RECORD:C212([ModelesHTML:15])
 				If (IsAdmin(Session:C1714.storage.clientUuid.value))
 					$display:=""
 				Else 
 					$display:="hidden"
 				End if 
+				QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+				$navBar:=[ModelesHTML:15]Detail:3
+				UNLOAD RECORD:C212([ModelesHTML:15])
+				$prenomNom:=Session:C1714.userName
+				$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+				$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
 				$Contenu:=Replace string:C233($Contenu; "$display$"; $display)
 				WEB SEND TEXT:C677($Contenu; "text/html")
-				UNLOAD RECORD:C212([ModelesHTML:15])
 			Else 
 				WEB SEND HTTP REDIRECT:C659("/404.shtml")
 			End if 
@@ -56,14 +62,26 @@ If (Identify)
 			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
 				QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="menu_gestion")
 				$contenu:=[ModelesHTML:15]Detail:3
-				WEB SEND TEXT:C677($Contenu; "text/html")
 				UNLOAD RECORD:C212([ModelesHTML:15])
+				QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+				$navBar:=[ModelesHTML:15]Detail:3
+				UNLOAD RECORD:C212([ModelesHTML:15])
+				$prenomNom:=Session:C1714.userName
+				$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+				$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+				WEB SEND TEXT:C677($Contenu; "text/html")
 			Else 
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
 			
 		: ($URL="/Compte")
 			FindCompte(Session:C1714.storage.clientUuid.value)
+			
+		: ($URL="/ModifPwd")
+			ModifPwd(Session:C1714.storage.clientUuid.value)
+			
+		: ($URL="/ModifEmail")
+			ModifEmail(Session:C1714.storage.clientUuid.value)
 			
 		: ($URL="/Bourse")
 			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
@@ -126,8 +144,14 @@ If (Identify)
 				QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="dossier_saisie")
 				If (Records in selection:C76([ModelesHTML:15])>0)
 					$contenu:=[ModelesHTML:15]Detail:3
-					WEB SEND TEXT:C677($Contenu; "text/html")
 					UNLOAD RECORD:C212([ModelesHTML:15])
+					QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+					$navBar:=[ModelesHTML:15]Detail:3
+					UNLOAD RECORD:C212([ModelesHTML:15])
+					$prenomNom:=Session:C1714.userName
+					$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+					$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+					WEB SEND TEXT:C677($Contenu; "text/html")
 				Else 
 					WEB SEND HTTP REDIRECT:C659("/404.shtml")
 				End if 

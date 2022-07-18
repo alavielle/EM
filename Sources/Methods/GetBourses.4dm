@@ -4,6 +4,7 @@
 
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="bourse")
 $contenu:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
 
 $user:=ds:C1482.WebUser.query("UUID = :1"; $1).first()
 $display:=""
@@ -54,7 +55,8 @@ If (Records in selection:C76([Bourse:12])>0)
 		$SharedEC:=Storage:C1525.SharedEtatCivil.query("ID = :1"; [Bourse:12]ID_Boursier:8)[0]
 		$NomPrenom:=$SharedEC.Nom+" "+$SharedEC.Prenom
 		$CodeDossier:=$SharedEC.CodeDossier
-		APPEND TO ARRAY:C911($tabObj; New object:C1471("ID"; [Bourse:12]ID:1; "Nom Prénom"; $NomPrenom; "Classe"; $classe; "UC"; [Bourse:12]UC:51; "Montant"; [Bourse:12]Montant:55; "Dossier"; $CodeDossier; "Type"; [Bourse:12]TypeAide:60; "Année"; [AnneeScolaire:21]AnneeSco:2; "MontantAvance"; [Bourse:12]MontantAvance:25; "DateAvance"; [Bourse:12]DateAvance:26; "MontantSolde"; [Bourse:12]MontantSolde:36; "DateSolde"; [Bourse:12]DateSolde:37))
+		$etatCivil:=ds:C1482.EtatCivil.query("ID = :1"; [Bourse:12]ID_Boursier:8)[0]
+		APPEND TO ARRAY:C911($tabObj; New object:C1471("ID"; [Bourse:12]ID:1; "Nom Prénom"; $NomPrenom; "Classe"; $classe; "UC"; [Bourse:12]UC:51; "Montant"; [Bourse:12]Montant:55; "Dossier"; $CodeDossier; "Type"; [Bourse:12]TypeAide:60; "Année"; [AnneeScolaire:21]AnneeSco:2; "BM"; [Bourse:12]BM:17; "IndFiscal"; $etatCivil.IndependantFiscal; "SuperIsole"; $etatCivil.SuperIsole; "MontantAvance"; [Bourse:12]MontantAvance:25; "DateAvance"; [Bourse:12]DateAvance:26; "MontantSolde"; [Bourse:12]MontantSolde:36; "DateSolde"; [Bourse:12]DateSolde:37; "MontantBM"; [Bourse:12]MontantBM:18; "NbMois"; [Bourse:12]NbMois:19))
 		NEXT RECORD:C51([Bourse:12])
 	End for 
 	
@@ -68,5 +70,11 @@ Else
 	$Contenu:=Replace string:C233($Contenu; "$noData$"; "Pas de dossier en cours")
 End if 
 
-WEB SEND TEXT:C677($Contenu; "text/html")
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
 UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
+WEB SEND TEXT:C677($Contenu; "text/html")

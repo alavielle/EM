@@ -183,11 +183,12 @@
 		<field name="Eloignement" uuid="E6E0080185F2E44BBEA9E1B31C0D07EE" type="6" id="8"/>
 		<field name="SupplementGV" uuid="EFB65E10E9C0F041804BFA06C649640C" type="6" id="9"/>
 		<field name="SuperIsole" uuid="580AC92004AB2E42AB58EE94EB2C3EEA" type="6" id="10"/>
+		<field name="AE" uuid="CA44CE42E385D441883C7C069A534B7E" type="4" never_null="true" id="11"/>
 		<primary_key field_name="ID" field_uuid="BF269529E886304B82200481FFD4DED5"/>
 		<table_extra input_form="Input" output_form="Output">
-			<editor_table_info fields_ordering="1" displayable_fields_count="11">
+			<editor_table_info displayable_fields_count="11">
 				<color red="237" green="211" blue="181" alpha="255"/>
-				<coordinates left="1241" top="840" width="126" height="272.33203125"/>
+				<coordinates left="1241" top="809" width="126" height="291.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -329,8 +330,8 @@
 		<field name="SecteurMarine" uuid="AE50CF62270D144E931BB8ED02B8B544" type="10" limiting_length="255" never_null="true" id="17"/>
 		<field name="DatePension" uuid="5E93BB8386EF7B4AA1CB975836557592" type="8" never_null="true" id="18"/>
 		<field name="DecesEnActivite" uuid="2FEB88DE53B95D4EA282630D40E8E00E" type="1" never_null="true" id="19"/>
-		<field name="Decede" uuid="A80348EFCBA01A4091929FBE83AB3E67" type="1" id="20"/>
-		<field name="DateDeces" uuid="5CE508A09B3744409ADDAF5AB5BE3AE1" type="8" id="21"/>
+		<field name="Decede" uuid="A80348EFCBA01A4091929FBE83AB3E67" type="1" never_null="true" id="20"/>
+		<field name="DateDeces" uuid="5CE508A09B3744409ADDAF5AB5BE3AE1" type="8" never_null="true" id="21"/>
 		<field name="Handicap" uuid="7E1E8C3430D14B49B3CD97C63DBF51EC" type="1" id="22"/>
 		<field name="DecesEnRetraite" uuid="E40DF16C04C3BE4581320E45C435005B" type="1" never_null="true" id="23"/>
 		<field name="SituationProfessionnelle" uuid="EA9C3E616D2F1A45AD163C859E2F3E6E" type="10" limiting_length="255" id="24"/>
@@ -759,9 +760,9 @@
 		<field name="ImputableService" uuid="223D40C042CDE14084C73D1F15214006" type="1" id="7"/>
 		<primary_key field_name="CodeEC" field_uuid="0B5172DDCADF6E4BB696958A8D2036B5"/>
 		<table_extra>
-			<editor_table_info fields_ordering="1" displayable_fields_count="6">
+			<editor_table_info fields_ordering="1" displayable_fields_count="8">
 				<color red="255" green="255" blue="255" alpha="0"/>
-				<coordinates left="1106" top="1394" width="120" height="167.33203125"/>
+				<coordinates left="1111" top="1383" width="120" height="225.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>

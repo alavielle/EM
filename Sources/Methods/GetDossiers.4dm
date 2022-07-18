@@ -5,6 +5,7 @@
 C_TEXT:C284($1)
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="dossiers")
 $contenu:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
 
 QUERY:C277([WebUser:2]; [WebUser:2]UUID:7=$1)
 
@@ -42,5 +43,11 @@ Else
 	$Contenu:=Replace string:C233($Contenu; "$option$"; "Pas de dossier en cours")
 End if 
 
-WEB SEND TEXT:C677($Contenu; "text/html")
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
 UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
+WEB SEND TEXT:C677($Contenu; "text/html")

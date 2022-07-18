@@ -144,13 +144,15 @@ If ($etatcivil#Null:C1517)
 	$ComposantFrais:=HTML_LigneFrais()
 	$frais_scolarite_base:=Replace string:C233($frais_scolarite_base; "$LignesFrais$"; $ComposantFrais)
 	
-	QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="budget_mensuel")
-	$budgetMensuel:=[ModelesHTML:15]Detail:3
-	UNLOAD RECORD:C212([ModelesHTML:15])
-	$ComposantBudget:=HTML_LigneBudget()
-	$budgetMensuel:=Replace string:C233($budgetMensuel; "$Lignes_budget_mensuel$"; $ComposantBudget)
 	
-	If (Current date:C33()-Add to date:C393($SharedEC.DateNaissance; 18; 0; 0)<0)
+	//Si (Date du jour()-Ajouter à date($SharedEC.DateNaissance; 18; 0; 0)<0)
+	If ($etatcivil.IndependantFiscal=True:C214)
+		QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="budget_mensuel")
+		$budgetMensuel:=[ModelesHTML:15]Detail:3
+		UNLOAD RECORD:C212([ModelesHTML:15])
+		$ComposantBudget:=HTML_LigneBudget()
+		$budgetMensuel:=Replace string:C233($budgetMensuel; "$Lignes_budget_mensuel$"; $ComposantBudget)
+	Else 
 		C_COLLECTION:C1488($myCol)
 		ARRAY LONGINT:C221($tabIdEC; 0)
 		ARRAY TEXT:C222($tabLibEC; 0)
@@ -191,6 +193,13 @@ If ($etatcivil#Null:C1517)
 		UNLOAD RECORD:C212([ModelesHTML:15])
 		$selectRepresLegal:=Replace string:C233($selectRepresLegal; "$selectRepresLegal$"; $composantRepresLegal)
 	End if 
+	
+	QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+	$navBar:=[ModelesHTML:15]Detail:3
+	UNLOAD RECORD:C212([ModelesHTML:15])
+	$prenomNom:=Session:C1714.userName
+	$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+	$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
 	
 	$Contenu:=Replace string:C233($Contenu; "$etat_civil_base$"; $etatCivil_base)
 	$Contenu:=Replace string:C233($Contenu; "$assurance_base$"; $assurance_base)

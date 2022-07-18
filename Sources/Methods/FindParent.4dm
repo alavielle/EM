@@ -76,6 +76,14 @@ OB SET:C1220(ParamSelect; "Multiple"; "Faux")
 $SelectGrade:=HTML_Select("Dernier Grade"; "ID_Grade"; ->$TabId; ->$TabLib; Null:C1517; ""; ParamSelect)
 $contenu_activite:=Replace string:C233($contenu_activite; "$SelectGrade$"; $SelectGrade)
 
+
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
 $Contenu:=Replace string:C233($Contenu; "$etat_civil_base$"; $contenu_base)
 $Contenu:=Replace string:C233($Contenu; "$assurance_base$"; $assurance_base)
 $Contenu:=Replace string:C233($Contenu; "$activite_marine$"; $contenu_activite)

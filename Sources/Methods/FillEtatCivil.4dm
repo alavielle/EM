@@ -2,7 +2,7 @@
 //FillEtatCivil 
 //$1 Type/id
 
-C_TEXT:C284($composant; $hideIfNew; $SelectFiscal; $SelectAyantDroits; $SelectEnfants; $autre; $activite_marine)
+C_TEXT:C284($composant; $hideIfNew; $SelectFiscal; $SelectAyantDroits; $SelectEnfants; $SelectTutelles; $autre; $activite_marine)
 $position:=Position:C15("/"; $1)
 $type:=Substring:C12($1; 1; $position-1)
 $uuid:=Substring:C12($1; $position+1; Length:C16($1))
@@ -16,6 +16,7 @@ If (Length:C16($uuid)>0)
 	$SelectFiscal:=FindAutresFoyers($uuid)
 	$SelectAyantDroits:=FindAyantDroits($uuid)
 	$SelectEnfants:=FindEnfants($uuid)
+	$SelectTutelles:=FindTutelles($uuid)
 End if 
 
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="etat_civil")
@@ -68,6 +69,13 @@ OB SET:C1220(ParamSelect; "Multiple"; "Vrai")
 $SelectAss:=HTML_Select("Sélectionnez dans la liste (plusieurs choix possibles)"; "Assurance"; ->$TabId; ->$TabLib; Null:C1517; "multiselect"; ParamSelect)
 $assurance_base:=Replace string:C233($assurance_base; "$selectAss$"; $SelectAss)
 
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
 $Contenu:=Replace string:C233($Contenu; "$hideIfNew$"; $hideIfNew)
 $Contenu:=Replace string:C233($Contenu; "$etat_civil_base$"; $contenu_base)
 $Contenu:=Replace string:C233($Contenu; "$assurance_base$"; $assurance_base)
@@ -75,6 +83,7 @@ $Contenu:=Replace string:C233($Contenu; "$activite_marine$"; $activite_marine)
 $Contenu:=Replace string:C233($Contenu; "$selectFiscal$"; $SelectFiscal)
 $Contenu:=Replace string:C233($Contenu; "$SelectAyantDroits$"; $SelectAyantDroits)
 $Contenu:=Replace string:C233($Contenu; "$SelectEnfants$"; $SelectEnfants)
+$Contenu:=Replace string:C233($Contenu; "$SelectTutelles$"; $SelectTutelles)
 $Contenu:=Replace string:C233($Contenu; "$SelectTuteurs$"; $SelectTuteurs)
 $Contenu:=Replace string:C233($Contenu; "$Data$"; $Composant)
 $Contenu:=Replace string:C233($Contenu; "$Type$"; $type)

@@ -10,6 +10,7 @@ $uuid:=$param[2]
 
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="ressource")
 $contenu:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
 
 QUERY:C277([WebUser:2]; [WebUser:2]UUID:7=Session:C1714.storage.clientUuid.value)
 QUERY:C277([EquipeSociale:16]; [EquipeSociale:16]ID:1=[WebUser:2]ID_Equipe:8)
@@ -53,9 +54,16 @@ End if
 
 $Composant:=HTML_LigneRessource()
 $Composant:=Replace string:C233($Composant; "$AnneeSco$"; [AnneeScolaire:21]AnneeSco:2)
+
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
 $Contenu:=Replace string:C233($Contenu; "$LignesRessources$"; $Composant)
 $Contenu:=Replace string:C233($Contenu; "$BourseID$"; $BourseID)
 $Contenu:=Replace string:C233($Contenu; "$UUID_boursier$"; $uuid)
 
 WEB SEND TEXT:C677($Contenu; "text/html")
-UNLOAD RECORD:C212([ModelesHTML:15])

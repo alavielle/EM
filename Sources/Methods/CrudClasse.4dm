@@ -14,6 +14,13 @@ QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="crud")
 $contenu:=[ModelesHTML:15]Detail:3
 UNLOAD RECORD:C212([ModelesHTML:15])
 
+QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
+$navBar:=[ModelesHTML:15]Detail:3
+UNLOAD RECORD:C212([ModelesHTML:15])
+$prenomNom:=Session:C1714.userName
+$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
+$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
+
 $Contenu:=Replace string:C233($Contenu; "$displayAdd$"; "")
 $Contenu:=Replace string:C233($Contenu; "$displayDelete$"; "")
 $Contenu:=Replace string:C233($Contenu; "$param$"; "")
