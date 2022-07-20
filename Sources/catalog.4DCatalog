@@ -38,7 +38,7 @@
 	<table name="FoyerFiscal" uuid="F1EAFD2D991B4840A92086370A67A2E6" id="3">
 		<field name="ID" uuid="A75FF7E4B2E2CA428B0438E14ACE984A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="CodeFiscal" uuid="A399B5C0A2286448AAD40AD67F48CCE8" type="10" limiting_length="255" never_null="true" id="2">
-			<field_extra multi_line="false" enumeration_id="2">
+			<field_extra multi_line="false">
 				<editor_field_info>
 					<color red="255" green="255" blue="255" alpha="0"/>
 				</editor_field_info>
@@ -311,7 +311,7 @@
 		<field name="Observation" uuid="662FC085D318F44F8A1DFE214CB31AAE" type="10" never_null="true" id="6"/>
 		<field name="Prenom" uuid="469DB0023920B64AAC67E3AEC16EF97F" type="10" limiting_length="255" id="7"/>
 		<field name="BlobCrypted" uuid="6F7356D40D73D54FB730B9D84394EA7C" type="18" never_null="true" id="8"/>
-		<field name="Divorce" uuid="3BF188C6E5F73E4280542D90F63D6F36" type="1" never_null="true" id="9"/>
+		<field name="Divorce" uuid="3BF188C6E5F73E4280542D90F63D6F36" type="1" id="9"/>
 		<field name="LieuNaissance" uuid="F083AAB6F7F29442844B18C50114F74D" type="10" limiting_length="255" id="10"/>
 		<field name="Adresse" uuid="ED6E016D5850DB47AEAFC10000040302" type="10" limiting_length="255" id="11"/>
 		<field name="ID_Tuteur" uuid="B55527721B2EC44BBA5D8EA78630D90B" type="4" never_null="true" id="12"/>
@@ -324,8 +324,8 @@
 				<comment format="text">Civil ou militaire</comment>
 			</field_extra>
 		</field>
-		<field name="IndependantFiscal" uuid="7697C9975924064A8BC3A577A0CBCB0F" type="1" never_null="true" id="14"/>
-		<field name="SuperIsole" uuid="FCFC1C289C673A4784A4EF6095BC8653" type="1" never_null="true" id="15"/>
+		<field name="IndependantFiscal" uuid="7697C9975924064A8BC3A577A0CBCB0F" type="1" id="14"/>
+		<field name="SuperIsole" uuid="FCFC1C289C673A4784A4EF6095BC8653" type="1" id="15"/>
 		<field name="SituationMaritale" uuid="68F0078E6EFDFC4687E9EA1390BCA80D" type="10" limiting_length="255" never_null="true" id="16"/>
 		<field name="SecteurMarine" uuid="AE50CF62270D144E931BB8ED02B8B544" type="10" limiting_length="255" never_null="true" id="17"/>
 		<field name="DatePension" uuid="5E93BB8386EF7B4AA1CB975836557592" type="8" never_null="true" id="18"/>

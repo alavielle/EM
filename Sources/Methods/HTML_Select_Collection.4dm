@@ -70,18 +70,20 @@ If ($LigneChoisir#"Faux")
 End if 
 
 $i:=0
-For each ($id; $3)
-	$optionid:=$id
-	$optionname:=$4[$i]
-	If (Count parameters:C259=8)
-		If ($8#Null:C1517)
-			$optionname:=$optionname+" - "+$8[$i]
+If ($3.length>0)
+	For each ($id; $3)
+		$optionid:=$id
+		$optionname:=$4[$i]
+		If (Count parameters:C259=8)
+			If ($8#Null:C1517)
+				$optionname:=$optionname+" - "+$8[$i]
+			End if 
 		End if 
-	End if 
-	$OptionLine:="<option value="+Char:C90(34)+String:C10($optionid)+Char:C90(34)+">"+$optionname+"</option>"
-	$Contenu:=$Contenu+$OptionLine
-	$i:=$i+1
-End for each 
+		$OptionLine:="<option value="+Char:C90(34)+String:C10($optionid)+Char:C90(34)+">"+$optionname+"</option>"
+		$Contenu:=$Contenu+$OptionLine
+		$i:=$i+1
+	End for each 
+End if 
 
 If ($LigneVide="Vrai")
 	$Contenu:=$Contenu+"<option>"+"</option>"

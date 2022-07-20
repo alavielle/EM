@@ -2,12 +2,14 @@
 //GetBeneficiaires
 //$1 : Type de bénéficiaire
 
-C_TEXT:C284($Composant; $display; $autres; $Classe; $Assurances)
+C_TEXT:C284($Composant; $display; $autres; $autre; $feminin; $Classe; $Assurances)
 ARRAY OBJECT:C1221($tabObj; 0)
 C_OBJECT:C1216($etatCivil)
 
 If ($1="AUTRE")
 	$autres:="PERSONNES A CHARGE"
+	$autre:="personne à charge"
+	$feminin:="e"
 End if 
 
 For each ($etatCivil; ds:C1482.EtatCivil.query("Type = :1"; $1))
@@ -52,6 +54,8 @@ If (Records in selection:C76([ModelesHTML:15])=1)
 	
 	$Contenu:=Replace string:C233($Contenu; "$Type$"; $1)
 	$Contenu:=Replace string:C233($Contenu; "$autres$"; $autres)
+	$Contenu:=Replace string:C233($Contenu; "$autre$"; $autre)
+	$Contenu:=Replace string:C233($Contenu; "$feminin$"; $feminin)
 	$Contenu:=Replace string:C233($Contenu; "$Data$"; $Composant)
 	$Contenu:=Replace string:C233($Contenu; "$Display$"; $display)
 	WEB SEND TEXT:C677($Contenu; "text/html")
