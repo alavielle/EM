@@ -19,7 +19,10 @@ Else
 		RELATE MANY SELECTION:C340([EtatCivil:14]ID_CodeFiscal:31)
 	Else 
 		If ($user.ID_CodeFiscal>0)
-			QUERY:C277([EtatCivil:14]; [EtatCivil:14]ID_CodeFiscal:31=$user.ID_CodeFiscal)
+			$etatCivil:=ds:C1482.EtatCivil.query("ID_CodeFiscal = :1"; $user.ID_CodeFiscal)[0]
+			QUERY:C277([EtatCivil:14]; [EtatCivil:14]CodeDossier:30=$etatCivil.CodeDossier)
+			QUERY SELECTION:C341([EtatCivil:14]; [EtatCivil:14]ID_CodeFiscal:31=$user.ID_CodeFiscal; *)
+			QUERY SELECTION:C341([EtatCivil:14];  | ; [EtatCivil:14]Type:3="RESSORTISSANT")
 		End if 
 	End if 
 End if 

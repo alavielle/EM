@@ -151,7 +151,7 @@
 		<table_extra input_form="Input" output_form="Output">
 			<editor_table_info fields_ordering="1" displayable_fields_count="3">
 				<color red="249" green="130" blue="127" alpha="255"/>
-				<coordinates left="1429" top="1237" width="120" height="105.33203125"/>
+				<coordinates left="1424" top="1233" width="120" height="105.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -324,7 +324,7 @@
 				<comment format="text">Civil ou militaire</comment>
 			</field_extra>
 		</field>
-		<field name="IndependantFiscal" uuid="7697C9975924064A8BC3A577A0CBCB0F" type="1" id="14"/>
+		<field name="IndependantFiscal" uuid="7697C9975924064A8BC3A577A0CBCB0F" type="10" limiting_length="255" id="14"/>
 		<field name="SuperIsole" uuid="FCFC1C289C673A4784A4EF6095BC8653" type="1" id="15"/>
 		<field name="SituationMaritale" uuid="68F0078E6EFDFC4687E9EA1390BCA80D" type="10" limiting_length="255" never_null="true" id="16"/>
 		<field name="SecteurMarine" uuid="AE50CF62270D144E931BB8ED02B8B544" type="10" limiting_length="255" never_null="true" id="17"/>
@@ -362,11 +362,12 @@
 		<field name="DerniereAffectation" uuid="CAF1D1C12E3C6043B3B1433CD676E8ED" type="10" limiting_length="255" never_null="true" id="39"/>
 		<field name="ID_SecteurMarine" uuid="9A61F63780D0454795CED05E89DDCB61" type="4" never_null="true" id="40"/>
 		<field name="Parente" uuid="3EAAA39C6336904F9D280678E950C83D" type="10" limiting_length="255" never_null="true" id="41"/>
+		<field name="ID_RepresLegal" uuid="07DEA4C059326E4792D24E34DF90105C" type="4" never_null="true" id="42"/>
 		<primary_key field_name="ID" field_uuid="8EC072600131FD4584070FBCC4729F9D"/>
 		<table_extra input_form="Input" output_form="Output" trigger_insert="true" trigger_update="true">
-			<editor_table_info displayable_fields_count="41">
+			<editor_table_info displayable_fields_count="42">
 				<color red="150" green="216" blue="175" alpha="255"/>
-				<coordinates left="418" top="173" width="164.37890625" height="911.33203125"/>
+				<coordinates left="422" top="160" width="164.37890625" height="931.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -381,7 +382,7 @@
 		<table_extra input_form="Input" output_form="Output">
 			<editor_table_info displayable_fields_count="7">
 				<color red="255" green="153" blue="63" alpha="255"/>
-				<coordinates left="499" top="1236" width="120" height="191.33203125"/>
+				<coordinates left="475" top="1359" width="120" height="191.33203125"/>
 			</editor_table_info>
 		</table_extra>
 	</table>
@@ -433,7 +434,7 @@
 		<field name="ID_EtatCivil" uuid="0BF0397191C63A4FB3B950544E335299" type="4" never_null="true" id="2"/>
 		<field name="ID_Assurance" uuid="6868A7D447A1B845B61BF7661D219660" type="4" never_null="true" id="3"/>
 		<primary_key field_name="ID" field_uuid="C431124CF401AA4789A679A9FB66462C"/>
-		<table_extra>
+		<table_extra output_form="Output">
 			<editor_table_info displayable_fields_count="6">
 				<color red="150" green="216" blue="175" alpha="255"/>
 				<coordinates left="680" top="834" width="120" height="167.33203125"/>
@@ -777,7 +778,33 @@
 			</editor_table_info>
 		</table_extra>
 	</table>
-	<table name="AutreRessource" uuid="80F510E1EB6ACC46B1D1F7CB69C56591" id="40">
+	<table name="AutreRessource" uuid="93CE6D8E9A0BE041AC27F30026912B49" id="36">
+		<field name="ID" uuid="F07D4985A84A38498426E30872581372" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="ID_Ressource" uuid="4982D8A1ECD10F4A9AAFA9D88966AB96" type="4" never_null="true" id="2"/>
+		<field name="ID_Ligne" uuid="24C407B93212F6418D3CF4189B80F955" type="4" never_null="true" id="3"/>
+		<field name="Valeur" uuid="193E96193595084F9DC7D3F8D40464B5" type="10" limiting_length="255" never_null="true" id="4"/>
+		<primary_key field_name="ID" field_uuid="F07D4985A84A38498426E30872581372"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="252" green="191" blue="73" alpha="255"/>
+				<coordinates left="245" top="1248" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="ModelesMail" uuid="18F595DCFE14E6428A805DE2A35FD004" id="37">
+		<field name="ID" uuid="8F9FD7F2D1C6394B9D4F0D35EC9A21C8" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="Objet" uuid="B0FDB8235B4F3441B5CB3501405B3F38" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="Contenu" uuid="217AB5625A6E954CAA3856906E1EBC29" type="10" never_null="true" id="3"/>
+		<field name="Type" uuid="5E446A85A2D9CA4AA8026BC00AC17040" type="10" limiting_length="255" never_null="true" id="4"/>
+		<primary_key field_name="ID" field_uuid="8F9FD7F2D1C6394B9D4F0D35EC9A21C8"/>
+		<table_extra output_form="Output" input_form="Output">
+			<editor_table_info displayable_fields_count="7">
+				<color red="255" green="153" blue="63" alpha="255"/>
+				<coordinates left="609" top="1360.33203125" width="120" height="188.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="AutreLigneRessource" uuid="80F510E1EB6ACC46B1D1F7CB69C56591" id="40">
 		<field name="ID" uuid="1F4567032C48D64797F4FD88E85DEB8A" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
 		<field name="ID_Ligne" uuid="2E515DEF5460BE4188C799AC27768C1D" type="4" never_null="true" id="2"/>
 		<field name="Libelle" uuid="D3C940E36613BC4DA790E5F6C497CCB1" type="10" limiting_length="255" never_null="true" id="3"/>
@@ -1370,6 +1397,57 @@
 			</editor_relation_info>
 		</relation_extra>
 	</relation>
+	<relation uuid="56821922CCF08640B5FC98CBE5029E99" name_Nto1="representantLegal" name_1toN="representes" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="07DEA4C059326E4792D24E34DF90105C" name="ID_RepresLegal">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="8EC072600131FD4584070FBCC4729F9D" name="ID">
+				<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="255" green="153" blue="63" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="B5D68616EB6C2D4F8F0967F2C9AA140B" name_Nto1="ligneAutreRessource" name_1toN="autresRessources" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="24C407B93212F6418D3CF4189B80F955" name="ID_Ligne">
+				<table_ref uuid="93CE6D8E9A0BE041AC27F30026912B49" name="AutreRessource"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="1F4567032C48D64797F4FD88E85DEB8A" name="ID">
+				<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreLigneRessource"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="false" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="75ABCD85FF71E541834386C229ECD354" name_Nto1="ressource" name_1toN="autresRessources" auto_load_Nto1="true" auto_load_1toN="true" foreign_key="false" state="1">
+		<related_field kind="source">
+			<field_ref uuid="4982D8A1ECD10F4A9AAFA9D88966AB96" name="ID_Ressource">
+				<table_ref uuid="93CE6D8E9A0BE041AC27F30026912B49" name="AutreRessource"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="532A05A500CAA44E983DEC3843BFBB0A" name="ID">
+				<table_ref uuid="BC5CA96AB5126A4EA1A8DEB45949053B" name="Ressource"/>
+			</field_ref>
+		</related_field>
+		<relation_extra entry_wildchar="false" entry_create="false" choice_field="0" entry_autofill="false">
+			<editor_relation_info via_point_x="-1" via_point_y="-1" prefers_left="true" smartlink="true">
+				<color red="252" green="191" blue="73" alpha="255"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
 	<index kind="regular" uuid="055A6755281BCD4FA196CD28CDB95C7E" type="7">
 		<field_ref uuid="D02A9C990EA2C04ABFD9F85BDFFE2DAA" name="ID_Ligne">
 			<table_ref uuid="38E4C495AD909C48B7820F86A2878AB9" name="Budget"/>
@@ -1383,6 +1461,11 @@
 	<index kind="regular" unique_keys="true" uuid="1B28009E66DD2B438D72FD5509F3554E" type="7">
 		<field_ref uuid="C431124CF401AA4789A679A9FB66462C" name="ID">
 			<table_ref uuid="8947163D1995224EBFF3245FCA327915" name="Mutuelle"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="20232D33EFDFBB4D9E637F9325CB2210" type="7">
+		<field_ref uuid="F07D4985A84A38498426E30872581372" name="ID">
+			<table_ref uuid="93CE6D8E9A0BE041AC27F30026912B49" name="AutreRessource"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="2402E0B8DA9C664F992753444B069B4A" type="7">
@@ -1422,7 +1505,7 @@
 	</index>
 	<index kind="regular" unique_keys="true" uuid="30BCE7916FC11841A237D67886FC7724" type="7">
 		<field_ref uuid="1F4567032C48D64797F4FD88E85DEB8A" name="ID">
-			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreRessource"/>
+			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreLigneRessource"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="341C89F0C3110441B3E44437C9E65003" type="7">
@@ -1492,7 +1575,7 @@
 	</index>
 	<index kind="regular" uuid="5D6784A93FD29F47AB99EF5D3A3CB18A" type="7">
 		<field_ref uuid="2E515DEF5460BE4188C799AC27768C1D" name="ID_Ligne">
-			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreRessource"/>
+			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreLigneRessource"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="61D40C56AE6C064BA6C4D281FA67EEE7" type="7">
@@ -1557,7 +1640,7 @@
 	</index>
 	<index kind="regular" uuid="824EF8757B2584449AB03C04DE135B32" type="7">
 		<field_ref uuid="A03EB0D5FAFDF948A88F3823611EA96E" name="ID_Document">
-			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreRessource"/>
+			<table_ref uuid="80F510E1EB6ACC46B1D1F7CB69C56591" name="AutreLigneRessource"/>
 		</field_ref>
 	</index>
 	<index kind="regular" uuid="859280143D04A647AE04A797E0F529B2" type="7">
@@ -1630,6 +1713,16 @@
 			<table_ref uuid="E4B364B6EB3CC248A3E89A521B9CA95E" name="WebDebugger"/>
 		</field_ref>
 	</index>
+	<index kind="regular" unique_keys="true" uuid="A5D2F867D011AF439B7737E0883B1C55" type="7">
+		<field_ref uuid="8F9FD7F2D1C6394B9D4F0D35EC9A21C8" name="ID">
+			<table_ref uuid="18F595DCFE14E6428A805DE2A35FD004" name="ModelesMail"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="A668745A7267F3428ECE3EF5E025C9E1" type="7">
+		<field_ref uuid="4982D8A1ECD10F4A9AAFA9D88966AB96" name="ID_Ressource">
+			<table_ref uuid="93CE6D8E9A0BE041AC27F30026912B49" name="AutreRessource"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="AB20C01705963F4AA7026AB7AAFB345E" type="7">
 		<field_ref uuid="A205DBDA1667A446AA60BF7A51593266" name="ID">
 			<table_ref uuid="8160BBE8FF80B34E984EE66C50ACE850" name="LigneRessource"/>
@@ -1643,6 +1736,11 @@
 	<index kind="regular" uuid="B0031BA49E489B459D14F744F072C4F5" type="7">
 		<field_ref uuid="3D338B9AA837854FA00B9257F6988227" name="ID_CodeFiscal">
 			<table_ref uuid="11F6DB6E9B052042A7AECEF651138E6B" name="EtatCivil"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="B04EAF5F27A34347A74C1A4A396042F3" type="7">
+		<field_ref uuid="24C407B93212F6418D3CF4189B80F955" name="ID_Ligne">
+			<table_ref uuid="93CE6D8E9A0BE041AC27F30026912B49" name="AutreRessource"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="B4BEA581FF1C25479FFEF4495CBBAD9B" type="7">

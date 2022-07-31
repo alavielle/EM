@@ -18,6 +18,8 @@ $navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
 $Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
 
 $Contenu:=Replace string:C233($Contenu; "$displayAdd$"; "")
+$Contenu:=Replace string:C233($Contenu; "$displayMail$"; "hidden")
+$Contenu:=Replace string:C233($Contenu; "$TypeEnvoi$"; "")
 $Contenu:=Replace string:C233($Contenu; "$displayDelete$"; "")
 $Contenu:=Replace string:C233($Contenu; "$param$"; "")
 $Contenu:=Replace string:C233($Contenu; "$title$"; "Documents justificatifs")

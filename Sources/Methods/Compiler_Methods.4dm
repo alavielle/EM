@@ -86,7 +86,7 @@ C_TEXT:C284(DepotDossier; $1)
 C_LONGINT:C283(DepotDossier; $2)
 
 //Envoi_lien
-C_LONGINT:C283(Envoi_lien; $1)
+C_LONGINT:C283(EnvoiLien; $1)
 
 //FillEtatCivil
 C_TEXT:C284(FillEtatCivil; $1)
@@ -204,7 +204,7 @@ C_LONGINT:C283(NewWebUser; $5)
 C_LONGINT:C283(NewWebUser; $6)
 
 //Oubli_pwd
-C_TEXT:C284(Oubli_pwd; $1)
+C_TEXT:C284(OubliPwd; $1)
 
 //Permission
 C_TEXT:C284(Permission; $0)
@@ -216,22 +216,22 @@ C_BOOLEAN:C305(Profil; $0)
 C_TEXT:C284(Profil; $1)
 
 //Reinit_pwd
-C_TEXT:C284(Reinit_pwd; $1)
+C_TEXT:C284(ReinitPwd; $1)
 
 //SauvegarderEtatCivil
-C_TEXT:C284(SauvegarderEtatCivil; $0)
-C_LONGINT:C283(SauvegarderEtatCivil; $1)
+C_TEXT:C284(SaveEtatCivil; $0)
+C_LONGINT:C283(SaveEtatCivil; $1)
 
 //SauvegarderStorageEtatCivil
-C_LONGINT:C283(SauvegarderStorageEtatCivil; $1)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $2)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $3)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $4)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $5)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $6)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $7)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $8)
-C_TEXT:C284(SauvegarderStorageEtatCivil; $9)
+C_LONGINT:C283(SaveStorageEtatCivil; $1)
+C_TEXT:C284(SaveStorageEtatCivil; $2)
+C_TEXT:C284(SaveStorageEtatCivil; $3)
+C_TEXT:C284(SaveStorageEtatCivil; $4)
+C_TEXT:C284(SaveStorageEtatCivil; $5)
+C_TEXT:C284(SaveStorageEtatCivil; $6)
+C_TEXT:C284(SaveStorageEtatCivil; $7)
+C_TEXT:C284(SaveStorageEtatCivil; $8)
+C_TEXT:C284(SaveStorageEtatCivil; $9)
 
 //SelectionEtatCivilSelonProfil
 C_TEXT:C284(SelectionEtatCivilSelonProfil; $1)
@@ -289,8 +289,8 @@ C_POINTER:C301(HTML_ListGroup; $3)
 //CalculNvSeuils
 C_TEXT:C284(CalculNvSeuils; $1)
 
-//CrudAutreRessource
-C_TEXT:C284(CrudAutreRessource; $1)
+//CrudAutreLigneRessource
+C_TEXT:C284(CrudAutreLigneRessource; $1)
 
 //CrudLigneBudget
 C_TEXT:C284(CrudLigneBudget; $1)
@@ -319,3 +319,91 @@ C_TEXT:C284(HTML_LigneBudget; $0)
 
 //HTML_LigneFrais
 C_TEXT:C284(HTML_LigneFrais; $0)
+
+//CrudModelesMail
+C_TEXT:C284(CrudModelesMail; $1)
+
+//EnvoiLien
+C_TEXT:C284(EnvoiLien; $0)
+
+//FindTutelles
+C_TEXT:C284(FindTutelles; $0)
+C_TEXT:C284(FindTutelles; $1)
+
+//InitMail
+C_TEXT:C284(InitMail; $1)
+
+//ModifEmail
+C_TEXT:C284(ModifEmail; $1)
+
+//ModifPwd
+C_TEXT:C284(ModifPwd; $1)
+
+//NewCodeDossier
+C_LONGINT:C283(NewCodeDossier; $0)
+
+//NewCodeFiscal
+C_LONGINT:C283(NewCodeFiscal; $0)
+C_TEXT:C284(NewCodeFiscal; $1)
+C_BOOLEAN:C305(NewCodeFiscal; $2)
+
+//SaveAssurance
+C_LONGINT:C283(SaveAssurance; $1)
+C_COLLECTION:C1488(SaveAssurance; $2)
+
+//SaveAutreRessource
+C_LONGINT:C283(SaveAutreRessource; $1)
+C_COLLECTION:C1488(SaveAutreRessource; $2)
+
+//SaveBudget
+C_LONGINT:C283(SaveBudget; $1)
+C_LONGINT:C283(SaveBudget; $2)
+C_COLLECTION:C1488(SaveBudget; $3)
+
+//SaveCandidat
+C_TEXT:C284(SaveCandidat; $0)
+C_LONGINT:C283(SaveCandidat; $1)
+
+//SaveFrais
+C_LONGINT:C283(SaveFrais; $1)
+C_LONGINT:C283(SaveFrais; $2)
+C_COLLECTION:C1488(SaveFrais; $3)
+
+//SaveRessource
+C_TEXT:C284(SaveRessource; $0)
+C_LONGINT:C283(SaveRessource; $1)
+
+//SaveScolarite
+C_LONGINT:C283(SaveScolarite; $1)
+C_LONGINT:C283(SaveScolarite; $2)
+C_LONGINT:C283(SaveScolarite; $3)
+C_TEXT:C284(SaveScolarite; $4)
+
+//SaveStorageEtatCivil
+C_TEXT:C284(SaveStorageEtatCivil; $10)
+C_TEXT:C284(SaveStorageEtatCivil; $11)
+
+//SelectActiviteMarine
+C_TEXT:C284(SelectActiviteMarine; $0)
+
+//SelectAssurance
+C_TEXT:C284(SelectAssurance; $0)
+
+//SelectScolarite
+C_TEXT:C284(SelectScolarite; $0)
+C_LONGINT:C283(SelectScolarite; $1)
+C_LONGINT:C283(SelectScolarite; $2)
+
+//SelectTuteur
+C_TEXT:C284(SelectTuteur; $0)
+
+//SendeMail_OnMandrill
+C_TEXT:C284(SendeMail_OnMandrill; $0)
+
+//SendMail
+C_LONGINT:C283(SendMail; $0)
+C_TEXT:C284(SendMail; $1)
+C_TEXT:C284(SendMail; $2)
+C_TEXT:C284(SendMail; $3)
+C_TEXT:C284(SendMail; $4)
+C_TEXT:C284(SendMail; $5)

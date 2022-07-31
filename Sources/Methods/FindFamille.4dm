@@ -1,5 +1,5 @@
 //%attributes = {}
-//FindParent
+//FindFamille
 //$1 : BourseID/Famille/UUID EtatCivil 
 
 C_COLLECTION:C1488($param)
@@ -15,7 +15,7 @@ If ($etatCivil.length=1)
 End if 
 
 $enfantsDuRessortissant:=ds:C1482.EtatCivil.query("ID = :1"; $id_ressortissant).ayantDroits.query("Type = ENFANT | Type = AUTRE")
-$AnneeSco:=ds:C1482.AnneeScolaire.query("Courante = :1"; True:C214).AnneeSco[0]
+$AnneeSco:=ds:C1482.AnneeScolaire.query("Courante = :1"; True:C214)[0].AnneeSco
 
 ARRAY OBJECT:C1221($tabObjE; 0)
 ARRAY OBJECT:C1221($tabObj; 0)
@@ -38,10 +38,16 @@ For each ($enfant; $enfantsDuRessortissant)
 	Else 
 		$aCharge:=False:C215
 	End if 
-	$classes:=$enfant.scolarites.query("ID_AnneeSco = :1"; ds:C1482.AnneeScolaire.query("Courante = :1"; True:C214).ID[0]).classe.Classe
+	$scolarite:=$enfant.scolarites.query("ID_AnneeSco = :1"; ds:C1482.AnneeScolaire.query("Courante = :1"; True:C214)[0].ID)
+	$classes:=$scolarite.classe.Classe
 	If ($classes.length>0)
 		$classe:=$classes[0]
+		OB SET:C1220($objEC; "ID_NiveauEtude"; $scolarite[0].classe.niveau.ID)
+		OB SET:C1220($objEC; "ID_Classe"; $scolarite[0].classe.ID)
+		OB SET:C1220($objEC; "Filiere"; $scolarite[0].Filiere)
 	Else 
+		OB SET:C1220($objEC; "ID_Classe"; 0)
+		OB SET:C1220($objEC; "ID_NiveauEtude"; 0)
 		$classe:=""
 	End if 
 	APPEND TO ARRAY:C911($tabObjE; New object:C1471("ID"; $enfant.ID; "Nom"; $SharedEC.Nom; "Prenom"; $SharedEC.Prenom; "DateNaissance"; $SharedEC.DateNaissance; "SituationProfessionnelle"; $enfant.SituationProfessionnelle; "Classe"; $classe; "ACharge"; $aCharge))
@@ -86,33 +92,7 @@ QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="etat_civil_base")
 $etatCivil_base:=[ModelesHTML:15]Detail:3
 UNLOAD RECORD:C212([ModelesHTML:15])
 
-QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="assurance_base")
-$assurance_base:=[ModelesHTML:15]Detail:3
-UNLOAD RECORD:C212([ModelesHTML:15])
-
-QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="scolarite_base")
-$scolarite_base:=[ModelesHTML:15]Detail:3
-UNLOAD RECORD:C212([ModelesHTML:15])
-
-ALL RECORDS:C47([MontantPart:7])
-ORDER BY:C49([MontantPart:7]; [MontantPart:7]ID:1; >)
-ARRAY LONGINT:C221($TabId; 0)
-ARRAY TEXT:C222($TabLib; 0)
-SELECTION TO ARRAY:C260([MontantPart:7]ID:1; $TabId; [MontantPart:7]NiveauEtude:2; $TabLib)
-C_TEXT:C284($Select)
-C_OBJECT:C1216($SelectProperties)
-OB SET:C1220($SelectProperties; "onchange"; "Oui")
-OB SET:C1220($SelectProperties; "onchangemethod"; "popNeSelected")
-C_OBJECT:C1216(ParamSelect)
-OB SET:C1220(ParamSelect; "Required"; "Faux")
-OB SET:C1220(ParamSelect; "LigneVide"; "Faux")
-OB SET:C1220(ParamSelect; "LigneChoisir"; "Choisir")
-OB SET:C1220(ParamSelect; "Disabled"; "Faux")
-OB SET:C1220(ParamSelect; "Hidden"; "Faux")
-OB SET:C1220(ParamSelect; "Multiple"; "Faux")
-$SelectNe:=HTML_Select("Niveau d'études *"; "NiveauEtude"; ->$TabId; ->$TabLib; $SelectProperties; ""; ParamSelect)
-
-$scolarite_base:=Replace string:C233($scolarite_base; "$selectNe$"; $SelectNe)
+$scolarite_base:=SelectScolarite($objEC.ID_Classe; $objEC.ID_NiveauEtude)
 
 
 QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")

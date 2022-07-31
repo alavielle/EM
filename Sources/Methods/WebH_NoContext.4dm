@@ -83,10 +83,63 @@ If (Identify)
 		: ($URL="/ModifEmail")
 			ModifEmail(Session:C1714.storage.clientUuid.value)
 			
-		: ($URL="/Bourse")
+			
+		: ($URL="/Received/EtatCivil/@")
 			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
 			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
-				GetBourses(Session:C1714.storage.clientUuid.value)
+				$id:=Num:C11(Replace string:C233($URL; "/Received/EtatCivil/"; ""))
+				$Composant:=SaveEtatCivil($id)
+				ReturnSomething($composant)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="/Received/Bourse/@")
+			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$id:=Num:C11(Replace string:C233($URL; "/Received/Bourse/"; ""))
+				$Composant:=SaveCandidat($id)
+				ReturnSomething($composant)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="/Received/Ressource/@")
+			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$uuid:=Num:C11(Replace string:C233($URL; "/Received/Ressource/"; ""))
+				$Composant:=SaveRessource($uuid)
+				ReturnSomething($composant)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="/Received/Document/@")
+			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$uuid:=Replace string:C233($URL; "/Received/Document/"; "")
+				$Composant:=SaveDocument($uuid)
+				ReturnSomething($composant)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="@/Signature/@")
+			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$uuid:=Replace string:C233($URL; "/Received/Signature/"; "")
+				//$Composant:=SaveDocument($uuid)
+				ReturnSomething("Signature")  //$composant)"
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="/@/Validation/@")
+			$ptrPermission:=->[Privilege:4]Zone_EtatCivil:5
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$uuid:=Replace string:C233($URL; "/Received/Validation/"; "")
+				//$Composant:=SaveDocument($uuid)
+				ReturnSomething("Validation")
 			Else 
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
@@ -118,7 +171,6 @@ If (Identify)
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
 			
-			
 		: ($URL="@/Justificatif/@")
 			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
 			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
@@ -128,38 +180,20 @@ If (Identify)
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
 			
-			
 		: ($URL="/Bourse/@")
 			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
 			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
 				$id:=Num:C11(Replace string:C233($URL; "/Bourse/"; ""))
-				FindBourse($id)
-			Else 
-				WEB SEND HTTP REDIRECT:C659("/403.shtml")
-			End if 
-			
-		: ($URL="/Dossier/Saisie")
-			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
-			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
-				QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="dossier_saisie")
-				If (Records in selection:C76([ModelesHTML:15])>0)
-					$contenu:=[ModelesHTML:15]Detail:3
-					UNLOAD RECORD:C212([ModelesHTML:15])
-					QUERY:C277([ModelesHTML:15]; [ModelesHTML:15]Titre:2="navBar")
-					$navBar:=[ModelesHTML:15]Detail:3
-					UNLOAD RECORD:C212([ModelesHTML:15])
-					$prenomNom:=Session:C1714.userName
-					$navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
-					$Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
-					WEB SEND TEXT:C677($Contenu; "text/html")
+				If ($id>0)
+					FindBourse($id)
 				Else 
-					WEB SEND HTTP REDIRECT:C659("/404.shtml")
+					GetBourses(Session:C1714.storage.clientUuid.value)
 				End if 
 			Else 
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
 			
-		: ($URL="/Dossier/Depot")
+		: ($URL="/Dossier/New")
 			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
 			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
 				GetBoursiers(Session:C1714.storage.clientUuid.value)
@@ -212,15 +246,6 @@ If (Identify)
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
 			
-		: ($URL="/Received/EtatCivil/@")
-			$ptrPermission:=->[Privilege:4]Zone_EtatCivil:5
-			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
-				$id:=Num:C11(Replace string:C233($URL; "/Received/EtatCivil/"; ""))
-				$Composant:=SauvegarderEtatCivil($id)
-				ReturnSomething($composant)
-			Else 
-				WEB SEND HTTP REDIRECT:C659("/403.shtml")
-			End if 
 			
 		: ($URL="/FoyerFiscal")
 			$ptrPermission:=->[Privilege:4]Zone_Bourse:6
@@ -303,11 +328,11 @@ If (Identify)
 			End if 
 			
 			
-		: ($URL="/AutresRessources/@")
+		: ($URL="/AutresLignesRessources/@")
 			$ptrPermission:=->[Privilege:4]Zone_Parametre:4
 			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
-				$index:=Replace string:C233($URL; "/AutresRessources/"; "")
-				CrudAutreRessource($index)
+				$index:=Replace string:C233($URL; "/AutresLignesRessources/"; "")
+				CrudAutreLigneRessource($index)
 			Else 
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
@@ -438,9 +463,38 @@ If (Identify)
 				WEB SEND HTTP REDIRECT:C659("/403.shtml")
 			End if 
 			
+		: ($URL="/ModelesMail/@")
+			$ptrPermission:=->[Privilege:4]Zone_Parametre:4
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$index:=Replace string:C233($URL; "/ModelesMail/"; "")
+				CrudModelesMail($index)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="/EnvoiLien/@")
+			$ptrPermission:=->[Privilege:4]Zone_Parametre:4
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$index:=Replace string:C233($URL; "/EnvoiLien/"; "")
+				$return:=EnvoiLien(Num:C11($index))
+				ReturnSomething($return)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
+		: ($URL="/InitMail/@")
+			$ptrPermission:=->[Privilege:4]Zone_Parametre:4
+			If (Permission(Session:C1714.storage.clientUuid.value; $ptrPermission)#"NoAccess")
+				$index:=Replace string:C233($URL; "/InitMail/"; "")
+				InitMail($index)
+			Else 
+				WEB SEND HTTP REDIRECT:C659("/403.shtml")
+			End if 
+			
 		Else 
 			WEB SEND HTTP REDIRECT:C659("/404.shtml")
 	End case 
+	
 Else 
 	Case of 
 		: ($URL="/login")
@@ -448,11 +502,11 @@ Else
 			
 		: ($URL="/oubli_pwd/@")
 			$index:=Replace string:C233($URL; "/oubli_pwd/"; "")
-			Oubli_pwd($index)
+			OubliPwd($index)
 			
 		: ($URL="/reinit_pwd/@")
 			$index:=Replace string:C233($1; "/reinit_pwd/"; "")
-			Reinit_pwd($index)
+			ReinitPwd($index)
 			
 		: ($URL="/NewPassword")
 			NewPassword

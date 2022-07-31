@@ -7,6 +7,7 @@
 // Optionnel
 // $5 : CC
 
+$return:="Mail envoyé avec success"
 $V_smtp:="smtp.mandrillapp.com"
 $V_pass:="0nPN0qMlFDPZ4dHJ5XSMlg"
 
@@ -34,9 +35,9 @@ var $transporter : 4D:C1709.SMTPTransporter
 $transporter:=SMTP New transporter:C1608($server)
 $status:=$transporter.send($mail)
 If (Not:C34($status.success))
-	ALERT:C41("Une erreur s'est produite à l'envoi du mail : "+$status.message)
+	$return:="Une erreur s'est produite à l'envoi du mail"
 End if 
-
+$0:=$return
 
 //$SmtpOption:=8  
 //$SmtpPort:=587  

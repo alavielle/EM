@@ -18,7 +18,7 @@ If (Size of array:C274(tNoms)>0)
 	C_OBJECT:C1216($Obj)
 	For ($i; 1; Size of array:C274($sel))
 		$Obj:=$sel{$i}
-		$Email:=OB Get:C1224($Obj; "id")
+		$UUID:=OB Get:C1224($Obj; "id")
 		$token:=OB Get:C1224($Obj; "token")
 		$newPassword:=OB Get:C1224($Obj; "newpassword")
 		$confirmPassword:=OB Get:C1224($Obj; "confirmpassword")
@@ -26,14 +26,14 @@ If (Size of array:C274(tNoms)>0)
 	If ($newPassword=$confirmPassword)
 		If (Match regex:C1019("(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(.{8,})"; $newPassword))
 			C_OBJECT:C1216($user)
-			$user:=ds:C1482.WebUser.query("Email = :1"; $Email).first()
+			$user:=ds:C1482.WebUser.query("UUID = :1"; $UUID).first()
 			If ($user#Null:C1517)  //a user was found
 				$intervalle:=$user.Expiration-DateToEpoch(Timestamp:C1445)
 				If (($intervalle>0) & ($user.Token#"") & ($user.Token=$token))
 					$user.Password:=Generate password hash:C1533($newPassword)
 					$user.Expiration:=0
 					$user.save()
-					$JsonRecu:="Votre mot de passe a été modifié.<br>Vous allez être redirigé vers la page de connexion."
+					$JsonRecu:="Votre nouveau mot de passe a été enregistré.<br>Vous allez être redirigé vers la page de connexion."
 				Else 
 					$erreur:=403
 					$JsonRecu:="Une erreur est survenue..."

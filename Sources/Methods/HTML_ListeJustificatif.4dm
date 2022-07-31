@@ -8,7 +8,7 @@ For ($i; 1; Records in selection:C76([Document:28]))
 	$contenu:=$contenu+"<div class=\"row my-3\">"
 	$contenu:=$contenu+"<div class=\"col-md-6\">"
 	$contenu:=$contenu+"<label for=\"\" class=\"form-label\\ id=\""+String:C10([Document:28]ID:1)+"\">"+[Document:28]Document:2+"</label>"
-	$autreJustif:=ds:C1482.AutreRessource.query("ID_Document = :1"; [Document:28]ID:1)
+	$autreJustif:=ds:C1482.AutreLigneRessource.query("ID_Document = :1"; [Document:28]ID:1)
 	If ($autreJustif.length>0)
 		$contenu:=$contenu+"<ul>"
 		For each ($autre; $autreJustif)

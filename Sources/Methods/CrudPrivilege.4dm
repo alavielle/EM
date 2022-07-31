@@ -2,7 +2,7 @@
 // CrudPrivilege
 // $1 : Index
 
-QUERY:C277([Privilege:4]; [Privilege:4]ID:1>1)
+
 $composant:=Crud($1; ->[Privilege:4]; ds:C1482.Privilege)
 
 
@@ -18,6 +18,8 @@ $navBar:=Replace string:C233($navBar; "$prenomNom$"; $prenomNom)
 $Contenu:=Replace string:C233($Contenu; "$navBar$"; $navBar)
 
 $Contenu:=Replace string:C233($Contenu; "$displayAdd$"; "hidden")
+$Contenu:=Replace string:C233($Contenu; "$displayMail$"; "hidden")
+$Contenu:=Replace string:C233($Contenu; "$TypeEnvoi$"; "")
 $Contenu:=Replace string:C233($Contenu; "$displayDelete$"; "hidden")
 $Contenu:=Replace string:C233($Contenu; "$param$"; "")
 $Contenu:=Replace string:C233($Contenu; "$title$"; "Privilèges")

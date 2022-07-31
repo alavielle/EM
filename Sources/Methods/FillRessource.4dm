@@ -2,8 +2,10 @@
 //FillRessource
 //$1 : BourseID/UUID Etat civil
 
-C_COLLECTION:C1488($param)
+C_COLLECTION:C1488($param; $toutesRessources; $autresRessources)
 $param:=New collection:C1472
+$toutesRessources:=New collection:C1472
+$autresRessources:=New collection:C1472
 $param:=Split string:C1554($1; "/")
 $bourseID:=$param[1]
 $uuid:=$param[2]
@@ -18,13 +20,14 @@ QUERY:C277([EtatCivil:14]; [EtatCivil:14]UUID:34=$uuid)
 $id_CodeFiscal:=[EtatCivil:14]ID_CodeFiscal:31
 Case of 
 	: ([Privilege:4]ID:1<3)
-		QUERY:C277([Ressource:13]; [Ressource:13]ID_CodeFiscal:2=$id_CodeFiscal)
-		
+		//CHERCHER([Ressource]; [Ressource]ID_CodeFiscal=$id_CodeFiscal)
+		$ressources:=ds:C1482.Ressource.query("ID_CodeFiscal= :1"; $id_CodeFiscal)
 	: ([Privilege:4]ID:1=5)
 		If ([WebUser:2]ID_CodeFiscal:9#$id_CodeFiscal)
 			WEB SEND HTTP REDIRECT:C659("/403.shtml")
 		Else 
-			QUERY:C277([Ressource:13]; [Ressource:13]ID_CodeFiscal:2=$id_CodeFiscal)
+			//CHERCHER([Ressource]; [Ressource]ID_CodeFiscal=$id_CodeFiscal)
+			$ressources:=ds:C1482.Ressource.query("ID_CodeFiscal= :1"; $id_CodeFiscal)
 		End if 
 	Else 
 		Case of 
@@ -35,7 +38,8 @@ Case of
 		End case 
 		QUERY SELECTION:C341([FoyerFiscal:3]; [FoyerFiscal:3]ID:1=$id_CodeFiscal)
 		If (Records in selection:C76([FoyerFiscal:3])=1)
-			QUERY:C277([Ressource:13]; [Ressource:13]ID_CodeFiscal:2=$id_CodeFiscal)
+			//CHERCHER([Ressource]; [Ressource]ID_CodeFiscal=$id_CodeFiscal)
+			$ressources:=ds:C1482.Ressource.query("ID_CodeFiscal= :1"; $id_CodeFiscal)
 		Else 
 			WEB SEND HTTP REDIRECT:C659("/403.shtml")
 		End if 
@@ -43,15 +47,25 @@ End case
 
 QUERY:C277([AnneeScolaire:21]; [AnneeScolaire:21]Courante:3=True:C214)
 $annee:=Substring:C12([AnneeScolaire:21]AnneeSco:2; 1; 4)
-QUERY SELECTION:C341([Ressource:13]; [Ressource:13]Annee:3=$annee)
-If (Records in selection:C76([Ressource:13])>0)
-	C_TEXT:C284($composant)
-	$composant:=Selection to JSON:C1234([Ressource:13])
-	$Contenu:=Replace string:C233($Contenu; "$Data$"; $Composant)
+//CHERCHER DANS SÉLECTION([Ressource]; [Ressource]Annee=$annee)
+$ressource:=$ressources.query("Annee = :1"; $annee)
+//Si (Enregistrements trouvés([Ressource])>0)
+C_OBJECT:C1216($obj; 0)
+If ($ressource.length>0)
+	C_TEXT:C284($composant; $composant1)
+	$autres:=$ressource.autresRessources
+	$toutesRessources:=$ressource.toCollection()
+	For each ($autre; $autres)
+		OB SET:C1220($obj; "Autre"+String:C10($autre.ID_Ligne; "00"); $autre.Valeur)
+	End for each 
+	$toutesRessources.push($obj)
+	$composant:=JSON Stringify:C1217($toutesRessources)
 Else 
-	$Contenu:=Replace string:C233($Contenu; "$Data$"; "")
+	OB SET:C1220($obj; "ID_CodeFiscal"; $id_CodeFiscal; "Annee"; $annee)
+	$composant:=JSON Stringify:C1217($obj)
 End if 
 
+$Contenu:=Replace string:C233($Contenu; "$Data$"; $Composant)
 $Composant:=HTML_LigneRessource()
 $Composant:=Replace string:C233($Composant; "$AnneeSco$"; [AnneeScolaire:21]AnneeSco:2)
 

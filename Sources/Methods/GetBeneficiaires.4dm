@@ -30,6 +30,8 @@ For each ($etatCivil; ds:C1482.EtatCivil.query("Type = :1"; $1))
 				$scolarite:=$etatCivil.scolarites.query("ID_AnneeSco = :1"; ds:C1482.AnneeScolaire.query("Courante = :1"; True:C214)[0].ID)
 				If ($scolarite.length>0)
 					$Classe:=$scolarite[0].classe.Classe
+				Else 
+					$Classe:=""
 				End if 
 				APPEND TO ARRAY:C911($tabObj; New object:C1471("UUID"; $etatcivil.UUID; "ID"; $etatcivil.ID; "Nom"; $Nom; "Prenom"; $etatcivil.Prenom; "DateNaissance"; $DateNaissance; "Ville"; $Ville; "Classe"; $Classe; "CodeDossier"; $etatCivil.CodeDossier; "IndependantFiscal"; $etatCivil.IndependantFiscal; "Handicap"; $etatCivil.Handicap; "SuperIsole"; $etatCivil.SuperIsole))
 			Else 

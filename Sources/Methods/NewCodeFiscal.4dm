@@ -16,7 +16,7 @@ If ($foyerFiscal.length>0)
 	$last:=$autresFoyers[$autresFoyers.length-1]
 	$TabLast:=Split string:C1554($last; "-")
 	$increment:=Num:C11($TabLast[$TabLast.length-1])+1
-	$entity.ID_ASA:=$foye]rFiscal[0].ID_ASA
+	$entity.ID_ASA:=$foyerFiscal[0].ID_ASA
 	$entity.ID_ASEM:=$foyerFiscal[0].ID_ASEM
 	$entity.CodeFiscal:=$1+"-"+String:C10($increment)
 Else 
